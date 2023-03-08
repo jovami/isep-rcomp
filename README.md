@@ -1,10 +1,11 @@
 RCOMP 2022-2023 Project repository template
 ===========================================
 # 1. Team members (update this information please) #
-  * 1111111 - {First and last name} 
-  * 2222222 - {First and last name} 
-  * 3333333 - {First and last name} 
-  * 4444444 - {First and last name}  
+  * 1210957 - João Teixeira 
+  * 1181478 - Jonas Antunes 
+  * 1211155 - José Rente
+  * 1210951 - Marco Maia
+  * 1210954 - Ruben Ferreira
 
 Any team membership changes should be reported here, examples:
 
