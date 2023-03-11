@@ -1,7 +1,36 @@
 RCOMP 2022-2023 Project - Sprint 1 - Member 1210954 folder
 ===========================================
-(This folder is to be created/edited by the team member 1210954 only)
 
-#### This is just an example for a team member with number 1210954 ####
-### Each member should create a folder similar to this, matching his/her number. ###
-The owner of this folder (member number 1210954) will commit here all the outcomes (results/artifacts/products)		       of his/her work during sprint 1. This may encompass any kind of standard file types.
+
+## Floor 0
+
+### Outlets
+
+| Room  | Width (m) | Length (m)    | No. Outlets   |
+|:-----:|:---------:|:-------------:|:-------------:|
+| A.0.1 | 5.27      | 5.00          | 5             |
+| A.0.2 | 4.64      | 5.00          | 3             |
+| A.0.3 | 5.73      | 5.00          | 4             |
+| A.0.4 | 5.04      | 7.25          | 7             |
+| A.0.5 | 6.85      | 4.46          | 5             |
+| A.0.6 | 6.85      | 7.23          | 8             |
+
+Total Outlets: 32
+
+
+## Floor 1
+
+### Outlets
+
+| Room  | Width (m) | Length (m)    | No. Outlets   |
+|:-----:|:---------:|:-------------:|:-------------:|
+| A.1.1 | 4.62      | 7.21          | 5             |
+| A.1.2 | 4.62      | 7.21          | 5             |
+| A.1.3 | 4.62      | 7.21          | 5             |
+| A.1.4 | 8.79      | 7.21          | 11            |
+| A.1.5 | 6.54      | 4.44          | 4             |
+| A.1.6 | 6.83      | 7.21          | 8             |
+| A.1.7 | 6.85      | 5.71          | 5             |
+
+Total Outlets: 46
+
