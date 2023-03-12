@@ -1,6 +1,6 @@
 module Main where
 
-import GHC.Float (floorFloat)
+import GHC.Float (roundFloat)
 import Text.Printf (printf)
 import Data.Foldable (traverse_)
 
@@ -17,15 +17,15 @@ data Floor = Floor { fname :: String, rooms :: [Room] }
 outletsPerMeter :: Float
 outletsPerMeter = 2 / 10
 
-pxToMeters :: Distance -> Distance
-pxToMeters = (scale *)
+toMeters :: Distance -> Distance
+toMeters = (scale *)
     where scale = 5 / 258
 
 roomArea :: Room -> Area
-roomArea (Room _ w l) = pxToMeters w * pxToMeters l
+roomArea (Room _ w l) = toMeters w * toMeters l
 
 roomOutlets :: Room -> Int
-roomOutlets = floorFloat . (outletsPerMeter *) . roomArea
+roomOutlets = roundFloat . (outletsPerMeter *) . roomArea
 
 showFloor :: Floor -> IO ()
 showFloor (Floor fname rs) = do
@@ -39,8 +39,8 @@ showFloor (Floor fname rs) = do
         _show :: Room -> Int -> String
         _show (Room n w l) = printf "Room %s (%.2fx%.2f m²) => %2d outlets" n wm lm
             where
-                wm = pxToMeters w
-                lm = pxToMeters l
+                wm = toMeters w
+                lm = toMeters l
 
 
 --- Width and length in pixels
