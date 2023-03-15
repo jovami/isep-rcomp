@@ -111,29 +111,29 @@ and also a ratio of two outlets for each 10 square meters of area.
   infrastructure hardware, no network outlets are required there, the same goes for restrooms, and common
   areas like halls and corridors.
 
-|    Room     | Width (m) | Length (m) | Area(m2)  | No. Outlets needed((area/10)*2) | No. Outlets used |
-|:-----------:|:---------:|:----------:|-----------|:-------------------------------:|------------------|
-|    E.1.1    |   7.14    |     10     | 71.4      |              14.28              | 16               |
-|    E.1.2    |   3.81    |    6.19    | 23.58     |              4.72               | 6                |
-|    E.1.3    |   3.81    |    6.19    | 23.58     |              4.72               | 6                |
-|    E.1.4    |   4.52    |    9.52    | 43        |               8.6               | 10               |
-|    E.1.5    |   3.81    |    6.67    | 25.41     |               5.1               | 6                |
-|    E.1.6    |   3.81    |    6.67    | 25.41     |               5.1               | 6                |
-|    E.1.7    |   3.81    |    6.67    | 25.41     |               5.1               | 6                |
-|    E.1.8    |   3.81    |    6.67    | 25.41     |               5.1               | 6                |
-|    E.1.9    |   3.81    |    6.67    | 25.41     |               5.1               | 6                |
-|   E.1.10    |   3.81    |    6.67    | 25.41     |               5.1               | 6                |
-|   E.1.11    |   3.81    |    6.19    | 23.58     |              4.72               | 6                |
-|   E.1.12    |   3.81    |    6.19    | 23.58     |              4.72               | 6                |
-|   E.1.13    |   3.81    |    5.71    | 21.76     |              4.35               | 6                |
-|   E.1.14    |   3.81    |    5.71    | 21.76     |              4.35               | 6                |
-|   E.1.15    |   3.81    |    5.71    | 21.76     |              4.35               | 6                |
-|   E.1.16    |   3.81    |    5.71    | 21.76     |              4.35               | 6                |
-|   E.1.17    |   3.81    |    5.71    | 21.76     |              4.35               | 6                |
-|   E.1.18    |   3.81    |    5.71    | 21.76     |              4.35               | 6                |
-|   E.1.19    |   1.90    |    3.33    | 6.34      |            ---------            | ---------        |
-|   E.1.20    |   1.67    |    6.43    | 10.74     |            ---------            | ---------        |
-| AccessPoint | --------- | ---------  | --------- |            ---------            | 2                |
+|    Room     | Width (m) | Length (m) |  Area(m2)   | No. Outlets needed((area/10)*2) |  No. Outlets used  |
+|:-----------:|:---------:|:----------:|:-----------:|:-------------------------------:|:------------------:|
+|    E.1.1    |   7.14    |     10     |    71.4     |              14.28              |         16         |
+|    E.1.2    |   3.81    |    6.19    |    23.58    |              4.72               |         6          |
+|    E.1.3    |   3.81    |    6.19    |    23.58    |              4.72               |         6          |
+|    E.1.4    |   4.52    |    9.52    |     43      |               8.6               |         10         |
+|    E.1.5    |   3.81    |    6.67    |    25.41    |               5.1               |         6          |
+|    E.1.6    |   3.81    |    6.67    |    25.41    |               5.1               |         6          |
+|    E.1.7    |   3.81    |    6.67    |    25.41    |               5.1               |         6          |
+|    E.1.8    |   3.81    |    6.67    |    25.41    |               5.1               |         6          |
+|    E.1.9    |   3.81    |    6.67    |    25.41    |               5.1               |         6          |
+|   E.1.10    |   3.81    |    6.67    |    25.41    |               5.1               |         6          |
+|   E.1.11    |   3.81    |    6.19    |    23.58    |              4.72               |         6          |
+|   E.1.12    |   3.81    |    6.19    |    23.58    |              4.72               |         6          |
+|   E.1.13    |   3.81    |    5.71    |    21.76    |              4.35               |         6          |
+|   E.1.14    |   3.81    |    5.71    |    21.76    |              4.35               |         6          |
+|   E.1.15    |   3.81    |    5.71    |    21.76    |              4.35               |         6          |
+|   E.1.16    |   3.81    |    5.71    |    21.76    |              4.35               |         6          |
+|   E.1.17    |   3.81    |    5.71    |    21.76    |              4.35               |         6          |
+|   E.1.18    |   3.81    |    5.71    |    21.76    |              4.35               |         6          |
+|   E.1.19    |   1.90    |    3.33    |    6.34     |            ---------            |     ---------      |
+|   E.1.20    |   1.67    |    6.43    |    10.74    |            ---------            |     ---------      |
+| AccessPoint | --------- | ---------  |  ---------  |            ---------            |         2          |
 
 #### Note1: All the measurements were made based on paper and the scale of 5 meters given(corresponding to 2.1 cm).
 #### Note2: The double outlets used for the access point are not represented in this floor plan.
@@ -169,20 +169,20 @@ and also a ratio of two outlets for each 10 square meters of area.
 
 ## Inventory For First floor(floor 1)
 
-|               Material | Price for a unit (€) | Price (€) |
-|-----------------------:|:--------------------:|:---------:|
-|         X Cabinets 24U |                      |           |
-|         X Cabinets 12U |                      |           |
-|             74 outlets |                      |           |
-| X Patch Panel 24 Ports |                      |           |
-|      X Switch 24 Ports |                      |           |
-| X Patch Panel 12 Ports |                      |           |
-|      X Switch 12 Ports |                      |           |
-|    Xm of Copper Cables |                      |           | 
-|     Xm of Fibre Cables |          -           |     -     |
-|   Xm of Cable Raceways |                      |           |
-|        1 Access Points |                      |           |
-|          Total floor 1 |          -           |           |
+|        Material         | Price for a unit (€) | Price (€) |
+|:-----------------------:|:--------------------:|:---------:|
+|     X Cabinets 24U      |                      |           |
+|     X Cabinets 12U      |                      |           |
+|       74 outlets        |                      |           |
+| X Patch Panel 24 Ports  |                      |           |
+|    X Switch 24 Ports    |                      |           |
+| X Patch Panel 12 Ports  |                      |           |
+|    X Switch 12 Ports    |                      |           |
+|   Xm of Copper Cables   |                      |           | 
+|   Xm of Fibre Cables    |          -           |     -     |
+|  Xm of Cable Raceways   |                      |           |
+|     1 Access Points     |                      |           |
+|      Total floor 1      |          -           |           |
 
  
 # Total Inventory
