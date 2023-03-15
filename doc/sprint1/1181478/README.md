@@ -70,7 +70,7 @@ and also a ratio of two outlets for each 10 square meters of area.
 
 - .
 - .
-- .
+- Between ICC and HCC, copper cables will be used, since there isn't more than 90m of cable necessary between those two.
 
 - Between ICC and MCC, it is needed the use of fiber since the distance between this is higher than the maximum 90m of the cooper cables.
 
@@ -143,11 +143,29 @@ and also a ratio of two outlets for each 10 square meters of area.
 
 #### Important aspects(Consulting TP-01 available on moodle):
 
+- Copper cable distance has in account the fact that every cable raceway has to drop from the ceiling to 1 meter of height at least,
+    which means there's 1,5m of added copper cable on rooms from E.1.1 until E.1.18.
+    For this, it was added 1.5 * 18 = 27m of cable and cable raceway.
 
+- Room E.1.19 the copper cable comes through the floor cable passageway to the floor below and goes until the celling and after goes to a corner of the room,
+    to pass from there to room E.1.20. Room E.1.20 will be telecommunications room which means the horizontal cross connect will be placed there
+      and there is no need for outlets here. Between Floors, the IC connects to the HC in floor above through the ceiling passageway.
 
+- It's important to note that all the cabling done on floor one is above the droppable ceiling and below the actual ceiling,
+   and whenever the cables need to drop from the ceiling, a cable raceway is used.
 
+- .
 
+- Access point in this floor will be placed on the main hall, between Room E.1.12 and E.1.13. A hole need's to be drill in the droppable celling to
+  place the access point there.
 
+- The router channel is the following(access point), channel 6. Although nothing was specified about the materials of the building 
+    to make sure the signal of the access point in floor 0 and floor 1 don't interfere with each other we choose different channels for both.
+
+- The rules for the positioning of the outlets and access points are the same as the ones on the floor 0.
+      The cooper cables used were the same and there was no need for fiber cables in this floor.
+
+- The longest cooper cable on this floor is around X meters long, not even close to the maximum 90 meter for this type of cable.
 
 ## Inventory For First floor(floor 1)
 
@@ -166,7 +184,7 @@ and also a ratio of two outlets for each 10 square meters of area.
 |        1 Access Points |                      |           |
 |          Total floor 1 |          -           |           |
 
-
+ 
 # Total Inventory
 
 |       Material       | Quatity |
