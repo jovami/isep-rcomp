@@ -1,8 +1,9 @@
 module Main where
 
+import Data.Foldable (traverse_)
+import Data.Function (on)
 import GHC.Float (roundFloat)
 import Text.Printf (printf)
-import Data.Foldable (traverse_)
 
 type Distance = Float
 type Area = Float
@@ -22,7 +23,7 @@ toMeters = (scale *)
     where scale = 5 / 258
 
 roomArea :: Room -> Area
-roomArea (Room _ w l) = toMeters w * toMeters l
+roomArea (Room _ w l) = on (*) toMeters w l
 
 roomOutlets :: Room -> Int
 roomOutlets = roundFloat . (outletsPerMeter *) . roomArea
@@ -30,17 +31,15 @@ roomOutlets = roundFloat . (outletsPerMeter *) . roomArea
 showFloor :: Floor -> IO ()
 showFloor (Floor fname rs) = do
     putStrLn $ fname ++ ":"
-    putStrLn . unlines $ zipWith _show rs outlets
-    printf "Total: %d outlets\n\n" $ sum outlets
+    putStrLn . unlines $ zipWith _show rs numOutlets
+    printf "Total: %d outlets\n\n" $ sum numOutlets
     where
-        outlets :: [Int]
-        outlets = map roomOutlets rs
+        numOutlets :: [Int]
+        numOutlets = map roomOutlets rs
 
         _show :: Room -> Int -> String
         _show (Room n w l) = printf "Room %s (%.2fx%.2f m²) => %2d outlets" n wm lm
-            where
-                wm = toMeters w
-                lm = toMeters l
+            where (wm, lm) = (toMeters w, toMeters l)
 
 
 --- Width and length in pixels
