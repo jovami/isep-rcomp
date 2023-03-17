@@ -25,7 +25,7 @@ and also a ratio of two outlets for each 10 square meters of area.
 
 # Building E - Ground floor(floor 0)
 
-![Floor Zero Photo](Building_E-Ground_floor.png)
+![Floor Zero_radius Photo](Building_E-Ground_floor_radius.png)
 
 ## Outlets
 
@@ -51,13 +51,33 @@ and also a ratio of two outlets for each 10 square meters of area.
 
 #### Note1: All the measurements were made based on paper and the scale of 5 meters given(corresponding to 2.4 cm).
 #### Note2: The double outlets used for the access point are not represented in this floor plan.
-#### Note3: The radius of the access point is not represented in this floor.
 
 #### Total number of outlets = 74
 
+## Extra cable raceways 
+
+![Floor Zero_cable Photo](Building_E-Ground_floor_cable_raceways.png)
+
+Despite we have a cable raceway that goes under the floor , we have two options,first is use 
+"floor cable passageway(to the underfloor cable raceway)"
+that is marked in the above picture and after that use cable raceways inside each room but above floor,
+or the second one is drill a hole in the floor in each point were we have an outlet that has underfloor cable 
+raceway passageway and extend a cable raceways from the outlet to the floor(on those that's possible), the others 
+will have an extended cable raceway.
+
+To make a more simple solution I decided that I won't drill new holes in the floor, so
+I use "floor cable passageway(to the underfloor cable raceway)" go up 1m and go around the room
+until each outlet, because the underfloor cable raceway didn't go to all outlets and in this way 
+I don't have a mix solution.
+
+The only exception to this the solution above its room E.0.2 because according to the project description
+"Rooms E.0.2 has a specific purpose and the only network outlets necessary are two near each floor cable passageway",
+so in this case I go up 1m with cable raceway in each double outlet.
+
+
 #### Important aspects(Consulting TP-01 available on moodle):
 
-- Room E.0.12  is the telecommunications room, which means the horizontal cross connect(HC) and the intermediate cross connect(IC) will be placed there and there is no need for outlets here.
+- Room E.0.12  is the telecommunications room, which means intermediate cross connect(IC) will be placed there and there is no need for outlets here.
 
 - The outlets were organized so that is possible to connect a PC with a 5 meter or less cable from any reasonable position on the room, using long patch cords. 
   Wherever the user equipment is, there should always be an outlet less than three meters away.(Places near doors were ignored since it's not practical to have an outlet behind a door).
@@ -66,43 +86,79 @@ and also a ratio of two outlets for each 10 square meters of area.
 
 - A double outlet was put near the access point for an easier fix in case the used cable gets damaged.
 
-- A wireless 802.11 local area coverage is used, the access-point device will grant approximately a 50 meters diameter circle coverage. 
+- A wireless 802.11 local area coverage is used, the access-point device will grant approximately a 50 meters diameter circle coverage.
 
-- .
-- .
-- Between ICC and HCC, copper cables will be used, since there isn't more than 90m of cable necessary between those two.
-
-- Between ICC and MCC, it is needed the use of fiber since the distance between this is higher than the maximum 90m of the cooper cables.
+- Between IC and MC, it is needed the use of fiber since the distance between this is higher than the maximum 90m of the cooper cables.
 
 - For the access point it is needed to drill a hole between Room E.0.8 and the hall.
 
-- The router channel is the following(access point), channel 1.
+- The router channel is the following(access point), channel 1, although it was told to us that the access point disperse is signal 
+   in a donut shape and its signal in vertical usually goes around 3 and at most 3.5 meters and looking at the 
+   measurements of each floor we probably didn't need to use channels , but in project description nothing was
+    told about the materials of the construction so to just be safe and make sure that the different access points
+    in the different floors don't interfere with each other we will use channels.
 
-- The longest cooper cable on this floor is around X meters long, not even close to the maximum 90 meter for this type of cable.
+- The longest cooper cable on this floor is around 81 meters long,
+    this only happen for 1 double outlet,not sufficiently close to the maximum 90 meter for this type of cable.
 
-- The copper cables used were CAT6A and the fiber cables were 4 pair monomode fiber. More information on these on the planing.md.
+- The copper cables used were CAT6A and the fiber cables were 4 pair monomodo fiber. More information on these on the planing.md.
+
+- The intermediate cross connect will use a 19" rack format, housing :
+    
+  - A patch panel with 12 ports with 1U size and a switch with 12 ports with 1U size.
+    It is to note that the switch used has fiber ports to connect to the main cross connect.
+  - A patch panel with 12 ports with 1U size and a switch with 12 ports with 1U size.
+    Between IC(floor 0) and HC(floor 1) , copper cables will be used, since there isn't more than 90m of cable necessary between those two.
+    In this connection, 4 cables were used for security.
+  - 2 patch panel with 48 ports with 1U size and 2 switch with 48 ports with 1U size, for outlets.   
+
+## Intermediate cross connect(IC) layout
+
+|                                               | U size |   Justification   |
+|:---------------------------------------------:|:------:|:-----------------:|
+| Management Horizontal Cable Rack("passafios") |   1    |         -         |
+|             Patch panel 12 ports              |   1    | MC->IC connection |
+| Management Horizontal Cable Rack("passafios") |   1    |         -         |
+|             Patch panel 12 ports              |   1    | IC->HC connection |
+| Management Horizontal Cable Rack("passafios") |   1    |         -         |
+|             Patch panel 48 ports              |   1    |      Outlets      |
+| Management Horizontal Cable Rack("passafios") |   1    |         -         |
+|             Patch panel 48 ports              |   1    |      Outlets      |
+| Management Horizontal Cable Rack("passafios") |   1    |         -         |
+|                Switch 12 ports                |   1    | MC->IC connection |
+| Management Horizontal Cable Rack("passafios") |   1    |         -         |
+|                Switch 12 ports                |   1    | IC->HC connection |
+| Management Horizontal Cable Rack("passafios") |   1    |         -         |
+|                Switch 48 ports                |   1    |      Outlets      |
+| Management Horizontal Cable Rack("passafios") |   1    |         -         |
+|                Switch 48 ports                |   1    |      Outlets      |
+|                     Total                     |   16   |         -         |
+
+- For feature improvements we should leave at least around 50% free space on our cabinet,
+    so a 48U cabinets will be used.
 
 ## Inventory For Ground floor(floor 0)
 
-|               Material | Price for a unit (€) | Price (€) |
-|-----------------------:|:--------------------:|:---------:|
-|         X Cabinets 24U |                      |           |
-|         X Cabinets 12U |                      |           |
-|             74 outlets |                      |           |
-| X Patch Panel 24 Ports |                      |           |
-|      X Switch 24 Ports |                      |           |
-| X Patch Panel 12 Ports |                      |           |
-|      X Switch 12 Ports |                      |           |
-|    Xm of Copper Cables |                      |           | 
-|     Xm of Fibre Cables |                      |           |
-|   Xm of Cable Raceways |                      |           |
-|        1 Access Points |                      |           |
-|          Total floor 0 |          -           |           |
+|          Material           | Quantity | Price (€) |
+|:---------------------------:|:--------:|:---------:|
+|        Cabinets 48U         |    1     |  2029.55  |
+|       Double outlets        |    74    |   836.2   |
+|    Patch Panel 48 Ports     |    2     |    138    |
+|       Switch 48 Ports       |    2     |  1323.54  |
+|    Patch Panel 12 Ports     |    1     |   61.92   | 
+|       Switch 12 Ports       |    1     |  254.95   |
+| Patch Panel 12 Ports(Fiber) |    1     |           | 
+|   Switch 12 Ports(Fiber)    |    1     |           |
+|        Copper Cables        | 3222.5m  |  2674.68  | 
+|        Fibre Cables         |   2.5m   |           |
+|       Cable Raceways        |  165.6m  |  2470.8   |
+|        Access Points        |    1     |   80.36   |
+|        Total floor 0        |    -     |           |
 
 
 # Building E - First floor(floor 1)
 
-![Floor One Photo](Building_E-Floor_one.png)
+![Floor one_radius Photo](Building_E-_floor1_radius.png)
 ![Floor Passageway Photo](Building_E-Floor_one_removable_celling.png)
 
 ## Outlets
@@ -137,7 +193,6 @@ and also a ratio of two outlets for each 10 square meters of area.
 
 #### Note1: All the measurements were made based on paper and the scale of 5 meters given(corresponding to 2.1 cm).
 #### Note2: The double outlets used for the access point are not represented in this floor plan.
-#### Note3: The radius of the access point is not represented in this floor.
 
 #### Total number of outlets = 124
 
@@ -145,7 +200,6 @@ and also a ratio of two outlets for each 10 square meters of area.
 
 - Copper cable distance has in account the fact that every cable raceway has to drop from the ceiling to 1 meter of height at least,
     which means there's 1,5m of added copper cable on rooms from E.1.1 until E.1.18.
-    For this, it was added 1.5 * 18 = 27m of cable and cable raceway.
 
 - Room E.1.19 the copper cable comes through the floor cable passageway to the floor below and goes until the celling and after goes to a corner of the room,
     to pass from there to room E.1.20. Room E.1.20 will be telecommunications room which means the horizontal cross connect will be placed there
@@ -154,13 +208,10 @@ and also a ratio of two outlets for each 10 square meters of area.
 - It's important to note that all the cabling done on floor one is above the droppable ceiling and below the actual ceiling,
    and whenever the cables need to drop from the ceiling, a cable raceway is used.
 
-- .
-
 - Access point in this floor will be placed on the main hall, between Room E.1.12 and E.1.13. A hole need's to be drill in the droppable celling to
   place the access point there.
 
-- The router channel is the following(access point), channel 6. Although nothing was specified about the materials of the building 
-    to make sure the signal of the access point in floor 0 and floor 1 don't interfere with each other we choose different channels for both.
+- The router channel is the following(access point), channel 6. Justification for this choice is above in floor 0.
 
 - The rules for the positioning of the outlets and access points are the same as the ones on the floor 0.
       The cooper cables used were the same and there was no need for fiber cables in this floor.
@@ -169,39 +220,36 @@ and also a ratio of two outlets for each 10 square meters of area.
 
 ## Inventory For First floor(floor 1)
 
-|        Material         | Price for a unit (€) | Price (€) |
-|:-----------------------:|:--------------------:|:---------:|
-|     X Cabinets 24U      |                      |           |
-|     X Cabinets 12U      |                      |           |
-|       74 outlets        |                      |           |
-| X Patch Panel 24 Ports  |                      |           |
-|    X Switch 24 Ports    |                      |           |
-| X Patch Panel 12 Ports  |                      |           |
-|    X Switch 12 Ports    |                      |           |
-|   Xm of Copper Cables   |                      |           | 
-|   Xm of Fibre Cables    |          -           |     -     |
-|  Xm of Cable Raceways   |                      |           |
-|     1 Access Points     |                      |           |
-|      Total floor 1      |          -           |           |
+|          Material           | Quantity | Price (€) |
+|:---------------------------:|:--------:|:---------:|
+|        Cabinets 48U         |          |           |
+|       Double outlets        |   124    |           |
+|    Patch Panel 48 Ports     |          |           |
+|       Switch 48 Ports       |          |           |
+|    Patch Panel 12 Ports     |          |           | 
+|       Switch 12 Ports       |          |           |
+| Patch Panel 12 Ports(Fiber) |          |           | 
+|   Switch 12 Ports(Fiber)    |          |           |
+|        Copper Cables        |    m     |           | 
+|       Cable Raceways        |    m     |           |
+|        Access Points        |    1     |           |
+|        Total floor 0        |    -     |           |
 
  
 # Total Inventory
 
-|       Material       | Quatity |
-|:--------------------:|:----:|
-|       Outlets        |      |
-|     Cabinets 12U     |      |
-|     Cabinets 24U     |      |
-| Patch Panel 48 Ports |      |
-| Patch Panel 24 Ports |      |
-| Patch Panel 12 Ports |      |
-|   Switch 48 Ports    |      |
-|   Switch 24 Ports    |      |
-|   Switch 12 Ports    |      |
-|    Cable Raceways    |    m |
-|     Fibre Cables     |    m |
-|    Copper Cables     |    m |
-|    Access Points     |    2 |
-|     Connectors*      |      | 
+|       Material       | Quantity |
+|:--------------------:|:--------:|
+| Patch Panel 48 Ports |          |
+| Patch Panel 24 Ports |          |
+| Patch Panel 12 Ports |          |
+|   Switch 48 Ports    |          |
+|   Switch 24 Ports    |          |
+|   Switch 12 Ports    |          |
+|    Cable Raceways    |    m     |
+|     Fibre Cables     |    m     |
+|    Copper Cables     |    m     |
+|    Access Points     |    2     |
+|     Connectors*      |          | 
 
 **Total Cost Of Building E : €**
