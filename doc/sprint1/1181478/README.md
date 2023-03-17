@@ -199,7 +199,9 @@ so in this case I go up 1m with cable raceway in each double outlet.
 #### Important aspects(Consulting TP-01 available on moodle):
 
 - Copper cable distance has in account the fact that every cable raceway has to drop from the ceiling to 1 meter of height at least,
-    which means there's 1,5m of added copper cable on rooms from E.1.1 until E.1.18.
+    which means there's 1,5m of added copper cable on rooms from E.1.1 until E.1.18 and E.1.20.
+  
+- Cable raceway after drop from the ceiling goes around the room to every outlet inside that room.
 
 - Room E.1.19 the copper cable comes through the floor cable passageway to the floor below and goes until the celling and after goes to a corner of the room,
     to pass from there to room E.1.20. Room E.1.20 will be telecommunications room which means the horizontal cross connect will be placed there
@@ -265,21 +267,22 @@ so in this case I go up 1m with cable raceway in each double outlet.
 |    Access Points     |    1     |   80.36   |
 |    Total floor 0     |    -     |           |
 
- 
 # Total Inventory
 
-|       Material       | Quantity |
-|:--------------------:|:--------:|
-| Patch Panel 48 Ports |          |
-| Patch Panel 24 Ports |          |
-| Patch Panel 12 Ports |          |
-|   Switch 48 Ports    |          |
-|   Switch 24 Ports    |          |
-|   Switch 12 Ports    |          |
-|    Cable Raceways    |    m     |
-|     Fibre Cables     |    m     |
-|    Copper Cables     |    m     |
-|    Access Points     |    2     |
-|     Connectors*      |          | 
+|          Material           | Quantity |
+|:---------------------------:|:--------:|
+|        Cabinets 48U         |    2     |  
+|       Double outlets        |    99    | 
+|    Patch Panel 48 Ports     |    5     |    
+|       Switch 48 Ports       |    5     |  
+|    Patch Panel 12 Ports     |    2     |    
+|       Switch 12 Ports       |    2     |  
+| Patch Panel 12 Ports(Fiber) |    1     |    
+|   Switch 12 Ports(Fiber)    |    1     |    
+|        Copper Cables        | 9944.8m  |  
+|        Fibre Cables         |   2.5m   |           
+|       Cable Raceways        |    Xm    |  
+|        Access Points        |    2     |   
+|         Connectors          |          | 
 
 **Total Cost Of Building E : €**
