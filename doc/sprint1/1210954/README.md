@@ -26,7 +26,6 @@ The results for each of the floors is displayed in the following tables:
 
 ## Floor 0
 
-<!-- TODO: change to the updated (drawn over) picture -->
 ![floor blueprint](./floor0.png)
 
 ### Outlets
@@ -41,10 +40,10 @@ The results for each of the floors is displayed in the following tables:
 | A.0.6 | 5.85      | 7.23          | 8             |
 
 Total Outlets: 32
+<!--NOTE: +1 for AP -->
 
 ## Floor 1
 
-<!-- TODO: change to the updated (drawn over) picture -->
 ![floor blueprint](./floor1.png)
 
 ### Outlets
@@ -60,4 +59,4 @@ Total Outlets: 32
 | A.1.7 | 4.71      | 5.85          | 6             |
 
 Total Outlets: 46
-
+<!--NOTE: +1 for AP -->
