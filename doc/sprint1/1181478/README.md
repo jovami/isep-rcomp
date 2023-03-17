@@ -153,7 +153,7 @@ so in this case I go up 1m with cable raceway in each double outlet.
 |        Fibre Cables         |   2.5m   |   2.23    |
 |       Cable Raceways        |  165.6m  |  2470.8   |
 |        Access Points        |    1     |   80.36   |
-|        Total floor 0        |    -     |           |
+|        Total floor 0        |    -     |  10930.9  |
 
 
 # Building E - First floor(floor 1)
@@ -218,7 +218,7 @@ so in this case I go up 1m with cable raceway in each double outlet.
 - The rules for the positioning of the outlets and access points are the same as the ones on the floor 0.
       The cooper cables used were the same and there was no need for fiber cables in this floor.
 
-- The longest cooper cable on this floor is around 86 meters long, close to the maximum 90 meter for this type of cable.
+- The longest cooper cable on this floor is around 85.5 meters long, close to the maximum 90 meter for this type of cable.
 
 - The horizontal cross connect will use a 19" rack format, housing :
 
@@ -262,10 +262,10 @@ so in this case I go up 1m with cable raceway in each double outlet.
 |   Switch 48 Ports    |    3     |  1985.31  |
 | Patch Panel 12 Ports |    1     |   61.92   |
 |   Switch 12 Ports    |    1     |  254.95   |
-|    Copper Cables     | 6722.3m  |  5579.50  | 
-|    Cable Raceways    |    m     |           |
+|    Copper Cables     | 6226.3m  |  5167.8   | 
+|    Cable Raceways    | 282.86m  |  4220.3   |
 |    Access Points     |    1     |   80.36   |
-|    Total floor 0     |    -     |           |
+|    Total floor 0     |    -     | 14708.03  |
 
 # Total Inventory
 
@@ -279,10 +279,10 @@ so in this case I go up 1m with cable raceway in each double outlet.
 |       Switch 12 Ports       |    2     |  
 | Patch Panel 12 Ports(Fiber) |    1     |    
 |   Switch 12 Ports(Fiber)    |    1     |    
-|        Copper Cables        | 9944.8m  |  
+|        Copper Cables        | 9448.8m  |  
 |        Fibre Cables         |   2.5m   |           
-|       Cable Raceways        |    Xm    |  
+|       Cable Raceways        | 448.46m  |  
 |        Access Points        |    2     |   
-|         Connectors          |          | 
+|         Connectors          |   404    | 
 
-**Total Cost Of Building E : €**
+**Total Cost Of Building E : 25719.73€**
