@@ -52,7 +52,7 @@ and also a ratio of two outlets for each 10 square meters of area.
 #### Note1: All the measurements were made based on paper and the scale of 5 meters given(corresponding to 2.4 cm).
 #### Note2: The double outlets used for the access point are not represented in this floor plan.
 
-#### Total number of outlets = 74
+#### Total number of outlets = 74 (we used double outlets so 37 double outlets)
 
 ## Extra cable raceways 
 
@@ -142,7 +142,7 @@ so in this case I go up 1m with cable raceway in each double outlet.
 |          Material           | Quantity | Price (€) |
 |:---------------------------:|:--------:|:---------:|
 |        Cabinets 48U         |    1     |  2029.55  |
-|       Double outlets        |    74    |   836.2   |
+|       Double outlets        |    37    |   418.1   |
 |    Patch Panel 48 Ports     |    2     |    138    |
 |       Switch 48 Ports       |    2     |  1323.54  |
 |    Patch Panel 12 Ports     |    1     |   61.92   | 
@@ -194,7 +194,7 @@ so in this case I go up 1m with cable raceway in each double outlet.
 #### Note1: All the measurements were made based on paper and the scale of 5 meters given(corresponding to 2.1 cm).
 #### Note2: The double outlets used for the access point are not represented in this floor plan.
 
-#### Total number of outlets = 124
+#### Total number of outlets = 124(we used double outlets so 62 double outlets)
 
 #### Important aspects(Consulting TP-01 available on moodle):
 
@@ -209,31 +209,61 @@ so in this case I go up 1m with cable raceway in each double outlet.
    and whenever the cables need to drop from the ceiling, a cable raceway is used.
 
 - Access point in this floor will be placed on the main hall, between Room E.1.12 and E.1.13. A hole need's to be drill in the droppable celling to
-  place the access point there.
+  place the access point there.- A double outlet was put near the access point for an easier fix in case the used cable gets damaged.
 
 - The router channel is the following(access point), channel 6. Justification for this choice is above in floor 0.
 
 - The rules for the positioning of the outlets and access points are the same as the ones on the floor 0.
       The cooper cables used were the same and there was no need for fiber cables in this floor.
 
-- The longest cooper cable on this floor is around X meters long, not even close to the maximum 90 meter for this type of cable.
+- The longest cooper cable on this floor is around 86 meters long, close to the maximum 90 meter for this type of cable.
+
+- The horizontal cross connect will use a 19" rack format, housing :
+
+    - A patch panel with 12 ports with 1U size and a switch with 12 ports with 1U size.
+      Between IC(floor 0) and HC(floor 1) , copper cables will be used, since there isn't more than 90m of cable necessary between those two.
+      In this connection, 4 cables were used for security.
+    - 3 patch panel with 48 ports with 1U size and 3 switch with 48 ports with 1U size, for outlets.
+
+## Horizontal cross connect(HC) layout
+
+|                                               | U size |   Justification   |
+|:---------------------------------------------:|:------:|:-----------------:|
+| Management Horizontal Cable Rack("passafios") |   1    |         -         |
+|             Patch panel 12 ports              |   1    | IC->HC connection |
+| Management Horizontal Cable Rack("passafios") |   1    |         -         |
+|             Patch panel 48 ports              |   1    |      Outlets      |
+| Management Horizontal Cable Rack("passafios") |   1    |         -         |
+|             Patch panel 48 ports              |   1    |      Outlets      |
+| Management Horizontal Cable Rack("passafios") |   1    |         -         |
+|             Patch panel 48 ports              |   1    |      Outlets      |
+| Management Horizontal Cable Rack("passafios") |   1    |         -         |
+|                Switch 12 ports                |   1    | IC->HC connection |
+| Management Horizontal Cable Rack("passafios") |   1    |         -         |
+|                Switch 48 ports                |   1    |      Outlets      |
+| Management Horizontal Cable Rack("passafios") |   1    |         -         |
+|                Switch 48 ports                |   1    |      Outlets      |
+| Management Horizontal Cable Rack("passafios") |   1    |         -         |
+|                Switch 48 ports                |   1    |      Outlets      |
+|                     Total                     |   16   |         -         |
+
+- For feature improvements we should leave at least around 50% free space on our cabinet,
+  so a 48U cabinets will be used.
 
 ## Inventory For First floor(floor 1)
 
-|          Material           | Quantity | Price (€) |
-|:---------------------------:|:--------:|:---------:|
-|        Cabinets 48U         |          |           |
-|       Double outlets        |   124    |           |
-|    Patch Panel 48 Ports     |          |           |
-|       Switch 48 Ports       |          |           |
-|    Patch Panel 12 Ports     |          |           | 
-|       Switch 12 Ports       |          |           |
-| Patch Panel 12 Ports(Fiber) |          |           | 
-|   Switch 12 Ports(Fiber)    |          |           |
-|        Copper Cables        |    m     |           | 
-|       Cable Raceways        |    m     |           |
-|        Access Points        |    1     |           |
-|        Total floor 0        |    -     |           |
+|       Material       | Quantity | Price (€) |
+|:--------------------:|:--------:|:---------:|
+|     Cabinets 48U     |    1     |  2029.55  |
+|    Double outlets    |    62    |   700.6   |
+| Patch Panel 48 Ports |    3     |    207    |
+|   Switch 48 Ports    |    3     |  1985.31  |
+| Patch Panel 12 Ports |    1     |   61.92   |
+|   Switch 12 Ports    |    1     |  254.95   |
+|    Copper Cables     | 6722.3m  |  5579.50  | 
+|    Cable Raceways    |    m     |           |
+|    Access Points     |    1     |   80.36   |
+|    Total floor 0     |    -     |           |
 
  
 # Total Inventory
