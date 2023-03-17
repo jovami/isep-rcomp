@@ -117,7 +117,7 @@ so in this case I go up 1m with cable raceway in each double outlet.
 |                                               | U size |   Justification   |
 |:---------------------------------------------:|:------:|:-----------------:|
 | Management Horizontal Cable Rack("passafios") |   1    |         -         |
-|             Patch panel 12 ports              |   1    | MC->IC connection |
+|         Patch panel 12 ports (fiber)          |   1    | MC->IC connection |
 | Management Horizontal Cable Rack("passafios") |   1    |         -         |
 |             Patch panel 12 ports              |   1    | IC->HC connection |
 | Management Horizontal Cable Rack("passafios") |   1    |         -         |
@@ -125,7 +125,7 @@ so in this case I go up 1m with cable raceway in each double outlet.
 | Management Horizontal Cable Rack("passafios") |   1    |         -         |
 |             Patch panel 48 ports              |   1    |      Outlets      |
 | Management Horizontal Cable Rack("passafios") |   1    |         -         |
-|                Switch 12 ports                |   1    | MC->IC connection |
+|           Switch 12 ports  (fiber)            |   1    | MC->IC connection |
 | Management Horizontal Cable Rack("passafios") |   1    |         -         |
 |                Switch 12 ports                |   1    | IC->HC connection |
 | Management Horizontal Cable Rack("passafios") |   1    |         -         |
@@ -147,10 +147,10 @@ so in this case I go up 1m with cable raceway in each double outlet.
 |       Switch 48 Ports       |    2     |  1323.54  |
 |    Patch Panel 12 Ports     |    1     |   61.92   | 
 |       Switch 12 Ports       |    1     |  254.95   |
-| Patch Panel 12 Ports(Fiber) |    1     |           | 
-|   Switch 12 Ports(Fiber)    |    1     |           |
+| Patch Panel 12 Ports(Fiber) |    1     |  259,78   | 
+|   Switch 12 Ports(Fiber)    |    1     | 1.216,99  |
 |        Copper Cables        | 3222.5m  |  2674.68  | 
-|        Fibre Cables         |   2.5m   |           |
+|        Fibre Cables         |   2.5m   |   2.23    |
 |       Cable Raceways        |  165.6m  |  2470.8   |
 |        Access Points        |    1     |   80.36   |
 |        Total floor 0        |    -     |           |
