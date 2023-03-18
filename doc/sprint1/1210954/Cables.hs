@@ -1,4 +1,4 @@
-module Main where
+module Cables where
 
 import Data.Foldable (for_)
 import GHC.Float (ceilingFloat)
@@ -129,8 +129,8 @@ secs =
             22, 43, 233.6,
 
             --- Outgoing
-            233.6, 60, 22,
             233.6, 60, 22
+            --, 233.6, 60, 22
         ]
     , Section "Floor 1 copper" (5 / 292)
         [
@@ -264,8 +264,8 @@ secs =
             58.4, 28,
 
             --- Outgoing
-            28, 58.4,
             28, 58.4
+            -- , 28, 58.4
         ]
     , Section "Outside fiber" (20 / 174)
         [
@@ -273,15 +273,15 @@ secs =
             353, 196, 22,
 
             -- Outgoing fiber from A
-            22, 22,
+            22,
 
-            -- Fiber cables in a ring for redundancy
-            662, 686, 1554,
-            662, 686, 1554,
+            -- Fiber cables
+            662, 686, 1554, 1554,
+            -- 662, 686, 1554, 1554,
 
             -- Incoming fiber for the remaining buildings
-            22, 22, 22, 22,
             22, 22, 22, 22
+            -- , 22, 22, 22, 22
         ]
     ]
 

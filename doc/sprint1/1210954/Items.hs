@@ -1,4 +1,4 @@
-module Main where
+module Items where
 
 import Control.Monad (liftM2)
 import Data.Foldable (for_)
@@ -65,7 +65,7 @@ floor0 = Section "Floor 0"
     , Item "Access Point"           1       accessPointPrice
 
     , Item "Copper Cable"           571.95  copperPrice
-    , Item "Fiber Cable"            15.92   fiber8CorePrice
+    , Item "Fiber Cable"            10.52   fiber8CorePrice
     , Item "Cable Raceways"         0       racewayPrice
     ]
 
@@ -81,13 +81,13 @@ floor1 = Section "Floor 0"
     , Item "Access Point"           1       accessPointPrice
 
     , Item "Copper Cable"           978.43  copperPrice
-    , Item "Fiber cable"            4.44    fiber8CorePrice
+    , Item "Fiber cable"            2.96    fiber8CorePrice
     , Item "Cable Raceways"         0       racewayPrice
     ]
 
 campus :: Section
 campus = Section "Campus"
-    [ Item "Fiber cable"    758.05  fiber8CorePrice
+    [ Item "Fiber cable"    590.46  fiber8CorePrice
     ]
 
 
