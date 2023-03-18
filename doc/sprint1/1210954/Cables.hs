@@ -10,7 +10,7 @@ type Scale = Float
 data Section = Section String Scale [Distance]
 
 totalDist :: Section -> Distance
-totalDist (Section _ scale dists)= foldl (\b -> (b+) . (scale *)) 0.0 dists
+totalDist (Section _ scale dists) = foldl (\b -> (b+) . (scale *)) 0.0 dists
 
 instance Show Section
     where show s@(Section str _ _) = printf "Section \"%s\" cable length: %.2f m" str $ totalDist s
@@ -19,6 +19,7 @@ instance Show Section
 secs :: [Section]
 secs =
     [ Section "Floor 0 copper" (5 / 292)
+    -- {{{
         [   -- Counter clockwise outlets
             -- 1m => 58.4 px
 
@@ -123,6 +124,7 @@ secs =
             26, 58.4, 280, 35, 124, 121, 35, 66, 147, 117, 92, 58.4, 124, 114, 183,
             26, 58.4, 280, 35, 124, 121, 35, 66, 147, 117, 92, 58.4, 124, 114, 183, 112
         ]
+    -- }}}
     , Section "Floor 0 fiber" (5 / 292)
         [
             --- Incoming
@@ -133,6 +135,7 @@ secs =
             --, 233.6, 60, 22
         ]
     , Section "Floor 1 copper" (5 / 292)
+    -- F1 copper {{{
         [
             ---A.1.7---
             -- pfx
@@ -256,6 +259,7 @@ secs =
             28, 102.2, 317, 132, 150, 418, 324, 102.2, 122,
             28, 102.2, 317, 132, 150, 418, 324, 102.2, 122, 136
         ]
+    -- }}}
     , Section "Floor 1 fiber" (5 / 292)
         [
             -- 58.4 => 1 meter
@@ -286,5 +290,126 @@ secs =
     ]
 
 
+raceway0 :: [Distance]
+raceway0 =
+    [
+        ---A.0.1---
+        --- left
+        145, 137,
+        --- bottom
+        99,
+        --- top
+        58.4, 85, 134,
+        --- right
+        221,
+
+        ---A.0.2---
+        --- left
+        58.4, 68, 138,
+        --- top
+        76,
+        --- right
+        58.4, 142,
+
+        ---A.0.3---
+        --- left
+        58.4, 107,
+        --- top
+        58.4, 150,
+        --- right
+        46, 120, 122,
+        --- bottom + AP
+        50, 67, 35, 175.2,
+
+        ---A.0.4---
+        --- top
+        105, 85, 84,
+        --- left
+        58.4, 80, 120,
+        --- right
+        58.4, 26, 133, 55, 113,
+        --- bottom
+        140,
+
+        ---A.0.5---
+        --- top
+        58.4, 134, 152,
+        --- right
+        124,
+        --- bottom
+        58.4, 66, 132,
+
+        ---A.0.6---
+        --- top
+        58.4, 174,
+        --- right
+        66, 147, 117,
+        --- bottom
+        58.4, 124, 114,
+        --- left
+        183, 112
+    ]
+raceway1 :: [Distance]
+raceway1 =
+    [
+        ---A.1.7---
+        --- top
+        102.2, 61, 112, 108,
+        --- left
+        102.2, 126,
+        --- bottom
+        58, 122,
+
+        ---A.1.1---
+        --- left
+        102.2, 20, 160, 153,
+
+        ---A.1.2---
+        --- top
+        108,
+        --- left
+        102.2, 116, 146,
+
+
+        ---A.1.3---
+        --- top
+        106,
+        --- left
+        102.2, 124, 156,
+
+
+        ---A.1.4---
+        --- top
+        132, 124, 121,
+        --- left
+        102.2, 106, 23, 74, 78, 23, 138,
+        --- right
+        28, 102, 102.2,
+        --- bottom
+        102.2, 60, 56, 38, 106,
+
+        ---A.1.5---
+        --- right
+        132,
+        --- bottom
+        102.2, 66, 128,
+
+        ---A.1.6---
+        --- right
+        160, 138,
+        --- bottom
+        102.2, 122, 136,
+        --- left
+        74, 137
+    ]
+
 main :: IO ()
-main = for_ secs print
+main = do
+    for_ secs print
+
+    printf "\nRaceway for floor 0: %.2f m\n" $ total raceway0
+    printf "Raceway for floor 1: %.2f m\n" $ total raceway1
+    where
+        scale = 5 / 292
+        total :: [Distance] -> Distance
+        total = foldl (\b -> (b+) . (scale *)) 0.0

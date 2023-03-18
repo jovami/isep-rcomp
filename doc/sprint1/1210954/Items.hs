@@ -66,7 +66,7 @@ floor0 = Section "Floor 0"
 
     , Item "Copper Cable"           571.95  copperPrice
     , Item "Fiber Cable"            10.52   fiber8CorePrice
-    , Item "Cable Raceways"         0       racewayPrice
+    , Item "Cable Raceways"         91.53   racewayPrice
     ]
 
 floor1 :: Section
@@ -82,7 +82,7 @@ floor1 = Section "Floor 0"
 
     , Item "Copper Cable"           978.43  copperPrice
     , Item "Fiber cable"            2.96    fiber8CorePrice
-    , Item "Cable Raceways"         0       racewayPrice
+    , Item "Cable Raceways"         85.62   racewayPrice
     ]
 
 campus :: Section
