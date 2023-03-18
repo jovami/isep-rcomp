@@ -64,13 +64,13 @@ floor0 = Section "Floor 0"
     , Item "Double Outlet"          35      outlet2Price
     , Item "Access Point"           1       accessPointPrice
 
-    , Item "Copper Cable"           571.95  copperPrice
+    , Item "Copper Cable"           591.65  copperPrice
     , Item "Fiber Cable"            10.52   fiber8CorePrice
-    , Item "Cable Raceways"         91.53   racewayPrice
+    , Item "Cable Raceways"         95.53   racewayPrice
     ]
 
 floor1 :: Section
-floor1 = Section "Floor 0"
+floor1 = Section "Floor 1"
     [ Item "Cabinet <TODO>U"        1       undefined
     , Item "Patch Panel <?> ports"  0       undefined
     , Item "Patch Panel <!> ports"  0       undefined
