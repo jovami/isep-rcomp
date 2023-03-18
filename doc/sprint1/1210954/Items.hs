@@ -30,27 +30,64 @@ printSection (Section name its) p = do
 
 
 --- Prices
+cabinet12UPrice = 532.30 :: Price
+cabinet24UPrice = 799.83 :: Price
+cabinet48UPrice = 2029.55 :: Price
+
+pp48PortsPrice = 69.00 :: Price
+pp24PortsPrice = 27.50 :: Price
+pp12PortsPrice = 61.92 :: Price  -- 12 ports more expensive than 24?
+pp12PortsFiberPrice = 259.78 :: Price
+
+sw48PortsPrice = 661.77 :: Price
+sw24PortsPrice = 314.97 :: Price
+sw12PortsPrice = 254.95 :: Price
+sw12PortsFiberPrice = 1_216.92 :: Price
+
 outlet2Price = 11.30 :: Price
+accessPointPrice = 80.36 :: Price
+
 copperPrice = 0.83 :: Price
-fiberPrice = undefined :: Price
+racewayPrice = 14.92 :: Price
+
+fiber8CorePrice = undefined :: Price ---TODO
 ---
 
 floor0 :: Section
 floor0 = Section "Floor 0"
-    [ Item "Double Outlet"      35      outlet2Price
-    , Item "Copper cable"       571.95  copperPrice
-    , Item "Fiber cable"        15.92   fiberPrice
+    [ Item "Cabinet <TODO>U"        1       undefined
+    , Item "Patch Panel <?> ports"  0       undefined
+    , Item "Patch Panel <!> ports"  0       undefined
+    , Item "Switch <!> ports"       0       undefined
+    , Item "Switch <!> ports"       0       undefined
+
+    , Item "Double Outlet"          35      outlet2Price
+    , Item "Access Point"           1       accessPointPrice
+
+    , Item "Copper Cable"           571.95  copperPrice
+    , Item "Fiber Cable"            15.92   fiber8CorePrice
+    , Item "Cable Raceways"         0       racewayPrice
     ]
 
 floor1 :: Section
 floor1 = Section "Floor 0"
-    [ Item "Double Outlet"      46      outlet2Price
-    , Item "Fiber cable"        4.44    fiberPrice
+    [ Item "Cabinet <TODO>U"        1       undefined
+    , Item "Patch Panel <?> ports"  0       undefined
+    , Item "Patch Panel <!> ports"  0       undefined
+    , Item "Switch <!> ports"       0       undefined
+    , Item "Switch <!> ports"       0       undefined
+
+    , Item "Double Outlet"          46      outlet2Price
+    , Item "Access Point"           1       accessPointPrice
+
+    , Item "Copper Cable"           0       copperPrice
+    , Item "Fiber cable"            4.44    fiber8CorePrice
+    , Item "Cable Raceways"         0       racewayPrice
     ]
 
 campus :: Section
 campus = Section "Campus"
-    [ Item "Fiber cable"        758.05  fiberPrice
+    [ Item "Fiber cable"    758.05  fiber8CorePrice
     ]
 
 
