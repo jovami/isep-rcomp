@@ -39,8 +39,7 @@ The results for each of the floors is displayed in the following tables:
 | A.0.5 | 4.46      | 5.85          | 5             |
 | A.0.6 | 5.85      | 7.23          | 8             |
 
-Total Outlets: 32
-<!--NOTE: +1 for AP -->
+Total Outlets: 34 + 1 for access point
 
 ## Floor 1
 
@@ -58,5 +57,4 @@ Total Outlets: 32
 | A.1.6 | 5.83      | 7.21          | 8             |
 | A.1.7 | 4.71      | 5.85          | 6             |
 
-Total Outlets: 46
-<!--NOTE: +1 for AP -->
+Total Outlets: 45 + 1 for access point
