@@ -49,7 +49,7 @@ higher density of people.
 | A.0.5 | 4.46      | 5.85          | 5             |
 | A.0.6 | 5.85      | 7.23          | 8             |
 
-Total Outlets: 34 + 1 for access point
+**Total Outlets**: 34 + 1 for access point
 
 ## Floor 1
 
@@ -69,7 +69,7 @@ Total Outlets: 34 + 1 for access point
 | A.1.6 | 5.83      | 7.21          | 8             |
 | A.1.7 | 4.71      | 5.85          | 6             |
 
-Total Outlets: 45 + 1 for access point
+**Total Outlets**: 45 + 1 for access point
 
 
 # Cross-connects
@@ -87,6 +87,21 @@ Total Outlets: 45 + 1 for access point
 
 ## Floor 0
 
+| Item              | Price (€)         |
+|:-----------------:|:-----------------:|
+|                   |                   |
+
+
 ## Floor 1
 
+| Item              | Price (€)         |
+|:-----------------:|:-----------------:|
+|                   |                   |
+
+
 ## Total
+
+| Item              | Price (€)         |
+|:-----------------:|:-----------------:|
+|                   |                   |
+
