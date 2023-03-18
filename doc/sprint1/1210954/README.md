@@ -17,16 +17,26 @@ Two floors:
     - Ceiling height: 3 meters (2.5 effective)
 
 
-# Network outlets per room
+# Network outlets
 
 Taking into account the standard of 2 network outlets per 10 squared meters,
 the number of outlets for each room was computed using [this Haskell source](./Outlets.hs).
 
-The results for each of the floors is displayed in the following tables:
+It was further decided, for convenience of use, that the outlets would stay
+1 meter above the floor level.
 
 ## Floor 0
 
 ![floor blueprint](./floor0.png)
+
+A single 25m range (radius) access point was chosen since it is more than enough
+to cover the whole floor. In order to connect the AP, a cable will be passed through
+a wall in Room A.0.3, which will then extend towards the ceiling and connect to a
+double outlet.
+
+Additionally, the AP will reside on the rightmost part of the entrance hall
+(i.e. next to rooms A.0.3 and A.0.4) in order to stay closer to areas with a
+higher density of people.
 
 ### Outlets
 
@@ -45,6 +55,8 @@ Total Outlets: 34 + 1 for access point
 
 ![floor blueprint](./floor1.png)
 
+<!--TODO: same idea as floor 0 -->
+
 ### Outlets
 
 | Room  | Width (m) | Length (m)    | No. Outlets   |
@@ -58,3 +70,23 @@ Total Outlets: 34 + 1 for access point
 | A.1.7 | 4.71      | 5.85          | 6             |
 
 Total Outlets: 45 + 1 for access point
+
+
+# Cross-connects
+
+## Floor 0
+
+<!-- TODO: IC -->
+
+## Floor 1
+
+<!-- TODO: MC -->
+
+
+# Inventory
+
+## Floor 0
+
+## Floor 1
+
+## Total
