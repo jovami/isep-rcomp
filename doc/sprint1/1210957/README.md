@@ -14,13 +14,11 @@
 
 **Removable dropped ceiling:** 0,5 meters
 
-**Outlets** The standard number of network outlets per area ratio is being apllied thoughtout this hole project with 2 outlets per each 10 square meters.
-
-# Rooms
+# Floors
 
 ## Floor 0
 
-![Floor 0 Squema]()
+![Floor 0 Squema](Floor0.png)
 
 ## Measurements
 
@@ -44,24 +42,31 @@
 
 - The IC will be a 24U rack cabinet with two patch panels of 48 ports and another one with 24 ports. The same applies to the switches, two of 48 ports and another one of 24 ports. It is also required 1U of space between, for instance, each patch panel or switch. The rack used needs to be one of 24U because with this approach it is possible to have the required 50% additional free space for, if needed, future upgrades.
 
+## IC Disposition
+<p></p>
+
+![IC](Rack.png)
+
+<p></p>
+
 ## Inventory For Floor 0
 
-|         Material         | Price (€) |
-| :----------------------: | :-------: |
-|      1 Cabinet 24U       |  799,83   |
-|    44 Double outlets     |  497,20   |
-|  2 Patch Panel 48 Ports  |  138,00   |
-|    2 Switch 48 Ports     |  1323,54  |
-|  1 Patch Panel 24 Ports  |   27,50   |
-|    1 Switch 24 Ports     |  314,97   |
-|  1662m of Copper Cables  |  1379,46  |
-|   1,5m of Fibre Cables   |   1,73    |
-| 110,5m of Cable Raceways |  331,50   |
-|      1 Access Point      |   80,36   |
+|        Material        | Price (€) |
+| :--------------------: | :-------: |
+|     1 Cabinet 24U      |  799,83   |
+|   45 Double outlets    |   508,5   |
+| 2 Patch Panel 48 Ports |  138,00   |
+|   2 Switch 48 Ports    |  1323,54  |
+| 1 Patch Panel 24 Ports |   27,50   |
+|   1 Switch 24 Ports    |  314,97   |
+| 1662m of Copper Cables |  1379,46  |
+|  1,5m of Fibre Cables  |   1,73    |
+| 90m of Cable Raceways  |  1342,80  |
+|     1 Access Point     |   80,36   |
 
 ## Floor 1
 
-![Floor 1 Photo]()
+![Floor 1 Photo](Floor1.png)
 
 ## Measurements
 
@@ -92,34 +97,37 @@
 
 - All the outlets are 1 meter above the floor.
 
+## HC Disposition
+<p></p>
+
+![hc](Rack.png)
+
+<p></p>
+
 ## Inventory For Floor 1
 
 |        Material        | Price (€) |
 | :--------------------: | :-------: |
 |     1 Cabinet 24U      |  799,83   |
-|   54 Double outlets    |  610,20   |
+|   55 Double outlets    |  621,50   |
 | 2 Patch Panel 48 Ports |  138,00   |
 |   2 Switch 48 Ports    |  1323,54  |
 | 1 Patch Panel 24 Ports |   27,50   |
 |   1 Switch 24 Ports    |  314,97   |
-|   m of Copper Cables   |  1693,37  |
-|   m of Fibre Cables    |  1425,60  |
-|  m of Cable Raceways   |  331,50   |
-|    2 Access Points     |  160,72   |
+| 2020m of Copper Cables |  1693,37  |
+| 120m of Cable Raceways |  1790,40  |
 
-# Total Inventory
-
-|           Material           | Price (€) |
-| :--------------------------: | :-------: |
-|        1 Cabinet 24U         |  799,83   |
-|      44 Double outlets       |  497,20   |
-|    2 Patch Panel 48 Ports    |  138,00   |
-|      2 Switch 48 Ports       |  1323,54  |
-|    1 Patch Panel 24 Ports    |   27,50   |
-|      1 Switch 24 Ports       |  314,97   |
-|      m of Copper Cables      |  1379,46  |
-|      m of Fibre Cables       |   1,73    |
-|       3 Access Points        |   419,4   |
-| 232 ISO8877(RJ45) connectors |   46,4    |
+|        Material        | Price (€) |
+| :--------------------: | :-------: |
+|     2 Cabinet 24U      |  799,83   |
+|   100 Double outlets   |  497,20   |
+| 4 Patch Panel 48 Ports |  138,00   |
+|   4 Switch 48 Ports    |  1323,54  |
+| 2 Patch Panel 24 Ports |   27,50   |
+|   2 Switch 24 Ports    |  314,97   |
+|   m of Copper Cables   |  1379,46  |
+|  1,5m of Fibre Cables  |   1,73    |
+|    3 Access Points     |   419,4   |
+|    Connectors(RJ45)    |   46,4    |
 
 Total Price = €
