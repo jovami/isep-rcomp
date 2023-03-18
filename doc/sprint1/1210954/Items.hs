@@ -80,7 +80,7 @@ floor1 = Section "Floor 0"
     , Item "Double Outlet"          46      outlet2Price
     , Item "Access Point"           1       accessPointPrice
 
-    , Item "Copper Cable"           0       copperPrice
+    , Item "Copper Cable"           978.43  copperPrice
     , Item "Fiber cable"            4.44    fiber8CorePrice
     , Item "Cable Raceways"         0       racewayPrice
     ]
