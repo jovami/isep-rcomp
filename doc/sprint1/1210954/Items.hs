@@ -2,7 +2,6 @@ module Items where
 
 import Control.Monad (liftM2)
 import Data.Foldable (for_)
-import GHC.Float (int2Float)
 import Text.Printf (printf)
 
 type Price = Float
@@ -11,7 +10,7 @@ data Item = Item { iname :: String, amt :: Float, price :: Price }
 data Section = Section { sname :: String, items :: [Item] }
 
 instance Show Item where
-    show (Item n a p) = printf "%s: %d x %.2f€" n a p
+    show (Item n a p) = printf "%s: %.2f x %.2f€" n a p
 
 
 itemPrice :: Item -> Price
@@ -25,8 +24,10 @@ printSection :: Section -> Price -> IO ()
 printSection (Section _ []) _ = putStrLn "Empty Section!"
 printSection (Section name its) p = do
     putStrLn (name ++ ":")
+    putStrLn $ replicate (1 + length name) '-'
+
     for_ its print
-    printf "Total price: %.2f€\n\n" p
+    printf "\nTotal price: %.2f€\n\n" p
 
 
 --- Prices
@@ -50,16 +51,16 @@ accessPointPrice = 80.36 :: Price
 copperPrice = 0.83 :: Price
 racewayPrice = 14.92 :: Price
 
-fiber8CorePrice = undefined :: Price ---TODO
+fiber8CorePrice = 2.87 :: Price
 ---
 
 floor0 :: Section
 floor0 = Section "Floor 0"
-    [ Item "Cabinet <TODO>U"        1       undefined
-    , Item "Patch Panel <?> ports"  0       undefined
-    , Item "Patch Panel <!> ports"  0       undefined
-    , Item "Switch <!> ports"       0       undefined
-    , Item "Switch <!> ports"       0       undefined
+    [ Item "Cabinet 24U"            1       cabinet24UPrice
+    , Item "Patch Panel 48 ports"   2       pp48PortsPrice
+    , Item "Switch 48 ports"        2       sw48PortsPrice
+    , Item "Patch Panel 24 ports"   1       pp24PortsPrice
+    , Item "Switch 24 ports"        1       sw24PortsPrice
 
     , Item "Double Outlet"          35      outlet2Price
     , Item "Access Point"           1       accessPointPrice
@@ -71,11 +72,11 @@ floor0 = Section "Floor 0"
 
 floor1 :: Section
 floor1 = Section "Floor 1"
-    [ Item "Cabinet <TODO>U"        1       undefined
-    , Item "Patch Panel <?> ports"  0       undefined
-    , Item "Patch Panel <!> ports"  0       undefined
-    , Item "Switch <!> ports"       0       undefined
-    , Item "Switch <!> ports"       0       undefined
+    [ Item "Cabinet 24U"            1       cabinet24UPrice
+    , Item "Patch Panel 48 ports"   2       pp48PortsPrice
+    , Item "Switch 48 ports"        2       sw48PortsPrice
+    , Item "Patch Panel 24 ports"   1       pp24PortsPrice
+    , Item "Switch 24 ports"        1       sw24PortsPrice
 
     , Item "Double Outlet"          46      outlet2Price
     , Item "Access Point"           1       accessPointPrice
