@@ -75,7 +75,7 @@
 | 1 Patch Panel 24 Ports |   27,50   |
 |   1 Switch 24 Ports    |  314,97   |
 | 1662m of Copper Cables |  1379,46  |
-|  1,5m of Fibre Cables  |   1,73    |
+|  1,5m of Fiber Cables  |   4,31    |
 | 90m of Cable Raceways  |  1342,80  |
 |     1 Access Point     |   80,36   |
 |  180 Connectors(RJ45)  |   36,00   |
@@ -160,9 +160,9 @@
 | 2 Patch Panel 24 Ports |   55,00   |
 |   2 Switch 24 Ports    |  629,94   |
 | 3682m of Copper Cables |  3019,40  |
-|  1,5m of Fibre Cables  |   1,73    |
+|  1,5m of Fiber Cables  |   1,73    |
 | 210m of Cable Raceways |  3133,20  |
 |    3 Access Points     |  241,08   |
 |    Connectors(RJ45)    |   80,00   |
-|      Total Price       | 12 813,09 |
+|      Total Price       | 12 815,67 |
 
