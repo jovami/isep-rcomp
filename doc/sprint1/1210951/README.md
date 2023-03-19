@@ -14,16 +14,57 @@ RCOMP 2022-2023 Project - Sprint 1 - Member 1210951 folder
 |     B.0.11      |    3.65    |   3,27    |   11.94   |    0    |
 |      TOTAL      |   ------   |  ------   |   377.04  |   84    |
 
+## Network cable/devices layout
+
+![Floor 0 Photo](floor0.png)
+
 ## Inventory
+
+### IC
+
+![Floor 0 IC Photo](IC-floor0.png)
 
 |        Material        | Price (€) |
 | :--------------------: | :-------: |
-|   42+3(AP e CP) Double outlets    |  508.5   |
-| 165m of Cable Raceways | 2461,8   |
-|  172+?(cp connection) Connectors(RJ45)   |    34,40     |
-| 2100m of Copper Cables |  1743  |
-|  1,5m of Fiber Cables  |   1,73    |
+|     1 Cabinet 24 U      |  799,83   |
+| 1 Patch Panel 48 Ports |  69,00   |
+|   1 Switch 48 Ports    |  661,77 |
+| 1 Patch Panel 24 Ports |   27,50   |
+|   1 Switch 24 Ports    |  314,97  |
+| 4 Management Horizontal Cable Rack|  79,96    |
+
+### CP
+
+![Floor 0 CP Photo](CP-floor0.png)
+
+|        Material        | Price (€) |
+| :--------------------: | :-------: |
+|     2 Cabinet 12U      |  1046,6   |
+| 2 Patch Panel 24 Ports |   55,00   |
+|   2 Switch 24 Ports    |  629,94   |
+| 4 Management Horizontal Cable Rack|  79,96    |
+
+
+### Floor 0 
+
+|        Material        | Price (€) |
+| :--------------------: | :-------: |
+|   45 Double outlets    |  508.50   |
+| 165m of Cable Raceways | 2461,80   |
+| 2100m of Copper Cables |  1743,00  |
 |    1 Access Point     |   80,36   |
+|     2 Cabinet 12U      |  1046,6   |
+|     1 Cabinet 24 U      |  799,83   |
+| 1 Patch Panel 48 Ports |  69,00   |
+| 3 Patch Panel 24 Ports |   82,50   |
+|   1 Switch 48 Ports    |  661,77 |
+|   3 Switch 24 Ports    |  944,91   |
+|  2 m of Fiber Cables  |   5.74    |
+|  182 Connectors(RJ45)   |    36,40     |
+|  TOTAL      |   --    |
+
+
+
 
 
 
@@ -38,23 +79,79 @@ RCOMP 2022-2023 Project - Sprint 1 - Member 1210951 folder
 | B.1.11 |  6.85    |   1.67    |  11.44   |   0    |
 |      TOTAL      |   ------   |  ------   |     406.79   |   102    |
 
+## Network cable/devices layout
 
-## Inventory
+![Floor 1 Photo](floor1.png)
 
+
+## Inventory 
+### HC
+![Floor 1 HC Photo](HC-floor1.png)
+
+1|        Material        | Price (€) |
+| :--------------------: | :-------: |
+|     1 Cabinet 24 U      |  799,83   |
+| 2 Patch Panel 48 Ports |  138,00   |
+|   2 Switch 48 Ports    |  1323,54  |
+| 1 Patch Panel 24 Ports |   27,50   |
+|   1 Switch 24 Ports    |  314,97  |
+| 6 Management Horizontal Cable Rack|  119,94    |
+
+
+## Inventory 
+### Floor 1
 |        Material        | Price (€) |
 | :--------------------: | :-------: |
 | 3610m of Copper Cables |  2996.30  |
 | 150m of Cable Raceways |  2238.00  |
 |  208 Connectors(RJ45)   |    41.6     |
-|   52 Double outlets(APs)    |  587.6   |
+|   52 Double outlets    |  587.6   |
 |    1 Access Point     |   80,36   |
-
+|     1 Cabinet 24 U      |  799,83   |
+| 2 Patch Panel 48 Ports |  138,00   |
+|   2 Switch 48 Ports    |  1323,54  |
+| 1 Patch Panel 24 Ports |   27,50   |
+|   1 Switch 24 Ports    |  314,97  |
+| 6 Management Horizontal Cable Rack|  119,94    |
+|  TOTAL      |   14077,27     |
 
 
 # Total Inventory
 
+CAT6
 |        Material        | Price (€) |
 | :--------------------: | :-------: |
-| 5710m of Copper Cables |  4739.3   |
-|    Connectors(RJ45)    |   46,4    |
-|    2 Access Points     |   160.72   |
+| 5710m of Copper Cables |  4739,3   |
+| 315m of Cable Raceways |  4699,8  |
+|    2 Access Point     |   80,36   |
+|     2 Cabinet 12U      |  1046,6   |
+|     2 Cabinet 24 U      |  799,83   |
+| 3 Patch Panel 48 Ports |  69,00   |
+| 4 Patch Panel 24 Ports |   82,50   |
+|   3 Switch 48 Ports    |  661,77 |
+|   4 Switch 24 Ports    |  944,91   |
+|   97 Double outlets    |  587,6   |
+| 14 Management Horizontal Cable Rack|  279,86    |
+|  400 Connectors(RJ45)   |    80,00     |
+|  2 m of Fiber Cables  |   5.74    |
+|  TOTAL      |   14077,27     |
+
+
+
+CAT7 
+|        Material        | Price (€) |
+| :--------------------: | :-------: |
+| 5710m of Copper Cables |  4739,3   |
+| 315m of Cable Raceways |  4699,8  |
+|    2 Access Point     |   80,36   |
+|     2 Cabinet 12U      |  1046,6   |
+|     2 Cabinet 24 U      |  799,83   |
+| 3 Patch Panel 48 Ports |  69,00   |
+| 4 Patch Panel 24 Ports |   82,50   |
+|   3 Switch 48 Ports    |  661,77 |
+|   4 Switch 24 Ports    |  944,91   |
+|   97 Double outlets    |  587,6   |
+| 14 Management Horizontal Cable Rack|  279,86    |
+|  400 Connectors(RJ45)   |    80,00     |
+|  2 m of Fiber Cables  |   5.74    |
+|  TOTAL      |   14077,27     |
