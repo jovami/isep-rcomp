@@ -10,7 +10,7 @@ data Item = Item { iname :: String, amt :: Float, price :: Price }
 data Section = Section { sname :: String, items :: [Item] }
 
 instance Show Item where
-    show (Item n a p) = printf "%s: %.2f x %.2f€" n a p
+    show i@(Item n a p) = printf "%s: %.2f x %.2f€ = %.2f€" n a p $ itemPrice i
 
 
 itemPrice :: Item -> Price

@@ -158,35 +158,35 @@ Two Haskell source files were used to compute the following values:
 
 ## Floor 0
 
-| Item                  | Ammount   | Price (€/per unit)    |
-|:----------------------|:---------:|:---------------------:|
-| Cabinet 24U           | 1         | 799.83€               |
-| Patch Panel 48 ports  | 2         | 69.00€                |
-| Switch 48 ports       | 2         | 661.77€               |
-| Patch Panel 24 ports  | 1         | 27.50€                |
-| Switch 24 ports       | 1         | 314.97€               |
-| Double Outlets        | 35        | 11.30€                |
-| Access Point          | 1         | 80.36€                |
-| Copper Cable          | 591.65m   | 0.83€                 |
-| Fiber Cable           | 10.52m    | 2.87€                 |
-| Cable Raceways        | 95.53m    | 14.92€                |
+| Item                  | Ammount   | Price (€/per unit)    | Price (€) |
+|:----------------------|:---------:|:---------------------:|:---------:|
+| Cabinet 24U           | 1         | 799.83€               | 799.83€   |
+| Patch Panel 48 ports  | 2         | 69.00€                | 138.00€   |
+| Switch 48 ports       | 2         | 661.77€               | 1323.54€  |
+| Patch Panel 24 ports  | 1         | 27.50€                | 27.50€    |
+| Switch 24 ports       | 1         | 314.97€               | 314.97€   |
+| Double Outlets        | 35        | 11.30€                | 395.50€   |
+| Access Point          | 1         | 80.36€                | 80.36€    |
+| Copper Cable          | 591.65m   | 0.83€                 | 491.07€   |
+| Fiber Cable           | 10.52m    | 2.87€                 | 30.19€    |
+| Cable Raceways        | 95.53m    | 14.92€                | 1425.31€  |
 
 **Total price**: 5026.27€
 
 ## Floor 1
 
-| Item                  | Ammount   | Price (€/per unit)    |
-|:----------------------|:---------:|:---------------------:|
-| 1 Cabinet 24U         | 1         | 799.83€               |
-| 2 Patch Panel 48 ports| 2         | 69.00€                |
-| 2 Switch 48 ports     | 2         | 661.77€               |
-| 1 Patch Panel 24 ports| 1         | 27.50€                |
-| 1 Switch 24 ports     | 1         | 314.97€               |
-| 46 Double Outlets     | 46        | 11.30€                |
-| 1 Access Point        | 1         | 80.36€                |
-| 978.43m Copper Cable  | 978.43m   | 0.83€                 |
-| 2.96m Fiber cable     | 2.96m     | 2.87€                 |
-| 85.62m Cable Raceways | 85.62m    | 14.92€                |
+| Item                  | Ammount   | Price (€/per unit)    | Price (€) |
+|:----------------------|:---------:|:---------------------:|:---------:|
+| 1 Cabinet 24U         | 1         | 799.83€               | 799.83€   |
+| 2 Patch Panel 48 ports| 2         | 69.00€                | 138.00€   |
+| 2 Switch 48 ports     | 2         | 661.77€               | 1323.54€  |
+| 1 Patch Panel 24 ports| 1         | 27.50€                | 27.50€    |
+| 1 Switch 24 ports     | 1         | 314.97€               | 314.97€   |
+| 46 Double Outlets     | 46        | 11.30€                | 519.80€   |
+| 1 Access Point        | 1         | 80.36€                | 80.36€    |
+| 978.43m Copper Cable  | 978.43m   | 0.83€                 | 812.10€   |
+| 2.96m Fiber cable     | 2.96m     | 2.87€                 | 8.50€     |
+| 85.62m Cable Raceways | 85.62m    | 14.92€                | 1277.45€  |
 
 **Total price**: 5302.04€
 
@@ -194,9 +194,9 @@ Two Haskell source files were used to compute the following values:
 
 ![outside](./campus.png)
 
-| Item          | Ammount   | Price (€/per unit)    |
-|:-------------:|:---------:|:---------------------:|
-| Fiber cable   | 590.46m   | 2.87€                 |
+| Item          | Ammount   | Price (€/per unit)    | Price (€) |
+|:-------------:|:---------:|:---------------------:|:---------:|
+| Fiber cable   | 590.46m   | 2.87€                 | 1694.62€  |
 
 **Total price**: 1694.62€
 
