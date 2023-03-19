@@ -78,20 +78,20 @@ The following image will depict the coverage radius of the access point in quest
 
 ## Inventory
 
-|        Material        | Price (€) |
-| :--------------------: | :-------: |
-|     1 Cabinet 24U      |  799,83   |
-|   48 Double outlets    |  542,4,9  |
-| 2 Patch Panel 48 Ports |  138,00   |
-|   2 Switch 48 Ports    |  1323,54  |
-| 1 Patch Panel 24 Ports |   27,50   |
-|   1 Switch 24 Ports    |  314,97   |
-| 3755m of Copper Cables |  3116,65  |
-|  63,6m of Fibre Cables |   56,6    |
-| 60m of Cable Raceways  |   895,2   |
-|     1 Access Point     |   80,36   |
+|        Material                  | Price (€) |
+| :--------------------:           | :-------: |
+|     1 Cabinet 24U                |  799,83   |
+|   48 Double outlets              |  542,4,9  |
+| 2 Patch Panel 48 Ports           |  138,00   |
+|   2 Switch 48 Ports              |  1323,54  |
+| 1 Patch Panel 24 Ports           |   27,50   |
+|   1 Switch 24 Ports              |  314,97   |
+| 3755m of Copper Cables           |  3116,65  |
+|  63,6m of Fiber Cables (8 cores) |   182,53  |
+| 60m of Cable Raceways            |   895,2   |
+|     1 Access Point               |   80,36   |
 
-**Total price for floor 0:** 7295,05€
+**Total price for floor 0:** 7420,98€
 
 # Floor 1
 
@@ -185,7 +185,7 @@ Floor 1 also has dimensions of **30 x 30 meters** and a single access point feat
 
 |        Floors          | Price (€) |
 | :--------------------: | :-------: |
-|        Floor 0         | 7295,05   |
+|        Floor 0         | 7420,98   |
 |        Floor 1         | 9597,88   |
 
-**Total price for building C:** 16892,93€
+**Total price for building C:** 17018,86€
