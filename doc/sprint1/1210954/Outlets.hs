@@ -1,4 +1,4 @@
-module Main where
+module Outlets where
 
 import Data.Foldable (traverse_)
 import Data.Function (on)
