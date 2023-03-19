@@ -1,35 +1,74 @@
 RCOMP 2022-2023 Project - Sprint 1 review
 =========================================
-### Sprint master: 1111111 ###
+
+### Sprint master: 1181478 ###
+
 (This file is to be created/edited by the sprint master only)
+
 # 1. Sprint's backlog #
-(Copy here a summary of the provided sprint's backlog, the same text as for the Planning Meeting)
+
+| Task  | Task description                                                                             | Assignment |
+| :---: | :------------------------------------------------------------------------------------------- | :--------: |
+| T.1.1 | Development of a structured cabling project for building A, encompassing the campus backbone |  1210954   |
+| T.1.2 | Development of a structured cabling project for building B.                                  |  1210951   |
+| T.1.3 | Development of a structured cabling project for building C.                                  |  1211155   |
+| T.1.4 | Development of a structured cabling project for building D.                                  |  1210957   |
+| T.1.5 | Development of a structured cabling project for building E.                                  |  1181478   |
+
 # 2. Subtasks assessment #
-One by one, each team member presents his/her outcomes to the team, the team assesses 		the accomplishment of the subtask backlog.
+
+One by one, each team member presents his/her outcomes to the team, the team assesses the accomplishment of the subtask backlog.
 The subtask backlog accomplishment can be assessed as one of:
 
-  * Totally implemented with no issues
-  * Totally implemented with issues
-  * Partially implemented with no issues
-  * Partially implemented with issues
+* Totally implemented with no issues
+* Totally implemented with issues
+* Partially implemented with no issues
+* Partially implemented with issues
 
 For the last three cases, a text description of what has not been implemented and present issues must be added.
-Unimplemented features and issues solving is assigned to the same member on the next sprint.
 
-(Examples)
-## 2.1. 1111111 - Structured cable design for building A, floors 2 and 3 #
-### Totally implemented with no issues. ###
-## 2.2. 2222222 - Structured cable design for building B, floors 0 and 1 #
-### Totally implemented with issues. ###
-The number of outlets in room X is incorrect.
-A better solution for the cable pathways between the floor 1 		distributer and rooms Z and Y should be found.
-## 2.3. 3333333 - VLAN devices configuration for building C #
-### Partially implemented with no issues. ###
-The VLAN CCCC with VLANID 400 has not been implemented.
-The VTP configuration is not present in switch DD.
-## 2.4. 4444444 - IPv4 addressing and routing configurations for building D #
-### Partially implemented with issues. ###
-The IPv4 network TTT has not been implemented.
-The routing table at router FF has the wrong mask for network YYY.
-Nodes on network CCC are not receiving the default-gateway by DHCP.
+* 1210954 - Development of a structured cabling project for building A, encompassing the campus backbone(datacenter)
+  | Task | Status |
+  |:----:|:------:|
+  |Demonstration of calculations regarding the number of network outlets for each room|Totally implemented with no issues|
+  |Network outlets deployment schematic plan (including outlets for wireless access points and justification comments)|Totally implemented with no issues|
+  |Cross-connects deployment schematic plan and justification comments|Totally implemented with no issues|
+  |Cable pathways deployment schematic plan and justification comments|Totally implemented with no issues|
+  |Hardware inventories, including total cable lengths by cable type, appropriate type patch panels, network outlets, telecommunication enclosures of suitable size|Totally implemented with no issues|
 
+* 1210951 - Development of a structured cabling project for building B.
+  | Task | Status |
+  |:----:|:------:|
+  |Demonstration of calculations regarding the number of network outlets for each room|Totally implemented with no issues|
+  |Network outlets deployment schematic plan (including outlets for wireless access points and justification comments)|Totally implemented with no issues|
+  |Cross-connects deployment schematic plan and justification comments|Totally implemented with no issues|
+  |Cable pathways deployment schematic plan and justification comments|Totally implemented with no issues|
+  |Hardware inventories, including total cable lengths by cable type, appropriate type patch panels, network outlets, telecommunication enclosures of suitable size|Totally implemented with no issues|  
+
+* 1211155 - Development of a structured cabling project for building C.
+  | Task | Status |
+  |:----:|:------:|
+  |Demonstration of calculations regarding the number of network outlets for each room|Totally implemented with no issues|
+  |Network outlets deployment schematic plan (including outlets for wireless access points and justification comments)|Totally implemented with no issues|
+  |Cross-connects deployment schematic plan and justification comments|Totally implemented with no issues|
+  |Cable pathways deployment schematic plan and justification comments|Totally implemented with no issues|
+  |Hardware inventories, including total cable lengths by cable type, appropriate type patch panels, network outlets, telecommunication enclosures of suitable size|Totally implemented with no issues|
+
+* 1210957 - Development of a structured cabling project for building D.
+  | Task | Status |
+  |:----:|:------:|
+  |Demonstration of calculations regarding the number of network outlets for each room|Totally implemented with no issues|
+  |Network outlets deployment schematic plan (including outlets for wireless access points and justification comments)|Totally implemented with no issues|
+  |Cross-connects deployment schematic plan and justification comments|Totally implemented with no issues|
+  |Cable pathways deployment schematic plan and justification comments|Totally implemented with no issues|
+  |Hardware inventories, including total cable lengths by cable type, appropriate type patch panels, network outlets, telecommunication enclosures of suitable size|Totally implemented with no issues|
+
+* 1181478 - Development of a structured cabling project for building E.
+  | Task | Status |
+  |:----:|:------:|
+  |Demonstration of calculations regarding the number of network outlets for each room|Totally implemented with no issues|
+  |Network outlets deployment schematic plan (including outlets for wireless access points and justification comments)|Totally implemented with no issues|
+  |Cross-connects deployment schematic plan and justification comments|Totally implemented with no issues|
+  |Cable pathways deployment schematic plan and justification comments|Totally implemented with no issues|
+  |Hardware inventories, including total cable lengths by cable type, appropriate type patch panels, network outlets, telecommunication enclosures of suitable size|Totally implemented with no issues|
+  
