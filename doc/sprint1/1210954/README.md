@@ -38,6 +38,9 @@ Additionally, the AP will reside on the rightmost part of the entrance hall
 (i.e. next to rooms A.0.3 and A.0.4) in order to stay closer to areas with a
 higher density of people.
 
+In this floor, cables will navigate through an underground raceway and ascend to 1m
+above the floor level, so as to connect to the network outlets (located on the walls).
+
 ### Outlets
 
 | Room  | Width (m) | Length (m)    | No. Outlets   |
@@ -55,7 +58,12 @@ higher density of people.
 
 ![floor blueprint](./floor1.png)
 
-<!--TODO: same idea as floor 0 -->
+Following the same approach as floor 0, floor 1 will also use a 25m range access point,
+located near rooms A.1.3 and A.1.4---opposite to the bottom-right corner of the blueprint
+as this is the zone that needs WiFi connection the least.
+
+In this floor, cables will navigate in a raceway above the floor and descend to 1m above
+the floor level, so as to connect to the network outlets (located on the walls).
 
 ### Outlets
 
@@ -76,14 +84,77 @@ higher density of people.
 
 ## Floor 0
 
-<!-- TODO: IC -->
+Since there was no information on where to place the cross-connect for this floor,
+room A.0.4 was chosen since it is right underneath the datacenter (room A.1.4).
+
+As the number of outlets in this floor is *relatively* low, it was decided that a single
+IC would suffice, rather than having both an IC and an HC.
+
+The IC will use a 19" rack format, with two 48 port patch panels and one of 24 ports.
+The same applies to the switches. Taking into account the cabling layers between each of
+the components, a 24U cabinet would be the most appropriate as it leaves half of its maximum
+capacity free to use in the event of future upgrades.
+
+### IC Rack outline
+
+| Item                  | U size    |
+|:---------------------:|:---------:|
+| Cable Management      | 1U        |
+| 48 Port Patch Panel   | 1U        |
+| Cable Management      | 1U        |
+| 48 Port Patch Panel   | 1U        |
+| Cable Management      | 1U        |
+| 24 Port Patch Panel   | 1U        |
+| Cable Management      | 1U        |
+| 48 Port Switch        | 1U        |
+| Cable Management      | 1U        |
+| 48 Port Switch        | 1U        |
+| Cable Management      | 1U        |
+| 24 Port Switch        | 1U        |
+| Cable Management      | 1U        |
+| ---Free Space---      | 11U       |
+
 
 ## Floor 1
 
-<!-- TODO: MC -->
+The main cross-connect (MC) will reside on room A.1.4 as this is the established location for the
+datacenter.
+
+Similar to floor 0, this floor will only contain the MC as a cross-connect as there is no need for
+neither an IC nor an HC.
+
+As the connection between the MC in this floor and the IC on floor 0 is crucial, four copper cables will
+connect the two cross-connects, as a fail-safe mechanism.
+
+Additionally, an **8-core** fiber cable will extend from the MC into the Technical Ditch of the campus, so as to
+provide network to the remaining buildings.
+
+### MC Rack outline
+
+| Item                  | U size    |
+|:---------------------:|:---------:|
+| Cable Management      | 1U        |
+| 48 Port Patch Panel   | 1U        |
+| Cable Management      | 1U        |
+| 48 Port Patch Panel   | 1U        |
+| Cable Management      | 1U        |
+| 24 Port Patch Panel   | 1U        |
+| Cable Management      | 1U        |
+| 48 Port Switch        | 1U        |
+| Cable Management      | 1U        |
+| 48 Port Switch        | 1U        |
+| Cable Management      | 1U        |
+| 24 Port Switch        | 1U        |
+| Cable Management      | 1U        |
+| ---Free Space---      | 11U       |
 
 
 # Inventory
+
+Two Haskell source files were used to compute the following values:
+
+- [Cable lengths](./Cables.hs)
+- [Costs per floor/total](./Items.hs)
 
 ## Floor 0
 
@@ -120,6 +191,8 @@ higher density of people.
 **Total price**: 5302.04€
 
 ## Campus
+
+![outside](./campus.png)
 
 | Item          | Ammount   | Price (€/per unit)    |
 |:-------------:|:---------:|:---------------------:|
