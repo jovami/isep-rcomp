@@ -87,21 +87,46 @@ higher density of people.
 
 ## Floor 0
 
-| Item              | Price (€)         |
-|:-----------------:|:-----------------:|
-|                   |                   |
+| Item                  | Ammount   | Price (€/per unit)    |
+|:----------------------|:---------:|:---------------------:|
+| Cabinet 24U           | 1         | 799.83€               |
+| Patch Panel 48 ports  | 2         | 69.00€                |
+| Switch 48 ports       | 2         | 661.77€               |
+| Patch Panel 24 ports  | 1         | 27.50€                |
+| Switch 24 ports       | 1         | 314.97€               |
+| Double Outlets        | 35        | 11.30€                |
+| Access Point          | 1         | 80.36€                |
+| Copper Cable          | 591.65m   | 0.83€                 |
+| Fiber Cable           | 10.52m    | 2.87€                 |
+| Cable Raceways        | 95.53m    | 14.92€                |
 
+**Total price**: 5026.27€
 
 ## Floor 1
 
-| Item              | Price (€)         |
-|:-----------------:|:-----------------:|
-|                   |                   |
+| Item                  | Ammount   | Price (€/per unit)    |
+|:----------------------|:---------:|:---------------------:|
+| 1 Cabinet 24U         | 1         | 799.83€               |
+| 2 Patch Panel 48 ports| 2         | 69.00€                |
+| 2 Switch 48 ports     | 2         | 661.77€               |
+| 1 Patch Panel 24 ports| 1         | 27.50€                |
+| 1 Switch 24 ports     | 1         | 314.97€               |
+| 46 Double Outlets     | 46        | 11.30€                |
+| 1 Access Point        | 1         | 80.36€                |
+| 978.43m Copper Cable  | 978.43m   | 0.83€                 |
+| 2.96m Fiber cable     | 2.96m     | 2.87€                 |
+| 85.62m Cable Raceways | 85.62m    | 14.92€                |
 
+**Total price**: 5302.04€
+
+## Campus
+
+| Item          | Ammount   | Price (€/per unit)    |
+|:-------------:|:---------:|:---------------------:|
+| Fiber cable   | 590.46m   | 2.87€                 |
+
+**Total price**: 1694.62€
 
 ## Total
 
-| Item              | Price (€)         |
-|:-----------------:|:-----------------:|
-|                   |                   |
-
+**Total Price for Building A:** 12022.93€
