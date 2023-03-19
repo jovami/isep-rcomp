@@ -33,21 +33,21 @@ and also a ratio of two outlets for each 10 square meters of area.
 - Room E.0.12 no network outlets are required in this room, and the same applies to restrooms and common
   areas like the entrance hall and corridors.
 
-|    Room     | Width (m) | Length (m) | Area(m2)   |     No. Outlets needed((area/10)*2)     | No. Outlets used       |
-|:-----------:|:---------:|:----------:|------------|:---------------------------------------:|------------------------|
-|    E.0.1    |    5.2    |    5.2     | 27.04      |                   5.4                   | 6                      |
-|    E.0.2    |   11.25   |   11.25    | 126.56     |                ---------                | 12(6 cable passageway) |
-|    E.0.3    |   3.13    |    6.67    | 20.87      |                   4.2                   | 6                      |
-|    E.0.4    |   3.13    |    6.67    | 20.87      |                   4.2                   | 6                      |
-|    E.0.5    |   3.13    |    6.67    | 20.87      |                   4.2                   | 6                      |
-|    E.0.6    |   3.13    |    6.67    | 20.87      |                   4.2                   | 6                      |
-|    E.0.7    |   3.13    |    6.67    | 20.87      |                   4.2                   | 6                      |
-|    E.0.8    |   3.13    |    6.67    | 20.87      |                   4.2                   | 6                      |
-|    E.0.9    |   3.13    |    6.67    | 20.87      |                   4.2                   | 6                      |
-|   E.0.10    |   3.13    |    6.67    | 20.87      |                   4.2                   | 6                      |
-|   E.0.11    |   3.13    |    6.67    | 20.87      |                   4.2                   | 6                      |
-|   E.0.12    |   3.13    |    3.96    | 12.39      |                ---------                | ---------              |
-| AccessPoint | --------- | ---------  | ---------  |                ---------                | 2                      |
+|    Room     | Width (m) | Length (m) | Area(m2)  | No. Outlets needed((area/10)*2) |    No. Outlets used    |
+| :---------: | :-------: | :--------: | :-------: | :-----------------------------: | :--------------------: |
+|    E.0.1    |    5.2    |    5.2     |   27.04   |               5.4               |           6            |
+|    E.0.2    |   11.25   |   11.25    |  126.56   |            ---------            | 12(6 cable passageway) |
+|    E.0.3    |   3.13    |    6.67    |   20.87   |               4.2               |           6            |
+|    E.0.4    |   3.13    |    6.67    |   20.87   |               4.2               |           6            |
+|    E.0.5    |   3.13    |    6.67    |   20.87   |               4.2               |           6            |
+|    E.0.6    |   3.13    |    6.67    |   20.87   |               4.2               |           6            |
+|    E.0.7    |   3.13    |    6.67    |   20.87   |               4.2               |           6            |
+|    E.0.8    |   3.13    |    6.67    |   20.87   |               4.2               |           6            |
+|    E.0.9    |   3.13    |    6.67    |   20.87   |               4.2               |           6            |
+|   E.0.10    |   3.13    |    6.67    |   20.87   |               4.2               |           6            |
+|   E.0.11    |   3.13    |    6.67    |   20.87   |               4.2               |           6            |
+|   E.0.12    |   3.13    |    3.96    |   12.39   |            ---------            |       ---------        |
+| AccessPoint | --------- | ---------  | --------- |            ---------            |           2            |
 
 #### Note1: All the measurements were made based on paper and the scale of 5 meters given(corresponding to 2.4 cm).
 #### Note2: The double outlets used for the access point are not represented in this floor plan.
@@ -114,8 +114,8 @@ so in this case I go up 1m with cable raceway in each double outlet.
 
 ## Intermediate cross connect(IC) layout
 
-|                                               | U size |   Justification   |
-|:---------------------------------------------:|:------:|:-----------------:|
+|                    Layout                     | U size |   Justification   |
+| :-------------------------------------------: | :----: | :---------------: |
 | Management Horizontal Cable Rack("passafios") |   1    |         -         |
 |         Patch panel 12 ports (fiber)          |   1    | MC->IC connection |
 | Management Horizontal Cable Rack("passafios") |   1    |         -         |
@@ -140,20 +140,20 @@ so in this case I go up 1m with cable raceway in each double outlet.
 ## Inventory For Ground floor(floor 0)
 
 |          Material           | Quantity | Price (€) |
-|:---------------------------:|:--------:|:---------:|
+| :-------------------------: | :------: | :-------: |
 |        Cabinets 48U         |    1     |  2029.55  |
-|       Double outlets        |    37    |   418.1   |
-|    Patch Panel 48 Ports     |    2     |    138    |
+|       Double outlets        |    37    |  418.10   |
+|    Patch Panel 48 Ports     |    2     |  138.00   |
 |       Switch 48 Ports       |    2     |  1323.54  |
-|    Patch Panel 12 Ports     |    1     |   61.92   | 
+|    Patch Panel 12 Ports     |    1     |   61.92   |
 |       Switch 12 Ports       |    1     |  254.95   |
-| Patch Panel 12 Ports(Fiber) |    1     |  259,78   | 
-|   Switch 12 Ports(Fiber)    |    1     | 1.216,99  |
-|        Copper Cables        | 3222.5m  |  2674.68  | 
-|        Fibre Cables         |   2.5m   |   2.23    |
-|       Cable Raceways        |  165.6m  |  2470.8   |
+| Patch Panel 12 Ports(Fiber) |    1     |  259.78   |
+|   Switch 12 Ports(Fiber)    |    1     |  1216.99  |
+|        Copper Cables        | 3222.5m  |  2674.68  |
+|        Fiber Cables         |   2.5m   |   7.20    |
+|       Cable Raceways        |  165.6m  |  2470.80  |
 |        Access Points        |    1     |   80.36   |
-|        Total floor 0        |    -     |  10930.9  |
+|        Total floor 0        |    -     | 10930.90  |
 
 
 # Building E - First floor(floor 1)
@@ -167,29 +167,29 @@ so in this case I go up 1m with cable raceway in each double outlet.
   infrastructure hardware, no network outlets are required there, the same goes for restrooms, and common
   areas like halls and corridors.
 
-|    Room     | Width (m) | Length (m) |  Area(m2)   | No. Outlets needed((area/10)*2) |  No. Outlets used  |
-|:-----------:|:---------:|:----------:|:-----------:|:-------------------------------:|:------------------:|
-|    E.1.1    |   7.14    |     10     |    71.4     |              14.28              |         16         |
-|    E.1.2    |   3.81    |    6.19    |    23.58    |              4.72               |         6          |
-|    E.1.3    |   3.81    |    6.19    |    23.58    |              4.72               |         6          |
-|    E.1.4    |   4.52    |    9.52    |     43      |               8.6               |         10         |
-|    E.1.5    |   3.81    |    6.67    |    25.41    |               5.1               |         6          |
-|    E.1.6    |   3.81    |    6.67    |    25.41    |               5.1               |         6          |
-|    E.1.7    |   3.81    |    6.67    |    25.41    |               5.1               |         6          |
-|    E.1.8    |   3.81    |    6.67    |    25.41    |               5.1               |         6          |
-|    E.1.9    |   3.81    |    6.67    |    25.41    |               5.1               |         6          |
-|   E.1.10    |   3.81    |    6.67    |    25.41    |               5.1               |         6          |
-|   E.1.11    |   3.81    |    6.19    |    23.58    |              4.72               |         6          |
-|   E.1.12    |   3.81    |    6.19    |    23.58    |              4.72               |         6          |
-|   E.1.13    |   3.81    |    5.71    |    21.76    |              4.35               |         6          |
-|   E.1.14    |   3.81    |    5.71    |    21.76    |              4.35               |         6          |
-|   E.1.15    |   3.81    |    5.71    |    21.76    |              4.35               |         6          |
-|   E.1.16    |   3.81    |    5.71    |    21.76    |              4.35               |         6          |
-|   E.1.17    |   3.81    |    5.71    |    21.76    |              4.35               |         6          |
-|   E.1.18    |   3.81    |    5.71    |    21.76    |              4.35               |         6          |
-|   E.1.19    |   1.90    |    3.33    |    6.34     |            ---------            |     ---------      |
-|   E.1.20    |   1.67    |    6.43    |    10.74    |            ---------            |     ---------      |
-| AccessPoint | --------- | ---------  |  ---------  |            ---------            |         2          |
+|    Room     | Width (m) | Length (m) | Area(m2)  | No. Outlets needed((area/10)*2) | No. Outlets used |
+| :---------: | :-------: | :--------: | :-------: | :-----------------------------: | :--------------: |
+|    E.1.1    |   7.14    |     10     |   71.4    |              14.28              |        16        |
+|    E.1.2    |   3.81    |    6.19    |   23.58   |              4.72               |        6         |
+|    E.1.3    |   3.81    |    6.19    |   23.58   |              4.72               |        6         |
+|    E.1.4    |   4.52    |    9.52    |    43     |               8.6               |        10        |
+|    E.1.5    |   3.81    |    6.67    |   25.41   |               5.1               |        6         |
+|    E.1.6    |   3.81    |    6.67    |   25.41   |               5.1               |        6         |
+|    E.1.7    |   3.81    |    6.67    |   25.41   |               5.1               |        6         |
+|    E.1.8    |   3.81    |    6.67    |   25.41   |               5.1               |        6         |
+|    E.1.9    |   3.81    |    6.67    |   25.41   |               5.1               |        6         |
+|   E.1.10    |   3.81    |    6.67    |   25.41   |               5.1               |        6         |
+|   E.1.11    |   3.81    |    6.19    |   23.58   |              4.72               |        6         |
+|   E.1.12    |   3.81    |    6.19    |   23.58   |              4.72               |        6         |
+|   E.1.13    |   3.81    |    5.71    |   21.76   |              4.35               |        6         |
+|   E.1.14    |   3.81    |    5.71    |   21.76   |              4.35               |        6         |
+|   E.1.15    |   3.81    |    5.71    |   21.76   |              4.35               |        6         |
+|   E.1.16    |   3.81    |    5.71    |   21.76   |              4.35               |        6         |
+|   E.1.17    |   3.81    |    5.71    |   21.76   |              4.35               |        6         |
+|   E.1.18    |   3.81    |    5.71    |   21.76   |              4.35               |        6         |
+|   E.1.19    |   1.90    |    3.33    |   6.34    |            ---------            |    ---------     |
+|   E.1.20    |   1.67    |    6.43    |   10.74   |            ---------            |    ---------     |
+| AccessPoint | --------- | ---------  | --------- |            ---------            |        2         |
 
 #### Note1: All the measurements were made based on paper and the scale of 5 meters given(corresponding to 2.1 cm).
 #### Note2: The double outlets used for the access point are not represented in this floor plan.
@@ -229,8 +229,8 @@ so in this case I go up 1m with cable raceway in each double outlet.
 
 ## Horizontal cross connect(HC) layout
 
-|                                               | U size |   Justification   |
-|:---------------------------------------------:|:------:|:-----------------:|
+|                    Layout                     | U size |   Justification   |
+| :-------------------------------------------: | :----: | :---------------: |
 | Management Horizontal Cable Rack("passafios") |   1    |         -         |
 |             Patch panel 12 ports              |   1    | IC->HC connection |
 | Management Horizontal Cable Rack("passafios") |   1    |         -         |
@@ -255,34 +255,34 @@ so in this case I go up 1m with cable raceway in each double outlet.
 ## Inventory For First floor(floor 1)
 
 |       Material       | Quantity | Price (€) |
-|:--------------------:|:--------:|:---------:|
+| :------------------: | :------: | :-------: |
 |     Cabinets 48U     |    1     |  2029.55  |
-|    Double outlets    |    62    |   700.6   |
-| Patch Panel 48 Ports |    3     |    207    |
+|    Double outlets    |    62    |  700.60   |
+| Patch Panel 48 Ports |    3     |  207.00   |
 |   Switch 48 Ports    |    3     |  1985.31  |
 | Patch Panel 12 Ports |    1     |   61.92   |
 |   Switch 12 Ports    |    1     |  254.95   |
-|    Copper Cables     | 6226.3m  |  5167.8   | 
-|    Cable Raceways    | 282.86m  |  4220.3   |
+|    Copper Cables     | 6226.3m  |  5167.80  |
+|    Cable Raceways    | 282.86m  |  4220.30  |
 |    Access Points     |    1     |   80.36   |
 |    Total floor 0     |    -     | 14708.03  |
 
 # Total Inventory
 
 |          Material           | Quantity |
-|:---------------------------:|:--------:|
-|        Cabinets 48U         |    2     |  
-|       Double outlets        |    99    | 
-|    Patch Panel 48 Ports     |    5     |    
-|       Switch 48 Ports       |    5     |  
-|    Patch Panel 12 Ports     |    2     |    
-|       Switch 12 Ports       |    2     |  
-| Patch Panel 12 Ports(Fiber) |    1     |    
-|   Switch 12 Ports(Fiber)    |    1     |    
-|        Copper Cables        | 9448.8m  |  
-|        Fibre Cables         |   2.5m   |           
-|       Cable Raceways        | 448.46m  |  
-|        Access Points        |    2     |   
-|         Connectors          |   404    | 
+| :-------------------------: | :------: |
+|        Cabinets 48U         |    2     |
+|       Double outlets        |    99    |
+|    Patch Panel 48 Ports     |    5     |
+|       Switch 48 Ports       |    5     |
+|    Patch Panel 12 Ports     |    2     |
+|       Switch 12 Ports       |    2     |
+| Patch Panel 12 Ports(Fiber) |    1     |
+|   Switch 12 Ports(Fiber)    |    1     |
+|        Copper Cables        | 9448.8m  |
+|        Fiber Cables         |   2.5m   |
+|       Cable Raceways        | 448.46m  |
+|        Access Points        |    2     |
+|         Connectors          |   404    |
 
-**Total Cost Of Building E : 25719.73€**
+**Total Cost Of Building E : 25724.70€**
