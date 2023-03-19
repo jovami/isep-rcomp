@@ -3,23 +3,27 @@ RCOMP 2022-2023 Project - Sprint 1 - Member 1210951 folder
 
 # Overview
 
-
 ## Floor 0:
+
 - Underground cable raceway
 - Ceiling height : 4 meters
 - B.0.11 does not need outlets
-- B.0.6 and B.0.7 only need 5 outlets along the underfloor cable raceway
+- B.0.6 and B.0.7 only need 5 outlets each along the underfloor cable raceway
+
 ## Floor 1:
+
 - Ceiling height: 3 meters
 - Removable dropped ceiling: 2.5 meters
 
 ## Common to both floors:
+
 - Full Wi-Fi coverage
 - No network outlets required at the restrooms, halls, and corridors
 - Rooms with no specific requirements regarding outlets must follow the ratio of 2 outlets by 10m2
 
 
 # Ground floor - Floor 0
+
 ## Measurements
 
 |      Room       | Length (m) | Width (m) | Area (m²) | Outlets |
@@ -33,20 +37,20 @@ RCOMP 2022-2023 Project - Sprint 1 - Member 1210951 folder
 |      TOTAL      |   ------   |  ------   |   377.04  |   50    |
 
 ## Network cable/devices layout
+
 <p>
 
 ![Floor 0 Photo](floor0.png)
 
 </p>
 
-- B.0.11 it is used to house the IC, and no outlets are required.
+- B.0.11 it is used to house the IC(Intermediate cross-connect), and no outlets are required.
 
 - All the cables run trought the underfloor cable raceway, at the properly passageway all cables are set at 1m from the floor, after that the cables run trougth cable raceways in each room.
 
 - It was placed only 1 Acess Point (AP) on this floor, considering 25m of radius,it is enough to cover all the floor, the AP it is not centered in the floor since it would be inside a room was choosen instead to move it a little bit to the side and place it on the hall with the goal to minimize signal loss, it was also placed a double outlet close to the AP.
 
-
-## Inventory
+- The AP on the floor 0 will operate on channel 1 at 2.4GHz
 
 ### IC
 
@@ -54,12 +58,22 @@ RCOMP 2022-2023 Project - Sprint 1 - Member 1210951 folder
 
 - Considering 0,5m of patch cords to connect each patch panel entry to the switch, we have a total of an additional 36m of cables to interconnect the switches with the patch panels
 
-
 <p>
 
 ![Floor 0 IC Photo](IC-floor0.png)
 
 </p>
+
+
+## Inventory
+
+### IC
+
+- Connectors RJ45:
+    - We need 27 double outlets, and for each 4 connectors (108)
+    - For each patch panel entry we need another 2 (72)
+    - 2 more to connect our AP (2)
+
 
 |        Material        | Price (€) |
 | :--------------------: | :-------: |
@@ -72,12 +86,9 @@ RCOMP 2022-2023 Project - Sprint 1 - Member 1210951 folder
 | 36m Copper Cables |    29,88    |
 
 
-- Connectors RJ45:
-    - We need 27 double outlets, and for each 4 connectors (108)
-    - For each patch panel entry we need another 2 (72)
-    - 2 more to connect our AP (2)
 
-### Floor 0 
+
+### Floor 0
 
 |        Material        | Price (€) |
 | :--------------------: | :-------: |
@@ -111,18 +122,20 @@ RCOMP 2022-2023 Project - Sprint 1 - Member 1210951 folder
 
 ![Floor 1 Photo](floor1.png)
 
-- Similiar to the room B.0.11 the room B.1.12 does not need outlets and it will be used to store the HC
+- Similiar to the room B.0.11 the room B.1.12 does not need outlets and it will be used to store the HC.
 
-- The connection between the HC on this floor and the IC on the floor 0 was made with 4 cables, 5m each(since the floor 0 is 4m tall), in order to minimize possible future problems connecting both equipments properly 
+- The connection between the HC on this floor and the IC on the floor 0 was made with 4 cables, 5m each(since the floor 0 is 4m tall), in order to minimize future problems connecting both equipments properly.
 
-- In this floor there is a dropped ceilig at a 2,5 heigth, so all the cable drop 1,5m at the correspondent ceiling passageway and after that each cable runs trougth the cable raceways properly installed in each room
+- In this floor there is a dropped ceilig at a 2,5 heigth, so all the cables drop 1,5m at the correspondent ceiling passageway and after that each cable runs trougth the cable raceways properly installed in each room.
 
-- Following the same idea with the floor 0 it was placed only 1 Acess Point (AP) on this floor, considering 25m of radius,it is enough to cover all the floor, and close to it a double outlet
+- Following the same idea with the floor 0 it was placed only 1 Acess Point (AP) on this floor, considering 25m of radius,it is enough to cover all the floor, and close to it a double outlet.
+
+- The AP on the floor 1 will operate on channel 6 at 2.4GHz
 
 
-## Inventory 
+### HC
 
-- Considering 0,5m of patch cords to connect each patch panel entry to the switch, we have a total of an additional 60m of cables to interconnect the switches with the patch panels
+- Considering 0,5m of patch cords to connect each patch panel entry to the switch, it is needed additional 60m of cables to interconnect the switches with the patch panels
 
 - Connectors RJ45:
     - We need 52 double outlets, and for each 4 connectors (208)
@@ -130,10 +143,15 @@ RCOMP 2022-2023 Project - Sprint 1 - Member 1210951 folder
     - 2 more to connect our AP (2)
 
 
-### HC
+
 ![Floor 1 HC Photo](HC-floor1.png)
 
-1|        Material        | Price (€) |
+
+## Inventory 
+
+### HC
+
+|        Material        | Price (€) |
 | :--------------------: | :-------: |
 |     1 Cabinet 24 U      |  799,83   |
 | 2 Patch Panel 48 Ports |  138,00   |
