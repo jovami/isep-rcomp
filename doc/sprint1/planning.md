@@ -106,4 +106,4 @@ RCOMP 2022-2023 Project - Sprint 1 planning
 | Management Horizontal Cable Rack("passafios") |                19,99                 | [Amazon](https://www.amazon.com/Lancher-1U-Cable-Management-Horizontal/dp/B01HJTTNR0/ref=sr_1_2_sspa?keywords=server+rack+cable+management&qid=1679072334&sr=8-2-spons&psc=1&spLa=ZW5jcnlwdGVkUXVhbGlmaWVyPUEyQ1IxTkNUTk44TTI0JmVuY3J5cHRlZElkPUEwODQ3NzU5M1RORUNJQjU3VzJSWiZlbmNyeXB0ZWRBZElkPUEwMTcwOTQ3MkZaR09KQTIxTEVYMCZ3aWRnZXROYW1lPXNwX2F0ZiZhY3Rpb249Y2xpY2tSZWRpcmVjdCZkb05vdExvZ0NsaWNrPXRydWU=)          |
 
 
-# Total Cost: X €
+# Total Cost: 80907.95€
