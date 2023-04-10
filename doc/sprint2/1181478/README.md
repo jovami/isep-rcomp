@@ -12,13 +12,13 @@ RCOMP 2022-2023 Project - Sprint 2 - Member 1181478 folder
 
 ## VLANIDs, VLAN Names and Description
 
-| **VLANIDs** | **VLAN Names** | **Necessary IPv4 Nodes** |                                              **Description**                                               |
-|:-----------:|:--------------:|:------------------------:|:----------------------------------------------------------------------------------------------------------:|
-|     436     |       X        |            45            |                             VLAN for all end-user outlets at the ground floor.                             |
-|     437     |       x        |            60            |                               A VLAN for all end-user outlets at floor one.                                |
-|     438     |       x        |            70            |              VLAN for the Wi-Fi network (for all access-points’ outlets within the building).              |
-|     439     |       x        |            20            |  VLAN for the building DMZ(for servers, administration workstations, and infrastructure network devices).  |
-|     440     |       x        |            25            |                           VLAN for VoIP (for all IP-phones within the building).                           |
+| **VLANIDs** |   **VLAN Names**    | **Necessary IPv4 Nodes** |                                              **Description**                                               |
+|:-----------:|:-------------------:|:------------------------:|:----------------------------------------------------------------------------------------------------------:|
+|     436     |  VLAN_E_GFLOOR_436  |            45            |                             VLAN for all end-user outlets at the ground floor.                             |
+|     437     | VLAN_E_1STFLOOR_437 |            60            |                               A VLAN for all end-user outlets at floor one.                                |
+|     438     |   VLAN_E_WIFI_438   |            70            |              VLAN for the Wi-Fi network (for all access-points’ outlets within the building).              |
+|     439     |    VLAN_E_DMZ_439   |            20            |  VLAN for the building DMZ(for servers, administration workstations, and infrastructure network devices).  |
+|     440     |   VLAN_E_VOIP_440   |            25            |                           VLAN for VoIP (for all IP-phones within the building).                           |
 
 ## IPv4 Addressing
 
@@ -55,19 +55,20 @@ To determine the IPv4 Networks necessary for each individual VLAN, IPv4 subnetti
   This originated the following result:
 
 
-| **VLANIDs** | **VLAN Names** | **Necessary IPv4 Nodes** | **Network Prefix** |
-|:-----------:|:--------------:|:------------------------:|:------------------:|
-|     436     |       X        |            45            |      **/26**       |
-|     437     |       x        |            60            |      **/26**       |
-|     438     |       x        |            70            |      **/25**       |
-|     439     |       x        |            20            |      **/27**       |
-|     440     |       x        |            25            |      **/27**       |
+| **VLANIDs** |   **VLAN Names**    | **Necessary IPv4 Nodes** | **Network Prefix** |
+|:-----------:|:-------------------:|:------------------------:|:------------------:|
+|     436     |  VLAN_E_GFLOOR_436  |            45            |      **/26**       |
+|     437     | VLAN_E_1STFLOOR_437 |            60            |      **/26**       |
+|     438     |   VLAN_E_WIFI_438   |            70            |      **/25**       |
+|     439     |   VLAN_E_DMZ_439    |            20            |      **/27**       |
+|     440     |   VLAN_E_VOIP_440   |            25            |      **/27**       |
 
 
-|                           |  Subnet Mask  | Network Address  |   Network Mask   |  First Node Address  |  Broadcast Address  |  Usable Addresses  |  Required Addresses  |
-|:-------------------------:|:-------------:|:----------------:|:----------------:|:--------------------:|:-------------------:|:------------------:|:--------------------:|
-|       Wi-Fi Network       |      /25      |   10.80.162.0    | 255.255.255.128  |     10.80.162.1      |    10.80.162.127    |        126         |          70          |
-|  1st Floor User Outlets   |      /26      |  10.80.162.128   | 255.255.255.192  |    10.80.162.129     |    10.80.162.191    |         62         |          60          |
-| Ground Floor User Outlets |      /26      |  10.80.162.192   | 255.255.255.192  |    10.80.162.193     |    10.80.162.255    |         62         |          45          |
-|           VoIP            |      /27      |   10.80.163.0    | 255.255.255.224  |     10.80.163.1      |    10.80.163.31     |         30         |          25          |
-|       Building DMZ        |      /27      |   10.80.163.32   | 255.255.255.224  |     10.80.163.33     |    10.80.163.63     |         30         |          20          |
+|                           | Router Sub-interface Addresses/Config |  Subnet Mask  | Network Address  |   Network Mask   | First Node Address(IPv4 Address) |  Broadcast Address  |  Usable Addresses  |  Required Addresses  |
+|:-------------------------:|:-------------------------------------:|:-------------:|:----------------:|:----------------:|:--------------------------------:|:-------------------:|:------------------:|:--------------------:|
+|       Wi-Fi Network       |           FastEthernet0/0.3           |      /25      |   10.80.162.0    | 255.255.255.128  |           10.80.162.1            |    10.80.162.127    |        126         |          70          |
+|  1st Floor User Outlets   |           FastEthernet0/0.2           |      /26      |  10.80.162.128   | 255.255.255.192  |          10.80.162.129           |    10.80.162.191    |         62         |          60          |
+| Ground Floor User Outlets |           FastEthernet0/0.1           |      /26      |  10.80.162.192   | 255.255.255.192  |          10.80.162.193           |    10.80.162.255    |         62         |          45          |
+|           VoIP            |           FastEthernet0/0.5           |      /27      |   10.80.163.0    | 255.255.255.224  |           10.80.163.1            |    10.80.163.31     |         30         |          25          |
+|       Building DMZ        |           FastEthernet0/0.4           |      /27      |   10.80.163.32   | 255.255.255.224  |           10.80.163.33           |    10.80.163.63     |         30         |          20          |
+
