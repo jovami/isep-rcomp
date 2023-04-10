@@ -1,7 +1,20 @@
-RCOMP 2022-2023 Project - Sprint 2 - Member 3333333 folder
+RCOMP 2022-2023 Project - Sprint 2 - Member 1210954 folder
 ===========================================
-(This folder is to be created/edited by the team member 3333333 only)
 
-#### This is just an example for a team member with number 3333333 ####
-### Each member should create a folder similar to this, matching his/her number. ###
-The owner of this folder (member number 3333333) will commit here all the outcomes (results/artifacts/products)		       of his/her work during sprint 2. This may encompass any kind of standard file types.
+# VLANs
+
+- VTP Domain name: **rc23ddg1**.
+- VLAN ID range:
+    + Building A: **416-420** (inclusive)
+    + Campus Backbone: **415**
+
+## Distribution
+
+| VLAN ID   | VLAN Name     | No. nodes | Description               |
+|:---------:|:-------------:|:---------:|:-------------------------:|
+| 415       | backbone      | 100       | Campus backbone           |
+| 416       | buildA_f1     | 70        | Floor 1 network outlets   |
+| 417       | buildA_wifi   | 100       | Wi-Fi network             |
+| 418       | buildA_dmz    | 90        | DMZ VLAN                  |
+| 419       | buildA_f0     | 40        | Floor 0 network outlets   |
+| 420       | buildA_voip   | 35        | VoIP network              |
