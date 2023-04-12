@@ -10,14 +10,14 @@ RCOMP 2022-2023 Project - Sprint 2 - Member 1210954 folder
 
 ## Distribution
 
-| VLAN ID   | VLAN Name     | No. nodes | Description               |
-|:---------:|:-------------:|:---------:|:-------------------------:|
-| 415       | backbone      | 100       | Campus backbone           |
-| 416       | buildA_f1     | 70        | Floor 1 network outlets   |
-| 417       | buildA_wifi   | 100       | Wi-Fi network             |
-| 418       | buildA_dmz    | 90        | DMZ VLAN                  |
-| 419       | buildA_f0     | 40        | Floor 0 network outlets   |
-| 420       | buildA_voip   | 35        | VoIP network              |
+| VLAN ID   | VLAN Name | No. nodes | Description               |
+|:---------:|:---------:|:---------:|:-------------------------:|
+| 415       | backbone  | 100       | Campus backbone           |
+| 416       | A_f1      | 70        | Floor 1 network outlets   |
+| 417       | A_wifi    | 100       | Wi-Fi network             |
+| 418       | A_dmz     | 90        | DMZ VLAN                  |
+| 419       | A_f0      | 40        | Floor 0 network outlets   |
+| 420       | A_voip    | 35        | VoIP network              |
 
 
 # IPv4 addressing
@@ -57,8 +57,8 @@ of **/X**, where `X = 32 - log_2(N)`
 | VLAN ID   | Network Address   | Subnet Mask           | Router Subinterface   |
 |:----------:|:----------------:|:---------------------:|:---------------------:|
 | 415       | 10.80.167.0       | 255.255.255.128 (/25) | ¯\_(ツ)_/¯            |
-| 416       | 10.80.160.0       | 255.255.255.128 (/25) | FastEthernet0/0.1     |
-| 417       | 10.80.160.0       | 255.255.255.128 (/25) | FastEthernet0/0.2     |
-| 418       | 10.80.161.0       | 255.255.255.128 (/25) | FastEthernet0/0.3     |
-| 419       | 10.80.161.0       | 255.255.255.192 (/26) | FastEthernet0/0.4     |
-| 420       | 10.80.161.0       | 255.255.255.192 (/26) | FastEthernet0/0.5     |
+| 416       | 10.80.160.0       | 255.255.255.128 (/25) | ¯\_(ツ)_/¯            |
+| 417       | 10.80.160.0       | 255.255.255.128 (/25) | ¯\_(ツ)_/¯            |
+| 418       | 10.80.161.0       | 255.255.255.128 (/25) | ¯\_(ツ)_/¯            |
+| 419       | 10.80.161.0       | 255.255.255.192 (/26) | ¯\_(ツ)_/¯            |
+| 420       | 10.80.161.0       | 255.255.255.192 (/26) | ¯\_(ツ)_/¯            |
