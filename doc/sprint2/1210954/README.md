@@ -26,17 +26,17 @@ In accordance with the [sprint planning](../planning.md) the IPv4 addresses assi
 to building A and the backbone are as follows:
 
 Address space:
-- Building A: **10.168.160.0/23**
-- Campus Backbone: **10.168.167.0/25**
+- Building A: **10.80.160.0/23**
+- Campus Backbone: **10.80.167.0/25**
 
 ## Distribution
 
 ### Campus Backbone
-As there is no need to subdivide the backbone's network, the entire **10.168.167.0/25** range
+As there is no need to subdivide the backbone's network, the entire **10.80.167.0/25** range
 will be used.
 
 ### Building A
-Building A will have 5 VLANs, meaning we need to assign a subnetwork of the 10.168.160.0/23
+Building A will have 5 VLANs, meaning we need to assign a subnetwork of the 10.80.160.0/23
 block to each.
 
 The assignment of the subnetworks was done according to the following procedure:
@@ -48,7 +48,7 @@ network and broadcast addresses.
 This thus establishes an ordering within the VLANs.
 4. Each VLAN will end at `last_addr := initial_addr + N - 1` and will have a subnet mask
 of **/X**, where `X = 32 - log_2(N)`
-5. The first VLAN will start at **10.168.160.0** (beginning of the addresses chunk).
+5. The first VLAN will start at **10.80.160.0** (beginning of the addresses chunk).
 6. Every other VLAN will start at `initial_addr := last_addr_of_previous + 1`
 
 
@@ -56,9 +56,9 @@ of **/X**, where `X = 32 - log_2(N)`
 
 | VLAN ID   | Network Address   | Subnet Mask           | Router Subinterface   |
 |:----------:|:----------------:|:---------------------:|:---------------------:|
-| 415       | 10.168.167.0      | 255.255.255.128 (/25) | ¯\_(ツ)_/¯            |
-| 416       | 10.168.160.0      | 255.255.255.128 (/25) | FastEthernet0/0.1     |
-| 417       | 10.168.160.0      | 255.255.255.128 (/25) | FastEthernet0/0.2     |
-| 418       | 10.168.161.0      | 255.255.255.128 (/25) | FastEthernet0/0.3     |
-| 419       | 10.168.161.0      | 255.255.255.192 (/26) | FastEthernet0/0.4     |
-| 420       | 10.168.161.0      | 255.255.255.192 (/26) | FastEthernet0/0.5     |
+| 415       | 10.80.167.0       | 255.255.255.128 (/25) | ¯\_(ツ)_/¯            |
+| 416       | 10.80.160.0       | 255.255.255.128 (/25) | FastEthernet0/0.1     |
+| 417       | 10.80.160.0       | 255.255.255.128 (/25) | FastEthernet0/0.2     |
+| 418       | 10.80.161.0       | 255.255.255.128 (/25) | FastEthernet0/0.3     |
+| 419       | 10.80.161.0       | 255.255.255.192 (/26) | FastEthernet0/0.4     |
+| 420       | 10.80.161.0       | 255.255.255.192 (/26) | FastEthernet0/0.5     |
