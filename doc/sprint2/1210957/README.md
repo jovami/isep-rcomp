@@ -12,11 +12,11 @@
 
 | **VLANIDs** | **VLAN Names** | **Nodes** |                  **Description**                   |
 | :---------: | :------------: | :-------: | :------------------------------------------------: |
-|     431     |   VLAN_D_431   |    80     |           VLAN for the Wireless Network.           |
-|     432     |   VLAN_D_432   |    60     |   A VLAN for all end-user outlets at floor one.    |
-|     433     |   VLAN_D_433   |    25     | VLAN for all end-user outlets at the ground floor. |
-|     434     |   VLAN_D_434   |    10     |             VLAN for the building DMZ.             |
-|     435     |   VLAN_D_435   |    13     |                  VLAN for VoIP .                   |
+|     431     |     D_wifi     |    80     |           VLAN for the Wireless Network.           |
+|     432     |      D_f1      |    60     |   A VLAN for all end-user outlets at floor one.    |
+|     433     |      D_f0      |    25     | VLAN for all end-user outlets at the ground floor. |
+|     434     |     D_dmz      |    10     |             VLAN for the building DMZ.             |
+|     435     |     D_voip     |    13     |                   VLAN for VoIP.                   |
 
 ## IPv4 Addressing
 
@@ -51,16 +51,16 @@ To determine the IPv4 Networks necessary for each individual VLAN, IPv4 subnetti
 
 | **VLANIDs** | **VLAN Names** | **Nodes** | **Network Prefix** |
 | :---------: | :------------: | :-------: | :----------------: |
-|     431     |   VLAN_D_431   |    80     |      **/25**       |
-|     432     |   VLAN_D_432   |    60     |      **/26**       |
-|     433     |   VLAN_D_433   |    25     |      **/27**       |
-|     434     |   VLAN_D_434   |    10     |      **/28**       |
-|     435     |   VLAN_D_435   |    13     |      **/28**       |
+|     431     |     D_wifi     |    80     |      **/25**       |
+|     432     |      D_f1      |    60     |      **/26**       |
+|     433     |      D_f0      |    25     |      **/27**       |
+|     434     |     D_dmz      |    10     |      **/28**       |
+|     435     |     D_voip     |    13     |      **/28**       |
 
 |                  | Router Sub-interface Addresses/Config | Subnet Mask | Network Address |   Subnet Mask   | End Node Device IPV4 | Broadcast Address | Usable Addresses | Required Addresses |
 | :--------------: | :-----------------------------------: | :---------: | :-------------: | :-------------: | :------------------: | :---------------: | :--------------: | :----------------: |
-| Wireless Network |          FastEthernet0/0.431          |     /25     |   10.80.166.0   | 255.255.255.128 |     10.80.166.4      |   10.80.162.127   |       126        |         80         |
-|    Outlets 1     |          FastEthernet0/0.432          |     /26     |  10.80.166.128  | 255.255.255.192 |    10.80.166.129     |   10.80.162.191   |        62        |         60         |
-|    Outlets 0     |          FastEthernet0/0.433          |     /27     |  10.80.166.192  | 255.255.255.224 |    10.80.166.293     |   10.80.162.255   |        30        |         25         |
-|       DMZ        |          FastEthernet0/0.434          |     /28     |  10.80.166.224  | 255.255.255.240 |    10.80.166.224     |   10.80.163.63    |        14        |         10         |
-|       VoIP       |          FastEthernet0/0.435          |     /28     |  10.80.166.240  | 255.255.255.240 |     ------------     |   10.80.163.31    |        14        |         13         |
+| Wireless Network |          FastEthernet0/0.431          |     /25     |   10.80.166.0   | 255.255.255.128 |     10.80.166.4      |   10.80.166.127   |       126        |         80         |
+|    Outlets F1    |          FastEthernet0/0.432          |     /26     |  10.80.166.128  | 255.255.255.192 |    10.80.166.130     |   10.80.166.191   |        62        |         60         |
+|    Outlets F0    |          FastEthernet0/0.433          |     /27     |  10.80.166.192  | 255.255.255.224 |    10.80.166.194     |   10.80.166.223   |        30        |         25         |
+|       DMZ        |          FastEthernet0/0.434          |     /28     |  10.80.166.224  | 255.255.255.240 |    10.80.166.226     |   10.80.166.239   |        14        |         10         |
+|       VoIP       |          FastEthernet0/0.435          |     /28     |  10.80.166.240  | 255.255.255.240 |     ------------     |   10.80.166.255   |        14        |         13         |
