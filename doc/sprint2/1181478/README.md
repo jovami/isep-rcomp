@@ -12,13 +12,13 @@ RCOMP 2022-2023 Project - Sprint 2 - Member 1181478 folder
 
 ## VLANIDs, VLAN Names and Description
 
-| **VLANIDs** |   **VLAN Names**    | **Necessary IPv4 Nodes** |                                              **Description**                                               |
-|:-----------:|:-------------------:|:------------------------:|:----------------------------------------------------------------------------------------------------------:|
-|     436     |  VLAN_E_GFLOOR_436  |            45            |                             VLAN for all end-user outlets at the ground floor.                             |
-|     437     | VLAN_E_1STFLOOR_437 |            60            |                               A VLAN for all end-user outlets at floor one.                                |
-|     438     |   VLAN_E_WIFI_438   |            70            |              VLAN for the Wi-Fi network (for all access-points’ outlets within the building).              |
-|     439     |    VLAN_E_DMZ_439   |            20            |  VLAN for the building DMZ(for servers, administration workstations, and infrastructure network devices).  |
-|     440     |   VLAN_E_VOIP_440   |            25            |                           VLAN for VoIP (for all IP-phones within the building).                           |
+| **VLANIDs** | **VLAN Names** | **Necessary IPv4 Nodes** |                                              **Description**                                               |
+|:-----------:|:--------------:|:------------------------:|:----------------------------------------------------------------------------------------------------------:|
+|     436     |      E_f0      |            45            |                             VLAN for all end-user outlets at the ground floor.                             |
+|     437     |      E_f1      |            60            |                               A VLAN for all end-user outlets at floor one.                                |
+|     438     |     E_wifi     |            70            |              VLAN for the Wi-Fi network (for all access-points’ outlets within the building).              |
+|     439     |     E_dmz      |            20            |  VLAN for the building DMZ(for servers, administration workstations, and infrastructure network devices).  |
+|     440     |     E_voip     |            25            |                           VLAN for VoIP (for all IP-phones within the building).                           |
 
 ## IPv4 Addressing
 
@@ -55,13 +55,13 @@ To determine the IPv4 Networks necessary for each individual VLAN, IPv4 subnetti
   This originated the following result:
 
 
-| **VLANIDs** |   **VLAN Names**    | **Necessary IPv4 Nodes** | **Network Prefix** |
-|:-----------:|:-------------------:|:------------------------:|:------------------:|
-|     436     |  VLAN_E_GFLOOR_436  |            45            |      **/26**       |
-|     437     | VLAN_E_1STFLOOR_437 |            60            |      **/26**       |
-|     438     |   VLAN_E_WIFI_438   |            70            |      **/25**       |
-|     439     |   VLAN_E_DMZ_439    |            20            |      **/27**       |
-|     440     |   VLAN_E_VOIP_440   |            25            |      **/27**       |
+| **VLANIDs** | **VLAN Names** | **Necessary IPv4 Nodes** | **Network Prefix** |
+|:-----------:|:--------------:|:------------------------:|:------------------:|
+|     436     |      E_f0      |            45            |      **/26**       |
+|     437     |      E_f1      |            60            |      **/26**       |
+|     438     |     E_wifi     |            70            |      **/25**       |
+|     439     |     E_dmz      |            20            |      **/27**       |
+|     440     |     E_voip     |            25            |      **/27**       |
 
 
 |                           | Router Sub-interface Addresses/Config |  Subnet Mask  | Network Address  |   Network Mask   | First Node Address(IPv4 Address) |  Broadcast Address  |  Usable Addresses  |  Required Addresses  |

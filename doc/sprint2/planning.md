@@ -1,117 +1,133 @@
 RCOMP 2022-2023 Project - Sprint 2 planning
 ===========================================
 
-### Sprint master: 2222222 ###
+### Sprint master: 1210957 ###
 (This file is to be created/edited by the sprint master only)
 
 # 1. Sprint's backlog #
-(Copy here a summary of the provided sprint's backlog)
 
+> T.2.1 Development of a layer two and layer three Packet Tracer simulation for building A, encompassing the campus backbone.
+        Integration of every member’s Packet Tracer simulation into a single simulation.
+
+> T.2.2 Development of a layer two and layer three Packet Tracer simulation for building B, encompassing the campus backbone.
+
+> T.2.3 Development of a layer two and layer three Packet Tracer simulation for building C, encompassing the campus backbone.
+
+> T.2.4 Development of a layer two and layer three Packet Tracer simulation for building D, encompassing the campus backbone.
+
+> T.2.5 Development of a layer two and layer three Packet Tracer simulation for building E, encompassing the campus backbone.
 
 # 2. Technical decisions and coordination #
-In this section, all technical decisions taken in the planning meeting should be mentioned. 		Most importantly, all technical decisions impacting on the subtasks implementation must be settled on this 		meeting and specified here.
+
+* Packet Tracer version: 8.2.0.
+* SWITCH : 2960 or PT-switch.
+* Cable types: copper or fiber.
+* Redundancy: link aggregation between cross-connects according to previous sprint.
+* End devices: 
+
+          - A workstation (PC) connected to the VLAN for end-user outlets on the ground floor.
+
+          - A workstation (PC) connected to the VLAN for end-user outlets on the floor one.
+
+          - A Wireless laptop, associated with a wireless access-point (not a wireless router) connected to
+            the VLAN of the Wi-Fi network of the building(access point).
+
+          - A server connected to the DMZ VLAN of the building.
+
+          - A VoIP phone connected to the VoIP VLAN of the building(model 7960).
+
+* Static Routing: 2811 router model.
+
+## 2.1. VLANs and VTP
+
+* The VTP Domain name to be used is rc23ddg1.
+
+* The VLANID range to be used(415 - 445) :
+
+| **VLANIDs** | **VLAN Names** | **Necessary IPv4 Nodes** |
+|:-----------:|:--------------:|:------------------------:|
+|     415     |    backbone    |           100            |
+|     416     |      A_f1      |            70            |
+|     417     |     A_wifi     |           100            |
+|     418     |     A_dmz      |            90            |
+|     419     |      A_f0      |            40            |
+|     420     |     A_voip     |            35            |
+|     421     |                |                          |
+|     422     |                |                          |
+|     423     |                |                          |
+|     424     |                |                          |
+|     425     |                |                          |
+|     426     |      C_f0      |            40            |
+|     427     |      C_f1      |            50            |
+|     428     |     C_wifi     |            55            |
+|     429     |     C_dmz      |            20            |
+|     430     |     C_voip     |            25            |
+|     431     |     D_wifi     |            80            |
+|     432     |      D_f1      |            60            |
+|     433     |      D_f0      |            25            |
+|     434     |     D_dmz      |            10            |
+|     435     |     D_voip     |            13            |
+|     436     |      E_f0      |            45            |
+|     437     |      E_f1      |            60            |
+|     438     |     E_wifi     |            70            |
+|     439     |     E_dmz      |            20            |
+|     440     |     E_voip     |            25            |
+
+* VLANIDs 441 - 445 unused.
+
+## 2.2. WIFI channels
+
+| **Building** | **WIFI Names** |
+|:------------:|:--------------:|
+|      A       |   A_NETWORK    |
+|      B       |   B_NETWORK    |
+|      C       |   C_NETWORK    |
+|      D       |   D_NETWORK    |
+|      E       |   E_NETWORK    |
+
+## 2.3. Devices naming(naming rules)
+
+* Whenever we add a new device, the following rules were used:
+      
+      1º-Letter for the building (A,B,C,D,E).
+      2º-Device type (SW, RT, PC(computers), LP(laptops)).
+      3º-Function (CP, MC, IC, HC).
+      4º-Floor (0,1).
+      5º-Number.
+
+  Example: E_SW_IC_0_1
+
+## 3. IPV4 block addresses distribution
+
+### 3.1 Required block address sizes for each building
+
+  *Formula: (number of nodes + 2) rounded up to the next power of 2.*
+
+* Inside each tuple the notation X -> Y represent :
+    * X - nodes used.
+    * Y - block address size.
+
+| Location  |  0 floor  |  1 floor   |    WI-FI    |    DMZ     |   VOIP    |                 Required                 |                      Provided                       |
+|:---------:|:---------:|:----------:|:-----------:|:----------:|:---------:|:----------------------------------------:|:---------------------------------------------------:|
+|     A     | 40 -> 64  | 70 -> 128  | 100 -> 128  | 90 -> 128  | 35 -> 64  | Total: 640<br> A: 512 <br> BACKBONE: 128 | Total: 1024 /22<br>A: 1024 /23<br>BACKBONE: 128 /25 |
+|     B     | 25 -> 32  |  60 -> 64  | 110 -> 128  |  10 -> 16  | 35 -> 16  |                   256                    |                       256 /24                       |
+|     C     | 40 -> 64  |  50 -> 64  |  55 -> 64   |  20 -> 32  | 25 -> 32  |                   256                    |                       256 /24                       |
+|     D     | 25 -> 32  |  60 -> 64  |  80 -> 128  |  10 -> 16  | 13 -> 16  |                   256                    |                       256 /24                       |
+|     E     | 45 -> 64  |  60 -> 64  |  70 -> 128  |  20 -> 32  | 25 -> 32  |                   320                    |                       512 /23                       |
 
 
-#### Examples: ####
-  * Backbone cable types to be used
-  * VLAN IDs to be used
-  * VTP domains
-  * WiFi channels
-  * IPv4 networks' addresses and routers' addresses
-  * Routing protocols
-  * Application protocols outlining (further coordination may be required between members)
 
+### 3.2 IPV4 block addresses
+      Provided Address Block: 10.80.160.0/21
 
-# 3. Subtasks assignment #
-(For each team member (sprint master included), the description of the assigned subtask in sprint 2)
-
-
-## 4. IPV4 block addresses distribution
-
-### Required block address sizes for each building
-
-  **Formula : (nºnodes +2 ) arredondado a próxima potência de base 2**
-
-- A
-  0 floor : 40 -> 64
-  1 floor : 70 -> 128
-  WI-FI   : 100 -> 128
-  DMZ     : 90 -> 128
-  VOIP    : 35 -> 64  
-
-  **Required: 640**
-  **Provided: 1024 /22**
-
-  Required: 512 
-  Provided: 1024 /23
-
-  **backbone:100 ->128**  
-  Required: 128
-  Provided: 128 /25
-
-- B 
-
-  0 floor : 25 -> 32
-  1 floor : 60 -> 64
-  WI-FI   : 110 -> 128
-  DMZ     : 10 -> 16
-  VOIP    : 35 -> 16
-
-  Required: 256
-  Provided: 256 /24
-
-
-- C 
-
-  0 floor : 40 -> 64
-  1 floor : 50 -> 64
-  WI-FI   : 55 -> 64
-  DMZ     : 20 -> 32
-  VOIP    : 25 -> 32
-
-  Required: 256
-  Provided: 256 /24
-
-
-
-- D 
-
-  0 floor : 25 -> 32
-  1 floor : 60 -> 64
-  WI-FI   : 80 -> 128
-  DMZ     : 10 -> 16
-  VOIP    : 13 -> 16
-
-  Required: 256
-  Provided: 256 /24
-
-
-- E 
-
-  0 floor : 45 -> 64
-  1 floor : 60 -> 64
-  WI-FI   : 70 -> 128
-  DMZ     : 20 -> 32
-  VOIP    : 25 -> 32
-
-  Required: 320
-  Provided: 512 /
-
-### IPV4 block addresses
-      10.80.160.0/21
-
-A- 10.80.160.0/23 - 10.80.161.255/23
-
-E- 10.80.162.0/23 - 10.80.163.255/23
-
-B- 10.80.164.0/24 - 10.80.164.255/24 
-
-C- 10.80.165.0/24 - 10.80.165.255/24 
-
-D- 10.80.166.0/24 - 10.80.166.255/24 
-
-Backbone- 10.80.167.0/25 - 10.80.167.127/25 
-
+|   Network   |               Range                |
+|:-----------:|:----------------------------------:|
+|      A      | 10.80.160.0/23 - 10.80.161.255/23  |
+|      E      | 10.80.162.0/23 - 10.80.163.255/23  |
+|      B      | 10.80.164.0/24 - 10.80.164.255/24  |
+|      C      | 10.80.165.0/24 - 10.80.165.255/24  |
+|      D      | 10.80.166.0/24 - 10.80.166.255/24  |
+|  Backbone   | 10.80.167.0/25 - 10.80.167.127/25  |
 
 
 **The following diagram:**
@@ -138,8 +154,12 @@ Backbone- 10.80.167.0/25 - 10.80.167.127/25
                   25- 167.127
 
 
-#### Example: ####
-  * 1181478 - Structured cable design for building A, floors 2 and 3
-  * 1210951 - Structured cable design for building B, floors 0 and 1
-  * 1210954 - VLAN devices configuration for building C
-  * 1211155 - IPv4 addressing and routing configurations for building D
+#### Examples: ####
+* Backbone cable types to be used(DONE)
+* VLAN IDs to be used(DONE)
+* VTP domains(DONE)
+* WiFi channels(DONE)
+* IPv4 networks' addresses and routers' addresses(PARTIAL DONE)
+* Routing protocols
+* Application protocols outlining (further coordination may be required between members)
+
