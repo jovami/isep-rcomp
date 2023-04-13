@@ -85,4 +85,4 @@ These network prefixes can be used to configure the routers and switches for eac
 
 The following image represents a network simulation for the structured cabling project of Building C:
 
-![packt-tracer-sim](Packer_Tracer_Sim.png)
+![packet-tracer-sim](Packet_Tracer_Sim.png)

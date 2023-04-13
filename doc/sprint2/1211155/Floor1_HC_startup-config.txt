@@ -24,7 +24,7 @@ interface FastEthernet4/1
  switchport mode trunk
 !
 interface FastEthernet5/1
- switchport access vlan 430
+ switchport voice vlan 430
 !
 interface FastEthernet6/1
  switchport access vlan 427
