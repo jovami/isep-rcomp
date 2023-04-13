@@ -14,13 +14,13 @@ cabling project of Building C, emphasizing layer two infrastructure and layer th
 
 ## VLAN Distribution
 
-| VLAN ID |  VLAN Name  | No. nodes |         Description         |
-| :-----: | :---------: | :-------: | :-------------------------: |
-|   426   |  buildC_f0  |    40     | Network outlets for Floor 0 |
-|   427   |  buildC_f1  |    50     | Network outlets for Floor 1 |
-|   428   | buildC_wifi |    55     |        Wi-Fi Network        |
-|   429   | buildC_dmz  |    20     |          DMZ VLAN           |
-|   430   | buildC_voip |    25     |        VoIP network         |
+| VLAN ID | VLAN Name | No. nodes |         Description         |
+| :-----: | :-------: | :-------: | :-------------------------: |
+|   426   |   C_f0    |    40     | Network outlets for Floor 0 |
+|   427   |   C_f1    |    50     | Network outlets for Floor 1 |
+|   428   |  C_wifi   |    55     |        Wi-Fi Network        |
+|   429   |   C_dmz   |    20     |          DMZ VLAN           |
+|   430   |  C_voip   |    25     |        VoIP network         |
 
 # IPv4 addressing
 
@@ -32,11 +32,11 @@ is **10.80.165.0/24**
 To determine the necessary IPv4 networks for each VLAN in Building C, we need to perform IPv4 subnetting.
 We have 5 VLANs, each with different numbers of nodes:
 
-- VLAN buildC_f0 with 40 nodes
-- VLAN buildC_f1 with 50 nodes
-- VLAN buildC_wifi with 55 nodes
-- VLAN buildC_dmz with 20 nodes
-- VLAN buildC_voip with 25 nodes
+- VLAN C_f0 with 40 nodes
+- VLAN C_f1 with 50 nodes
+- VLAN C_wifi with 55 nodes
+- VLAN C_dmz with 20 nodes
+- VLAN C_voip with 25 nodes
 
 Using the **"bigger blocks first"** rule, we can follow these steps:
 
@@ -63,20 +63,20 @@ We can now determine the network prefix for each subnetwork using the formula X 
 where N is the number of required addresses rounded up to the next power of two.
 Here are the network prefixes for each subnetwork:
 
-- VLAN buildC_f0: 10.80.165.0/26
-- VLAN buildC_f1: 10.80.165.64/26
-- VLAN buildC_wifi: 10.80.165.128/26
-- VLAN buildC_dmz: 10.80.165.192/27
-- VLAN buildC_voip: 10.80.165.224/27
+- VLAN C_f0: 10.80.165.0/26
+- VLAN C_f1: 10.80.165.64/26
+- VLAN C_wifi: 10.80.165.128/26
+- VLAN C_dmz: 10.80.165.192/27
+- VLAN C_voip: 10.80.165.224/27
 
 These network prefixes can be used to configure the routers and switches for each VLAN in Building C.
 
 ### IPv4 Summary
 
-| VLAN        | Network Address | Subnet Mask           | Router Subinterface |
-| ----------- | --------------- | --------------------- | ------------------- |
-| buildC_f0   | 10.80.165.0     | 255.255.255.192 (/26) | FastEthernet0/0.1   |
-| buildC_f1   | 10.80.165.64    | 255.255.255.192 (/26) | FastEthernet0/0.2   |
-| buildC_wifi | 10.80.165.128   | 255.255.255.192 (/26) | FastEthernet0/0.3   |
-| buildC_dmz  | 10.80.165.192   | 255.255.255.224 (/27) | FastEthernet0/0.4   |
-| buildC_voip | 10.80.165.224   | 255.255.255.224 (/27) | FastEthernet0/0.5   |
+| VLAN   | Network Address | Subnet Mask           | Router Subinterface |
+| ------ | --------------- | --------------------- | ------------------- |
+| C_f0   | 10.80.165.0     | 255.255.255.192 (/26) | FastEthernet0/0.1   |
+| C_f1   | 10.80.165.64    | 255.255.255.192 (/26) | FastEthernet0/0.2   |
+| C_wifi | 10.80.165.128   | 255.255.255.192 (/26) | FastEthernet0/0.3   |
+| C_dmz  | 10.80.165.192   | 255.255.255.224 (/27) | FastEthernet0/0.4   |
+| C_voip | 10.80.165.224   | 255.255.255.224 (/27) | FastEthernet0/0.5   |
