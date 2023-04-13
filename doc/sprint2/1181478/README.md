@@ -66,9 +66,9 @@ To determine the IPv4 Networks necessary for each individual VLAN, IPv4 subnetti
 
 |                           | Router Sub-interface Addresses/Config |  Subnet Mask  | Network Address  |   Network Mask   | First Node Address(IPv4 Address) |  Broadcast Address  |  Usable Addresses  |  Required Addresses  |
 |:-------------------------:|:-------------------------------------:|:-------------:|:----------------:|:----------------:|:--------------------------------:|:-------------------:|:------------------:|:--------------------:|
-|       Wi-Fi Network       |           FastEthernet0/0.3           |      /25      |   10.80.162.0    | 255.255.255.128  |           10.80.162.1            |    10.80.162.127    |        126         |          70          |
-|  1st Floor User Outlets   |           FastEthernet0/0.2           |      /26      |  10.80.162.128   | 255.255.255.192  |          10.80.162.129           |    10.80.162.191    |         62         |          60          |
-| Ground Floor User Outlets |           FastEthernet0/0.1           |      /26      |  10.80.162.192   | 255.255.255.192  |          10.80.162.193           |    10.80.162.255    |         62         |          45          |
-|           VoIP            |           FastEthernet0/0.5           |      /27      |   10.80.163.0    | 255.255.255.224  |           10.80.163.1            |    10.80.163.31     |         30         |          25          |
-|       Building DMZ        |           FastEthernet0/0.4           |      /27      |   10.80.163.32   | 255.255.255.224  |           10.80.163.33           |    10.80.163.63     |         30         |          20          |
+|       Wi-Fi Network       |          FastEthernet0/0.438          |      /25      |   10.80.162.0    | 255.255.255.128  |           10.80.162.1            |    10.80.162.127    |        126         |          70          |
+|  1st Floor User Outlets   |          FastEthernet0/0.437          |      /26      |  10.80.162.128   | 255.255.255.192  |          10.80.162.129           |    10.80.162.191    |         62         |          60          |
+| Ground Floor User Outlets |          FastEthernet0/0.436          |      /26      |  10.80.162.192   | 255.255.255.192  |          10.80.162.193           |    10.80.162.255    |         62         |          45          |
+|           VoIP            |          FastEthernet0/0.440          |      /27      |   10.80.163.0    | 255.255.255.224  |           10.80.163.1            |    10.80.163.31     |         30         |          25          |
+|       Building DMZ        |          FastEthernet0/0.439          |      /27      |   10.80.163.32   | 255.255.255.224  |           10.80.163.33           |    10.80.163.63     |         30         |          20          |
 
