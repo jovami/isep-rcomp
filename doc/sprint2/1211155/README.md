@@ -75,11 +75,11 @@ These network prefixes can be used to configure the routers and switches for eac
 
 | VLAN ID | VLAN Name | Network Address | Subnet Mask           | Router Subinterface |
 | ------- | --------- | --------------- | --------------------- | ------------------- |
-| 426     | C_f0      | 10.80.165.0     | 255.255.255.192 (/26) | FastEthernet0/0.1   |
-| 427     | C_f1      | 10.80.165.64    | 255.255.255.192 (/26) | FastEthernet0/0.2   |
-| 428     | C_wifi    | 10.80.165.128   | 255.255.255.192 (/26) | FastEthernet0/0.3   |
-| 429     | C_dmz     | 10.80.165.192   | 255.255.255.224 (/27) | FastEthernet0/0.4   |
-| 430     | C_voip    | 10.80.165.224   | 255.255.255.224 (/27) | FastEthernet0/0.5   |
+| 426     | C_f0      | 10.80.165.0     | 255.255.255.192 (/26) | FastEthernet0/0.426 |
+| 427     | C_f1      | 10.80.165.64    | 255.255.255.192 (/26) | FastEthernet0/0.427 |
+| 428     | C_wifi    | 10.80.165.128   | 255.255.255.192 (/26) | FastEthernet0/0.428 |
+| 429     | C_dmz     | 10.80.165.192   | 255.255.255.224 (/27) | FastEthernet0/0.429 |
+| 430     | C_voip    | 10.80.165.224   | 255.255.255.224 (/27) | FastEthernet0/0.430 |
 
 # Packet Tacer Simulation
 
