@@ -80,3 +80,9 @@ These network prefixes can be used to configure the routers and switches for eac
 | 428     | C_wifi    | 10.80.165.128   | 255.255.255.192 (/26) | FastEthernet0/0.3   |
 | 429     | C_dmz     | 10.80.165.192   | 255.255.255.224 (/27) | FastEthernet0/0.4   |
 | 430     | C_voip    | 10.80.165.224   | 255.255.255.224 (/27) | FastEthernet0/0.5   |
+
+# Packet Tacer Simulation
+
+The following image represents a network simulation for the structured cabling project of Building C:
+
+![packt-tracer-sim](Packer_Tracer_Sim.png)
