@@ -23,14 +23,8 @@ interface FastEthernet2/1
 interface FastEthernet3/1
 !
 interface FastEthernet4/1
- switchport access vlan 419
 !
 interface FastEthernet5/1
- switchport access vlan 417
-!
-interface FastEthernet6/1
- switchport access vlan 420
- switchport voice vlan 420
 !
 interface Vlan1
  no ip address

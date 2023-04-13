@@ -19,7 +19,7 @@ no ipv6 cef
 !
 !
 !
-license udi pid CISCO2811/K9 sn FTX1017B6U2-
+license udi pid CISCO2811/K9 sn FTX1017G17I-
 !
 !
 !
@@ -43,42 +43,20 @@ interface FastEthernet0/0
  duplex auto
  speed auto
 !
-interface FastEthernet0/0.1
- no ip address
-!
-interface FastEthernet0/0.416
- encapsulation dot1Q 416
- ip address 10.80.160.1 255.255.255.128
-!
-interface FastEthernet0/0.417
- encapsulation dot1Q 417
- ip address 10.80.160.129 255.255.255.128
-!
-interface FastEthernet0/0.418
- encapsulation dot1Q 418
- ip address 10.80.161.1 255.255.255.128
-!
-interface FastEthernet0/0.419
- encapsulation dot1Q 419
- ip address 10.80.161.129 255.255.255.192
-!
-interface FastEthernet0/0.420
- encapsulation dot1Q 420
- ip address 10.80.161.193 255.255.255.192
-!
 interface FastEthernet0/1
  no ip address
  duplex auto
  speed auto
 !
 interface FastEthernet1/0
- no ip address
+ ip address 10.80.167.4 255.255.255.128
 !
 interface Vlan1
  no ip address
  shutdown
 !
 ip classless
+ip route 0.0.0.0 0.0.0.0 10.80.167.1 
 !
 ip flow-export version 9
 !
