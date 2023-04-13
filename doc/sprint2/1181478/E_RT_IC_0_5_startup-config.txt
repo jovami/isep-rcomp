@@ -42,7 +42,6 @@ interface FastEthernet0/0
  no ip address
  duplex auto
  speed auto
- shutdown
 !
 interface FastEthernet0/0.436
  encapsulation dot1Q 436
@@ -72,11 +71,12 @@ interface FastEthernet0/1
 !
 interface FastEthernet1/0
  no ip address
- shutdown
 !
 interface Vlan1
  no ip address
  shutdown
+!
+router rip
 !
 ip classless
 !
