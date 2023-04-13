@@ -11,11 +11,11 @@ name a_f0
 vlan 420
 name a_voip
 vlan 421
-name b_f0
+name b_wifi
 vlan 422
 name b_f1
 vlan 423
-name b_wifi
+name b_f0
 vlan 424
 name b_dmz
 vlan 425
