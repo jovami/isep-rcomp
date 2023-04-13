@@ -72,3 +72,5 @@ To determine the IPv4 Networks necessary for each individual VLAN, IPv4 subnetti
 |           VoIP            |          FastEthernet0/0.440          |      /27      |   10.80.163.0    | 255.255.255.224  |           10.80.163.1            |    10.80.163.31     |         30         |          25          |
 |       Building DMZ        |          FastEthernet0/0.439          |      /27      |   10.80.163.32   | 255.255.255.224  |           10.80.163.33           |    10.80.163.63     |         30         |          20          |
 
+
+![packt-tracer-sim](building_E.png)

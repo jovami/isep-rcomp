@@ -52,11 +52,11 @@ RCOMP 2022-2023 Project - Sprint 2 planning
 |     418     |     A_dmz      |            90            |
 |     419     |      A_f0      |            40            |
 |     420     |     A_voip     |            35            |
-|     421     |                |                          |
-|     422     |                |                          |
-|     423     |                |                          |
-|     424     |                |                          |
-|     425     |                |                          |
+|     421     |     B_wifi     |           110            |
+|     422     |      B_f1      |            60            |
+|     423     |      B_f0      |            25            |
+|     424     |     B_dmz      |            10            |
+|     425     |     B_voip     |            13            |
 |     426     |      C_f0      |            40            |
 |     427     |      C_f1      |            50            |
 |     428     |     C_wifi     |            55            |
@@ -154,12 +154,24 @@ RCOMP 2022-2023 Project - Sprint 2 planning
                   25- 167.127
 
 
-#### Examples: ####
-* Backbone cable types to be used(DONE)
-* VLAN IDs to be used(DONE)
-* VTP domains(DONE)
-* WiFi channels(DONE)
-* IPv4 networks' addresses and routers' addresses(PARTIAL DONE)
-* Routing protocols
-* Application protocols outlining (further coordination may be required between members)
+## 4. Routing tables
+
+| Network | Destination address | subnet-mask |  next-hop   |
+|:-------:|:-------------------:|:-----------:|:-----------:|
+|    A    |       0.0.0.0       |   0.0.0.0   | 10.80.167.1 |
+|    B    |       0.0.0.0       |   0.0.0.0   | 10.80.167.1 |
+|    C    |       0.0.0.0       |   0.0.0.0   | 10.80.167.1 |
+|    D    |       0.0.0.0       |   0.0.0.0   | 10.80.167.1 |
+|    E    |       0.0.0.0       |   0.0.0.0   | 10.80.167.1 |
+
+
+| Network  |   Destination address    |       subnet-mask       |        next-hop        |
+|:--------:|:------------------------:|:-----------------------:|:----------------------:|
+|    A     |       10.80.160.0        |      255.255.254.0      |      10.80.167.2       |
+|    E     |       10.80.162.0        |      255.255.254.0      |      10.80.167.6       |
+|    B     |       10.80.164.0        |      255.255.255.0      |      10.80.167.3       |
+|    C     |       10.80.165.0        |      255.255.255.0      |      10.80.167.4       |
+|    D     |       10.80.166.0        |      255.255.255.0      |      10.80.167.5       |
+| FALLBACK |         0.0.0.0          |         0.0.0.0         |     121.60.202.74      |
+
 
