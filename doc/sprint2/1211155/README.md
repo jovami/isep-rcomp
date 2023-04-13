@@ -73,10 +73,10 @@ These network prefixes can be used to configure the routers and switches for eac
 
 ### IPv4 Summary
 
-| VLAN   | Network Address | Subnet Mask           | Router Subinterface |
-| ------ | --------------- | --------------------- | ------------------- |
-| C_f0   | 10.80.165.0     | 255.255.255.192 (/26) | FastEthernet0/0.1   |
-| C_f1   | 10.80.165.64    | 255.255.255.192 (/26) | FastEthernet0/0.2   |
-| C_wifi | 10.80.165.128   | 255.255.255.192 (/26) | FastEthernet0/0.3   |
-| C_dmz  | 10.80.165.192   | 255.255.255.224 (/27) | FastEthernet0/0.4   |
-| C_voip | 10.80.165.224   | 255.255.255.224 (/27) | FastEthernet0/0.5   |
+| VLAN ID | VLAN Name | Network Address | Subnet Mask           | Router Subinterface |
+| ------- | --------- | --------------- | --------------------- | ------------------- |
+| 426     | C_f0      | 10.80.165.0     | 255.255.255.192 (/26) | FastEthernet0/0.1   |
+| 427     | C_f1      | 10.80.165.64    | 255.255.255.192 (/26) | FastEthernet0/0.2   |
+| 428     | C_wifi    | 10.80.165.128   | 255.255.255.192 (/26) | FastEthernet0/0.3   |
+| 429     | C_dmz     | 10.80.165.192   | 255.255.255.224 (/27) | FastEthernet0/0.4   |
+| 430     | C_voip    | 10.80.165.224   | 255.255.255.224 (/27) | FastEthernet0/0.5   |
