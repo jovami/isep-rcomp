@@ -130,7 +130,7 @@ RCOMP 2022-2023 Project - Sprint 2 planning
 |  Backbone   | 10.80.167.0/25 - 10.80.167.127/25  |
 
 
-**The following diagram:**
+**The following diagram represents the network adresses layout between buildings:**
 
           23-160(A)
           |
