@@ -30,10 +30,7 @@ interface FastEthernet4/1
  switchport mode trunk
 !
 interface FastEthernet5/1
- switchport access vlan 416
-!
-interface FastEthernet6/1
- switchport access vlan 418
+ switchport mode trunk
 !
 interface Vlan1
  no ip address
