@@ -20,7 +20,7 @@ RCOMP 2022-2023 Project - Sprint 2 planning
 # 2. Technical decisions and coordination #
 
 * Packet Tracer version: 8.2.0.
-* SWITCH : 2960 or PT-switch.
+* SWITCH : 2960 or PT-empty.
 * Cable types: copper or fiber.
 * Redundancy: link aggregation between cross-connects according to previous sprint.
 * End devices: 
@@ -34,7 +34,7 @@ RCOMP 2022-2023 Project - Sprint 2 planning
 
           - A server connected to the DMZ VLAN of the building.
 
-          - A VoIP phone connected to the VoIP VLAN of the building(model 7960).
+          - A VoIP phone connected by voice to the VoIP VLAN of the building(model 7960).
 
 * Static Routing: 2811 router model.
 
@@ -45,7 +45,7 @@ RCOMP 2022-2023 Project - Sprint 2 planning
 * The VLANID range to be used(415 - 445) :
 
 | **VLANIDs** | **VLAN Names** | **Necessary IPv4 Nodes** |
-|:-----------:|:--------------:|:------------------------:|
+| :---------: | :------------: | :----------------------: |
 |     415     |    backbone    |           100            |
 |     416     |      A_f1      |            70            |
 |     417     |     A_wifi     |           100            |
@@ -78,7 +78,7 @@ RCOMP 2022-2023 Project - Sprint 2 planning
 ## 2.2. WIFI channels
 
 | **Building** | **WIFI Names** |
-|:------------:|:--------------:|
+| :----------: | :------------: |
 |      A       |   A_NETWORK    |
 |      B       |   B_NETWORK    |
 |      C       |   C_NETWORK    |
@@ -90,7 +90,7 @@ RCOMP 2022-2023 Project - Sprint 2 planning
 * Whenever we add a new device, the following rules were used:
       
       1º-Letter for the building (A,B,C,D,E).
-      2º-Device type (SW, RT, PC(computers), LP(laptops)).
+      2º-Device type (SW, RT, AP, PC(computers), LP(laptops), SV(server)).
       3º-Function (CP, MC, IC, HC).
       4º-Floor (0,1).
       5º-Number.
@@ -107,71 +107,68 @@ RCOMP 2022-2023 Project - Sprint 2 planning
     * X - nodes used.
     * Y - block address size.
 
-| Location  |  0 floor  |  1 floor   |    WI-FI    |    DMZ     |   VOIP    |                 Required                 |                      Provided                       |
-|:---------:|:---------:|:----------:|:-----------:|:----------:|:---------:|:----------------------------------------:|:---------------------------------------------------:|
-|     A     | 40 -> 64  | 70 -> 128  | 100 -> 128  | 90 -> 128  | 35 -> 64  | Total: 640<br> A: 512 <br> BACKBONE: 128 | Total: 1024 /22<br>A: 1024 /23<br>BACKBONE: 128 /25 |
-|     B     | 25 -> 32  |  60 -> 64  | 110 -> 128  |  10 -> 16  | 35 -> 16  |                   256                    |                       256 /24                       |
-|     C     | 40 -> 64  |  50 -> 64  |  55 -> 64   |  20 -> 32  | 25 -> 32  |                   256                    |                       256 /24                       |
-|     D     | 25 -> 32  |  60 -> 64  |  80 -> 128  |  10 -> 16  | 13 -> 16  |                   256                    |                       256 /24                       |
-|     E     | 45 -> 64  |  60 -> 64  |  70 -> 128  |  20 -> 32  | 25 -> 32  |                   320                    |                       512 /23                       |
+| Location | 0 floor  |  1 floor  |   WI-FI    |    DMZ    |   VOIP   |                 Required                 |                      Provided                       |
+| :------: | :------: | :-------: | :--------: | :-------: | :------: | :--------------------------------------: | :-------------------------------------------------: |
+|    A     | 40 -> 64 | 70 -> 128 | 100 -> 128 | 90 -> 128 | 35 -> 64 | Total: 640<br> A: 512 <br> BACKBONE: 128 | Total: 1024 /22<br>A: 1024 /23<br>BACKBONE: 128 /25 |
+|    B     | 25 -> 32 | 60 -> 64  | 110 -> 128 | 10 -> 16  | 35 -> 16 |                   256                    |                       256 /24                       |
+|    C     | 40 -> 64 | 50 -> 64  |  55 -> 64  | 20 -> 32  | 25 -> 32 |                   256                    |                       256 /24                       |
+|    D     | 25 -> 32 | 60 -> 64  | 80 -> 128  | 10 -> 16  | 13 -> 16 |                   256                    |                       256 /24                       |
+|    E     | 45 -> 64 | 60 -> 64  | 70 -> 128  | 20 -> 32  | 25 -> 32 |                   320                    |                       512 /23                       |
 
 
 
 ### 3.2 IPV4 block addresses
       Provided Address Block: 10.80.160.0/21
 
-|   Network   |               Range                |
-|:-----------:|:----------------------------------:|
-|      A      | 10.80.160.0/23 - 10.80.161.255/23  |
-|      E      | 10.80.162.0/23 - 10.80.163.255/23  |
-|      B      | 10.80.164.0/24 - 10.80.164.255/24  |
-|      C      | 10.80.165.0/24 - 10.80.165.255/24  |
-|      D      | 10.80.166.0/24 - 10.80.166.255/24  |
-|  Backbone   | 10.80.167.0/25 - 10.80.167.127/25  |
+| Network  |               Range               |
+| :------: | :-------------------------------: |
+|    A     | 10.80.160.0/23 - 10.80.161.255/23 |
+|    E     | 10.80.162.0/23 - 10.80.163.255/23 |
+|    B     | 10.80.164.0/24 - 10.80.164.255/24 |
+|    C     | 10.80.165.0/24 - 10.80.165.255/24 |
+|    D     | 10.80.166.0/24 - 10.80.166.255/24 |
+| Backbone | 10.80.167.0/25 - 10.80.167.127/25 |
 
+<br>
 
 **The following diagram represents the network adresses layout between buildings:**
 
-          23-160(A)
-          |
-      22-160
-      |   |
-      |  23-162(E)
-    21-160
-      |       24-164(B)
-      |       |
-      |   23-164
-      |   |   |
-      |   |   24-165(C)
-      22-164 
-          |   24-166(D)
-          |   | 
-          23-166
-              |   25- 167.0
-              |   |
-              24-167
-                  | 
-                  25- 167.127
 
+<img src="networkAddressLayout.jpg"  width="500">
+
+<br>
 
 ## 4. Routing tables
 
-| Network | Destination address | subnet-mask |  next-hop   |
-|:-------:|:-------------------:|:-----------:|:-----------:|
-|    A    |       0.0.0.0       |   0.0.0.0   | 10.80.167.1 |
-|    B    |       0.0.0.0       |   0.0.0.0   | 10.80.167.1 |
-|    C    |       0.0.0.0       |   0.0.0.0   | 10.80.167.1 |
-|    D    |       0.0.0.0       |   0.0.0.0   | 10.80.167.1 |
-|    E    |       0.0.0.0       |   0.0.0.0   | 10.80.167.1 |
+<br>
 
+### ISP_Router
+|   Network   |     Mask      |   Next Hop    |
+| :---------: | :-----------: | :-----------: |
+| 10.80.160.0 | 255.255.248.0 | 121.60.202.73 |
 
-| Network  |   Destination address    |       subnet-mask       |        next-hop        |
-|:--------:|:------------------------:|:-----------------------:|:----------------------:|
-|    A     |       10.80.160.0        |      255.255.254.0      |      10.80.167.2       |
-|    E     |       10.80.162.0        |      255.255.254.0      |      10.80.167.6       |
-|    B     |       10.80.164.0        |      255.255.255.0      |      10.80.167.3       |
-|    C     |       10.80.165.0        |      255.255.255.0      |      10.80.167.4       |
-|    D     |       10.80.166.0        |      255.255.255.0      |      10.80.167.5       |
-| FALLBACK |         0.0.0.0          |         0.0.0.0         |     121.60.202.74      |
+<br>
+
+### Entrance_RT 
+|   Network   |     Mask      |   Next Hop    |
+| :---------: | :-----------: | :-----------: |
+| 10.80.160.0 | 255.255.254.0 |  10.80.167.2  |
+| 10.80.164.0 | 255.255.255.0 |  10.80.167.3  |
+| 10.80.165.0 | 255.255.255.0 |  10.80.167.4  |
+| 10.80.166.0 | 255.255.255.0 |  10.80.167.5  |
+| 10.80.162.0 | 255.255.254.0 |  10.80.167.6  |
+|   0.0.0.0   |    0.0.0.0    | 121.60.202.74 |
+
+<br>
+
+### Building Routers
+|   Device    | Network |  Mask   |  Next Hop   |
+| :---------: | :-----: | :-----: | :---------: |
+| A_RT_IC_0_1 | 0.0.0.0 | 0.0.0.0 | 10.80.167.1 |
+| B_RT_IC_0_2 | 0.0.0.0 | 0.0.0.0 | 10.80.167.1 |
+| C_RT_IC_0_3 | 0.0.0.0 | 0.0.0.0 | 10.80.167.1 |
+| D_RT_IC_0_4 | 0.0.0.0 | 0.0.0.0 | 10.80.167.1 |
+| E_RT_IC_0_5 | 0.0.0.0 | 0.0.0.0 | 10.80.167.1 |
+
 
 
