@@ -9,7 +9,26 @@ hostname Router
 !
 !
 !
+ip dhcp excluded-address 10.80.160.1
+ip dhcp excluded-address 10.80.160.129
+ip dhcp excluded-address 10.80.161.1
+ip dhcp excluded-address 10.80.161.129
+ip dhcp excluded-address 10.80.161.193
+ip dhcp excluded-address 10.80.161.1 10.80.161.127
 !
+ip dhcp pool f1
+ network 10.80.160.0 255.255.255.128
+ default-router 10.80.160.1
+ip dhcp pool wifi
+ network 10.80.160.128 255.255.255.128
+ default-router 10.80.160.129
+ip dhcp pool f0
+ network 10.80.161.128 255.255.255.192
+ default-router 10.80.161.129
+ip dhcp pool voip
+ network 10.80.161.192 255.255.255.192
+ default-router 10.80.161.193
+ option 150 ip 10.80.161.193
 !
 !
 !
