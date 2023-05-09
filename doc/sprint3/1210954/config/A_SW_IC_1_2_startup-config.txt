@@ -35,6 +35,9 @@ interface FastEthernet5/1
 interface FastEthernet6/1
  switchport access vlan 418
 !
+interface FastEthernet7/1
+ switchport access vlan 418
+!
 interface Vlan1
  no ip address
  shutdown
