@@ -29,6 +29,11 @@ interface FastEthernet5/1
  switchport access vlan 417
 !
 interface FastEthernet6/1
+ switchport mode access
+ switchport voice vlan 420
+!
+interface FastEthernet7/1
+ switchport mode access
  switchport voice vlan 420
 !
 interface Vlan1
