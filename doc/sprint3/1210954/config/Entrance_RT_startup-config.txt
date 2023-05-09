@@ -56,15 +56,20 @@ interface Vlan1
  no ip address
  shutdown
 !
+router ospf 1
+ log-adjacency-changes
+ network 10.80.167.0 0.0.0.127 area 0
+ network 10.80.160.0 0.0.1.255 area 1
+ network 10.80.162.0 0.0.1.255 area 5
+ network 10.80.164.0 0.0.0.255 area 2
+ network 10.80.165.0 0.0.0.255 area 3
+ network 10.80.166.0 0.0.0.255 area 4
+ default-information originate
+!
 router rip
 !
 ip classless
-ip route 10.80.162.0 255.255.254.0 10.80.167.6 
-ip route 10.80.164.0 255.255.255.0 10.80.167.3 
-ip route 10.80.165.0 255.255.255.0 10.80.167.4 
-ip route 10.80.166.0 255.255.255.0 10.80.167.5 
 ip route 0.0.0.0 0.0.0.0 121.60.202.74 
-ip route 10.80.160.0 255.255.254.0 10.80.167.2 
 !
 ip flow-export version 9
 !

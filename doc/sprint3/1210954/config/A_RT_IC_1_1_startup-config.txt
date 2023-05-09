@@ -78,8 +78,12 @@ interface Vlan1
  no ip address
  shutdown
 !
+router ospf 1
+ log-adjacency-changes
+ network 10.80.160.0 0.0.1.255 area 1
+ network 10.80.167.0 0.0.0.127 area 0
+!
 ip classless
-ip route 0.0.0.0 0.0.0.0 10.80.167.1 
 !
 ip flow-export version 9
 !

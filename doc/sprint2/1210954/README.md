@@ -47,12 +47,12 @@ network and broadcast addresses.
 3. Sort the VLANs in decreasing order of **N** (VLANs with the same N are considered equivalent).
 This thus establishes an ordering within the VLANs.
 4. Each VLAN will end at `last_addr := initial_addr + N - 1` and will have a subnet mask
-of **/X**, where `X = 32 - log_2(N)`
+of **/X**, where `X := 32 - log_2(N)`
 5. The first VLAN will start at **10.80.160.0** (beginning of the addresses chunk).
 6. Every other VLAN will start at `initial_addr := last_addr_of_previous + 1`
 
 
-#### Summary
+### Summary
 
 | VLAN ID   | Network Address   | Subnet Mask           | Router Subinterface   |
 |:----------:|:----------------:|:---------------------:|:---------------------:|
