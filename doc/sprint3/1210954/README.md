@@ -142,6 +142,7 @@ dial-peer voice 5 voip
 **DNS Domain Name:** `rcomp-22-23-dd-g9`
 
 DNS records:
+
 ![dns_records](./dnsconfig.png)
 
 # Address Translation (NAT)
