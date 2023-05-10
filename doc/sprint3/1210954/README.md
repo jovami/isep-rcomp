@@ -3,17 +3,17 @@ RCOMP 2022-2023 Project - Sprint 3 - Member 1210954 folder
 
 # OSPF
 
-All static routes (except the default) were removed:
+All static routes (except the backbone default) were removed:
 ```bash
 # Backbone router
-ip route 10.80.162.0 255.255.254.0 10.80.167.6
-ip route 10.80.164.0 255.255.255.0 10.80.167.3
-ip route 10.80.165.0 255.255.255.0 10.80.167.4
-ip route 10.80.166.0 255.255.255.0 10.80.167.5
-ip route 10.80.160.0 255.255.254.0 10.80.167.2
+no ip route 10.80.162.0 255.255.254.0 10.80.167.6
+no ip route 10.80.164.0 255.255.255.0 10.80.167.3
+no ip route 10.80.165.0 255.255.255.0 10.80.167.4
+no ip route 10.80.166.0 255.255.255.0 10.80.167.5
+no ip route 10.80.160.0 255.255.254.0 10.80.167.2
 
 # Building A router
-ip route 0.0.0.0 0.0.0.0 10.80.167.1
+no ip route 0.0.0.0 0.0.0.0 10.80.167.1
 ```
 
 ## Backbone OSPF
