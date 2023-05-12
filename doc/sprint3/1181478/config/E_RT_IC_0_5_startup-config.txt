@@ -1,0 +1,146 @@
+!
+version 15.1
+no service timestamps log datetime msec
+no service timestamps debug datetime msec
+no service password-encryption
+!
+hostname Router
+!
+!
+!
+!
+!
+!
+!
+!
+no ip cef
+no ipv6 cef
+!
+!
+!
+!
+license udi pid CISCO2811/K9 sn FTX10177VGN-
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+spanning-tree mode pvst
+!
+!
+!
+!
+!
+!
+interface FastEthernet0/0
+ no ip address
+ duplex auto
+ speed auto
+!
+interface FastEthernet0/0.436
+ encapsulation dot1Q 436
+ ip address 10.80.162.193 255.255.255.192
+!
+interface FastEthernet0/0.437
+ encapsulation dot1Q 437
+ ip address 10.80.162.129 255.255.255.192
+!
+interface FastEthernet0/0.438
+ encapsulation dot1Q 438
+ ip address 10.80.162.1 255.255.255.128
+!
+interface FastEthernet0/0.439
+ encapsulation dot1Q 439
+ ip address 10.80.163.33 255.255.255.224
+!
+interface FastEthernet0/0.440
+ encapsulation dot1Q 440
+ ip address 10.80.163.1 255.255.255.224
+!
+interface FastEthernet0/1
+ no ip address
+ duplex auto
+ speed auto
+ shutdown
+!
+interface FastEthernet1/0
+ ip address 10.80.167.6 255.255.255.128
+!
+interface Vlan1
+ no ip address
+ shutdown
+!
+router ospf 5
+ log-adjacency-changes
+ network 10.80.162.0 0.0.1.255 area 5
+ network 10.80.167.0 0.0.0.127 area 0
+!
+router rip
+!
+ip classless
+!
+ip flow-export version 9
+!
+!
+!
+!
+!
+!
+!
+dial-peer voice 1 voip
+ destination-pattern 1...
+ session target ipv4:10.80.167.2
+!
+dial-peer voice 2 voip
+ destination-pattern 2...
+ session target ipv4:10.80.167.3
+!
+dial-peer voice 3 voip
+ destination-pattern 3...
+ session target ipv4:10.80.167.4
+!
+dial-peer voice 4 voip
+ destination-pattern 4...
+ session target ipv4:10.80.167.5
+!
+telephony-service
+ max-ephones 25
+ max-dn 25
+ ip source-address 10.80.163.1 port 2000
+ auto assign 1 to 25
+!
+ephone-dn 1
+ number 5000
+!
+ephone-dn 2
+ number 5001
+!
+ephone 1
+ device-security-mode none
+ mac-address 00D0.9735.17B4
+ type 7960
+ button 1:1
+!
+ephone 2
+ device-security-mode none
+ mac-address 0000.0C26.1398
+ type 7960
+ button 1:2
+!
+line con 0
+!
+line aux 0
+!
+line vty 0 4
+ login
+!
+!
+!
+end
+
