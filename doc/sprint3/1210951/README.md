@@ -9,92 +9,166 @@
     network 10.80.167.0 255.255.255.128 area 0 - backbone
 
 ## 2.HTTP
-Server - B_SV_0_1_HTTP:
+Server - B_SV_0_2_HTTP:
 - IP: 10.80.164.243 /28
-- DG: 10.80.164.241 /27
+- DG: 10.80.164.241 /28
 
 ## 3.DHCP
 
 ### Requirements:
-- exclude dmz
-- backbone(?) 
-- use option  105 to VOIP  
-
-**definir dns domain ???**
-
-"show run":
 
     ip dhcp pool wifi
     network 10.80.164.0 255.255.255.128
     default-router 10.80.164.1
+    dns-server 10.80.164.242
+    domain-name building-b.rcomp-22-23-dd-g09
 
     ip dhcp pool f1
     network 10.80.164.128 255.255.255.192
     default-router 10.80.164.129
+    dns-server 10.80.164.242
+    domain-name building-b.rcomp-22-23-dd-g09
 
     ip dhcp pool f0
     network 10.80.164.192 255.255.255.224
     default-router 10.80.164.193
+    dns-server 10.80.164.242
+    domain-name building-b.rcomp-22-23-dd-g09
 
     ip dhcp pool voip
-    network 10.80.164.240 255.255.255.240
-    default-router 10.80.164.241
-    option 150 ip 10.80.164.241
+    network 10.80.164.224 255.255.255.240
+    default-router 10.80.164.225
+    option 150 ip 10.80.164.225
+
+- exclude dmz 
+- use option  105 to VOIP  
+
 
 ## 4. VoIP service
 
+### Campus connections:
+
+    dial-peer voice 1 voip
+    destination-pattern 1...
+    session target ipv4:10.80.167.2
+    !
+    dial-peer voice 2 voip
+    destination-pattern 2...
+    session target ipv4:10.80.167.3
+    !
+    dial-peer voice 3 voip
+    destination-pattern 3...
+    session target ipv4:10.80.167.4
+    !
+    dial-peer voice 4 voip
+    destination-pattern 1...
+    session target ipv4:10.80.167.5
+    !
+
+    dial-peer voice 5 voip
+    destination-pattern 5...
+    session target ipv4:10.80.167.6
+
+
+### Building VOIP configure:
+    telephony-service
+    max-ephones 2
+    max-dn 2
+    ip source-address 10.80.164.225 port 2000
+    auto assign 1 to 2
+
+    ephone-dn 1
+    number 2001
+    !
+    ephone-dn 2
+    number 2002
+    !
+
+
 ## 5. DNS
+
+Server - B_SV_0_1_DNS:
+- IP: 10.80.164.242 /28
+- DG: 10.80.164.241 /28
+
 
 
 ## 6. NAT
 
-interface FastEthernet1/0
-ip address 10.80.167.3 255.255.255.128
+interface FastEthernet1/0<br>
+ip address 10.80.167.3 255.255.255.128<br>
 ip nat outside
 
-interface FastEthernet0/0
-no ip address
-ip nat inside
-duplex auto
-speed auto
 
-ip nat inside source static tcp 10.80.164.243 80 10.80.167.3 80 
-ip nat inside source static tcp 10.80.164.243 443 10.80.167.3 443
-ip nat inside source static tcp 10.80.164.242 53 10.80.167.3 53 
-ip nat inside source static udp 10.80.164.242 53 10.80.167.3 53 
+NOTE: NAT it is only used to translate packets related to dns and http(dmz devices) so **only the subinterface related to dmz** needs to have the nat side configured
+
+interface FastEthernet0/0.5<br>
+ encapsulation dot1Q 424<br>
+ ip address 10.80.164.241 255.255.255.240<br>
+ ip nat inside<br>
+
+    ip nat inside source static tcp 10.80.164.243 80 10.80.167.3 80 
+    ip nat inside source static tcp 10.80.164.243 443 10.80.167.3 443
+    ip nat inside source static tcp 10.80.164.242 53 10.80.167.3 53 
+    ip nat inside source static udp 10.80.164.242 53 10.80.167.3 53 
+
+## 7. Static Firewall (ACL)
+
+1. Interface Fa 0/0    (INTRANET)
+
+Allow internal nodes to reach any ip (all newtowrk)
+- access-list 120 permit ip 10.80.164.0 0.0.0.127 any
+- access-list 120 permit ip 10.80.164.128 0.0.0.63 any
+- access-list 120 permit ip 10.80.164.192 0.0.0.31 any
+- access-list 120 permit ip 10.80.164.224 0.0.0.15 any
+- access-list 120 permit ip 10.80.164.240 0.0.0.15 any
+
+**2**
+Allow internal nodes to request and answer icmp requests
+- access-list 120 permit icmp 10.80.164.0 0.0.0.255 any echo
+- access-list 120 permit icmp 10.80.164.0 0.0.0.255 any echo-reply
+
+**3**
+Allow HTTP server to be reached by any tcp packet using HTTP(80) AND HTTP(443)
+- access-list 120 permit tcp any host 10.80.164.243 eq www
+- access-list 120 permit tcp any host 10.80.164.243 eq 443
+
+Allow DNS server to be reached by any packet using udp on port domain(52)
+- access-list 120 permit udp any host 10.80.164.242 eq domain
+        - access-list 120 permit tcp any host 10.80.164.242 eq domain
+
+Deny all the other traffic that comes to the dmz server
+- access-list 120 deny ip any 10.80.146.240 0.0.0.15
 
 
+?????????
+- access-list 120 deny ip any host 10.80.164.0
 
-## 7. Static Firewall(ACL)
-access-list 105 deny ip 10.80.164.0 0.0.0.255 any
-
-
-## IPv4 Addressing
-
-- IPv4 address block for building B network: **10.80.164.0/24**.
-
-|       Network    | Router Sub-interface Addresses/Config | Network Address | Default Gateway|End Node Device IPV4 | Broadcast Address | Usable Addresses |
-| :--------------: | :-----------------------------------: | :-------------:  | :---------------: | :---------------: | :--------------:|:--------------:|
-| Wireless Network |          FastEthernet0/0.1          | 10.80.164.0 /25    |  10.80.164.1    |    10.80.164.2      |   10.80.164.127   |       126        |
-|    Outlets F1    |          FastEthernet0/0.2          | 10.80.164.128 /26  |  10.80.164.129    |   10.80.164.130     |   10.80.164.191   |        62        |
-|    Outlets F0    |          FastEthernet0/0.3          | 10.80.164.192 /27  |  10.80.164.193    |   10.80.164.194     |   10.80.164.223   |        30        |
-|       VoIP       |          FastEthernet0/0.5          | 10.80.164.240 /28  |  10.80.164.241    |    ------------     |   10.80.164.255   |        14        |
-|       DMZ        |          FastEthernet0/0.4          | 10.80.164.224 /28  |  10.80.164.225    |   10.80.164.226     |   10.80.164.239   |        14        |
+2. Inteface Fa1/0  (INTERNET)
 
 
+**1** Block external spoofing:
+- access-list 121 deny ip 10.80.164.0 0.0.0.255 any
 
-## VTP DOMAIN
+**2**Allow all icmp requests/replies
+- access-list 121 permit icmp any any echo
+- access-list 121 permit icmp any any echo-reply
 
-- The VTP Domain name to be used is **rc23ddg1**.
+**3**Allow HTTP(80)/HTTPS(443) access to 10.80.164.243(B_SV_0_2_HTTP)
+- access-list 121 permit tcp any host 10.80.164.243 eq www
+- access-list 121 permit tcp any host 10.80.164.243 eq 443
 
-## VLANIDs
+Allow DNS server to be reached by any packet using udp on port domain(52)
+- access-list 121 permit udp any host 10.80.164.242 eq domain
+        - access-list 121 permit tcp any host 10.80.164.242 eq domain
 
-- The VLANID range to be used is **421 - 425**.
+# **Allow ospf to be used ??**
+- access-list 121 permit ospf any any**
 
-| **VLANIDs** | **VLAN Names** | **Nodes** |                  **Description**                   |
-| :---------: | :------------: | :-------: | :------------------------------------------------: |
-|     421     |     B_f0       |    25     |VLAN for all end-user outlets at the ground floor.  |
-|     422     |      B_f1      |    60     |   A VLAN for all end-user outlets at floor one.    |
-|     423     |      B_wifi    |    110    |VLAN for the Wireless Network.                      |
-|     424     |     B_dmz      |    10     |             VLAN for the building DMZ.             |
-|     425     |     B_voip     |    13     |                   VLAN for VoIP.                   |
+
+Allow any dmz requests?
+- access-list 121 permit ip any 10.80.164.224 0.0.0.15
+
+
+Allow any host to acces router's backbone interface
+- access-list 121 permit ip any host 10.80.167.3
