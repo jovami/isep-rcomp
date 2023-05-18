@@ -20,23 +20,23 @@ ip dhcp pool f0
  network 10.80.165.0 255.255.255.192
  default-router 10.80.165.1
  dns-server 10.80.165.194
- domain-name rcomp-22-23-dd-g9
+ domain-name building-c.rcomp-22-23-dd-g9
 ip dhcp pool f1
  network 10.80.165.64 255.255.255.192
  default-router 10.80.165.65
  dns-server 10.80.165.194
- domain-name rcomp-22-23-dd-g9
+ domain-name building-c.rcomp-22-23-dd-g9
 ip dhcp pool wifi
  network 10.80.165.128 255.255.255.192
  default-router 10.80.165.129
  dns-server 10.80.165.194
- domain-name rcomp-22-23-dd-g9
+ domain-name building-c.rcomp-22-23-dd-g9
 ip dhcp pool voip
- network 10.80.165.224 255.255.255.192
+ network 10.80.165.224 255.255.255.224
  default-router 10.80.165.225
- dns-server 10.80.165.194
- domain-name rcomp-22-23-dd-g9
  option 150 ip 10.80.165.225
+ dns-server 10.80.165.194
+ domain-name building-c.rcomp-22-23-dd-g9
 !
 !
 !
@@ -85,6 +85,7 @@ interface FastEthernet0/0.428
 interface FastEthernet0/0.429
  encapsulation dot1Q 429
  ip address 10.80.165.193 255.255.255.224
+ ip nat inside
 !
 interface FastEthernet0/0.430
  encapsulation dot1Q 430
@@ -96,7 +97,8 @@ interface FastEthernet0/1
  speed auto
 !
 interface FastEthernet1/0
- ip address 10.80.167.4 255.255.255.128
+ ip address 10.80.167.2 255.255.255.128
+ ip nat outside
 !
 interface Vlan1
  no ip address
@@ -109,6 +111,10 @@ router ospf 3
 !
 router rip
 !
+ip nat inside source static tcp 10.80.165.194 53 10.80.167.4 53 
+ip nat inside source static udp 10.80.165.194 53 10.80.167.4 53 
+ip nat inside source static tcp 10.80.165.195 443 10.80.167.4 443 
+ip nat inside source static tcp 10.80.165.195 80 10.80.167.4 80 
 ip classless
 !
 ip flow-export version 9
@@ -118,6 +124,50 @@ ip flow-export version 9
 !
 !
 !
+!
+dial-peer voice 1 voip
+ destination-pattern 1...
+ session target ipv4:10.80.167.2
+!
+dial-peer voice 2 voip
+ destination-pattern 2...
+ session target ipv4:10.80.167.3
+!
+dial-peer voice 3 voip
+ destination-pattern 3...
+ session target ipv4:10.80.167.4
+!
+dial-peer voice 4 voip
+ destination-pattern 1...
+ session target ipv4:10.80.167.5
+!
+dial-peer voice 5 voip
+ destination-pattern 5...
+ session target ipv4:10.80.167.6
+!
+telephony-service
+ max-ephones 25
+ max-dn 25
+ ip source-address 10.80.165.225 port 2000
+ auto assign 1 to 2
+!
+ephone-dn 1
+ number 3001
+!
+ephone-dn 2
+ number 3002
+!
+ephone 1
+ device-security-mode none
+ mac-address 0090.0C14.0A43
+ type 7960
+ button 1:1
+!
+ephone 2
+ device-security-mode none
+ mac-address 00E0.8FD2.647A
+ type 7960
+ button 1:2
 !
 line con 0
 !
