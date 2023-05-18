@@ -1,30 +1,10 @@
 !
-version 15.1
+version 12.1
 no service timestamps log datetime msec
 no service timestamps debug datetime msec
 no service password-encryption
 !
-hostname Router
-!
-!
-!
-!
-!
-!
-!
-!
-no ip cef
-no ipv6 cef
-!
-!
-!
-!
-license udi pid CISCO2811/K9 sn FTX1017H4R4-
-!
-!
-!
-!
-!
+hostname Switch
 !
 !
 !
@@ -32,67 +12,48 @@ license udi pid CISCO2811/K9 sn FTX1017H4R4-
 !
 !
 spanning-tree mode pvst
-!
-!
-!
-!
-!
-!
-interface FastEthernet0/0
- no ip address
- duplex auto
- speed auto
-!
-interface FastEthernet0/0.426
- encapsulation dot1Q 426
- ip address 10.80.165.1 255.255.255.192
-!
-interface FastEthernet0/0.427
- encapsulation dot1Q 427
- ip address 10.80.165.65 255.255.255.192
-!
-interface FastEthernet0/0.428
- encapsulation dot1Q 428
- ip address 10.80.165.129 255.255.255.192
-!
-interface FastEthernet0/0.429
- encapsulation dot1Q 429
- ip address 10.80.165.193 255.255.255.224
-!
-interface FastEthernet0/0.430
- encapsulation dot1Q 430
- ip address 10.80.165.225 255.255.255.224
+spanning-tree extend system-id
 !
 interface FastEthernet0/1
- no ip address
- duplex auto
- speed auto
+ switchport mode trunk
 !
-interface FastEthernet1/0
- no ip address
+interface FastEthernet1/1
+ switchport mode trunk
+!
+interface FastEthernet2/1
+ switchport mode trunk
+!
+interface FastEthernet3/1
+!
+interface FastEthernet4/1
+ switchport access vlan 429
+!
+interface FastEthernet5/1
+ switchport access vlan 426
+!
+interface FastEthernet6/1
+ switchport access vlan 428
+!
+interface FastEthernet7/1
+ switchport access vlan 429
+!
+interface FastEthernet9/1
+ switchport mode trunk
 !
 interface Vlan1
  no ip address
  shutdown
-!
-router rip
-!
-ip classless
-!
-ip flow-export version 9
-!
-!
-!
 !
 !
 !
 !
 line con 0
 !
-line aux 0
-!
 line vty 0 4
  login
+line vty 5 15
+ login
+!
 !
 !
 !
