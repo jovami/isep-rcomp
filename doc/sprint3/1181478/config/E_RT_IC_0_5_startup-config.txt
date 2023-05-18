@@ -9,7 +9,33 @@ hostname Router
 !
 !
 !
+ip dhcp excluded-address 10.80.162.129
+ip dhcp excluded-address 10.80.162.1
+ip dhcp excluded-address 10.80.163.33
+ip dhcp excluded-address 10.80.162.193
+ip dhcp excluded-address 10.80.163.1
 !
+ip dhcp pool f1
+ network 10.80.162.128 255.255.255.192
+ default-router 10.80.162.129
+ dns-server 10.80.163.34
+ domain-name building-e.rcomp-22-23-dd-g9
+ip dhcp pool wifi
+ network 10.80.162.0 255.255.255.128
+ default-router 10.80.162.1
+ dns-server 10.80.163.34
+ domain-name building-e.rcomp-22-23-dd-g9
+ip dhcp pool f0
+ network 10.80.162.192 255.255.255.192
+ default-router 10.80.162.193
+ dns-server 10.80.163.34
+ domain-name building-e.rcomp-22-23-dd-g9
+ip dhcp pool voip
+ network 10.80.163.0 255.255.255.224
+ default-router 10.80.163.1
+ option 150 ip 10.80.163.1
+ dns-server 10.80.163.34
+ domain-name building-e.rcomp-22-23-dd-g9
 !
 !
 !
@@ -40,6 +66,7 @@ spanning-tree mode pvst
 !
 interface FastEthernet0/0
  no ip address
+ ip nat inside
  duplex auto
  speed auto
 !
@@ -58,6 +85,7 @@ interface FastEthernet0/0.438
 interface FastEthernet0/0.439
  encapsulation dot1Q 439
  ip address 10.80.163.33 255.255.255.224
+ ip nat inside
 !
 interface FastEthernet0/0.440
  encapsulation dot1Q 440
@@ -71,6 +99,7 @@ interface FastEthernet0/1
 !
 interface FastEthernet1/0
  ip address 10.80.167.6 255.255.255.128
+ ip nat outside
 !
 interface Vlan1
  no ip address
@@ -83,6 +112,10 @@ router ospf 5
 !
 router rip
 !
+ip nat inside source static tcp 10.80.163.35 80 10.80.167.6 80 
+ip nat inside source static tcp 10.80.163.35 443 10.80.167.6 443 
+ip nat inside source static tcp 10.80.163.34 53 10.80.167.6 53 
+ip nat inside source static udp 10.80.163.34 53 10.80.167.6 53 
 ip classless
 !
 ip flow-export version 9

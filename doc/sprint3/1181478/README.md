@@ -39,6 +39,9 @@ ip dhcp excluded-address 10.80.163.1    #VOIP
 
 # DMZ (including its default gateway)
 ip dhcp excluded-address 10.80.163.33 10.80.163.63
+
+Apesar de o dhcp excluir o default route, foi excluido os ips do default route para garantir que tal acontece.
+
 ```
 
 ### DHCP Pools
@@ -48,31 +51,31 @@ ip dhcp excluded-address 10.80.163.33 10.80.163.63
 ip dhcp pool f1
     network 10.80.162.128 255.255.255.192
     default-router 10.80.162.129
-    dns-server 10.80.162.130
-    domain-name rcomp-22-23-dd-g9 #(DUVIDA NO NOME)
+    dns-server 10.80.163.34
+    domain-name building-e.rcomp-22-23-dd-g9 
 
 
 # WiFi
 ip dhcp pool wifi
     network 10.80.162.0 255.255.255.128
     default-router 10.80.162.1
-    dns-server 10.80.162.130
-    domain-name rcomp-22-23-dd-g9 #(DUVIDA NO NOME)
+    dns-server 10.80.163.34
+    domain-name building-e.rcomp-22-23-dd-g9 
 
 # Floor 0
 ip dhcp pool f0
     network 10.80.162.192 255.255.255.192
     default-router 10.80.162.193
-    dns-server 10.80.162.130
-    domain-name rcomp-22-23-dd-g9  #(DUVIDA NO NOME)
+    dns-server 10.80.163.34
+    domain-name building-e.rcomp-22-23-dd-g9  
 
 
 # VoIP
 ip dhcp pool voip
     network 10.80.163.0 255.255.255.224
     default-router 10.80.163.1
-    dns-server 10.80.162.130
-    domain-name rcomp-22-23-dd-g9 #(DUVIDA NO NOME)
+    dns-server 10.80.163.34
+    domain-name building-e.rcomp-22-23-dd-g9 
     option 150 ip 10.80.163.1 # IP address of the TFTP server
 
 ```
@@ -135,7 +138,7 @@ dial-peer voice 4 voip
 
 # DNS service
 
-FALTA-----------------------
+
 
 **DNS Domain Name:** `rcomp-22-23-dd-g9`
 
@@ -156,6 +159,9 @@ interface FastEthernet0/0
 interface FastEthernet1/0
   ip address 10.80.167.6 255.255.255.128
   ip nat outside
+  
+interface fastEthernet0/0.439
+ip nat inside
 
 
 
