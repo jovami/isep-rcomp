@@ -148,18 +148,23 @@ DNS records:
 # Address Translation (NAT)
 ## Interface configuration
 ```bash
-# Building-A-facing interface
-interface FastEthernet0/0
-    no ip address
+# Building-A-facing (sub)interfaces
+interface FastEthernet0/0.416
+    ip nat inside
+interface FastEthernet0/0.417
+    ip nat inside
+interface FastEthernet0/0.418
+    ip nat inside
+interface FastEthernet0/0.419
+    ip nat inside
+interface FastEthernet0/0.420
     ip nat inside
 
 # Backbone-facing interface
 interface FastEthernet1/0
-    ip address 10.80.167.2 255.255.255.128
     ip nat outside
 ```
 ## Redirection
-<!-- FIXME: currently not working -->
 ```bash
 # Redirect HTTP/HTTPS requests to our internal HTTPS server
 ip nat inside source static tcp 10.80.161.3 80 10.80.167.2 80
