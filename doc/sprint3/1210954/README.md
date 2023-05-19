@@ -141,11 +141,12 @@ dial-peer voice 5 voip
 
 **DNS Domain Name:** `rcomp-22-23-dd-g9`
 
+<!-- FIXME: update records to point at other building's routers -->
 DNS records:
 
 ![dns_records](./dnsconfig.png)
 
-# Address Translation (NAT)
+# Network Address Translation (NAT)
 ## Interface configuration
 ```bash
 # Building-A-facing (sub)interfaces
@@ -175,4 +176,68 @@ ip nat inside source static tcp 10.80.161.2 53 10.80.167.2 53
 ip nat inside source static udp 10.80.161.2 53 10.80.167.2 53
 ```
 # Static firewall (ACLs)
-<!-- TODO -->
+
+## Backbone router
+```bash
+# internal spoofing
+access-list 100 permit ip 10.80.160.0 0.0.7.255 any
+
+# external spoofing
+access-list 101 deny   ip 10.80.160.0 0.0.7.255 any
+```
+
+## Building A router
+
+### Fa 0/0's sub-interfaces (inwards-facing)
+```bash
+# internal spoofing
+access-list 110 permit ip 10.80.160.0 0.0.1.255 any
+
+# allow outgoing ICMP echo requests/replies
+access-list 110 permit icmp 10.80.160.0 0.0.1.255 any echo-reply
+access-list 110 permit icmp 10.80.160.0 0.0.1.255 any echo
+
+# permit outgoing traffic from DMZ if from DNS or HTTP/HTTPS services
+access-list 110 permit tcp host 10.80.161.3 eq www      any established
+access-list 110 permit tcp host 10.80.161.3 eq 443      any established
+access-list 110 permit udp host 10.80.161.2 eq domain   any
+access-list 110 permit tcp host 10.80.161.2 eq 53       any established
+
+# TFTP traffic for VoIP phones
+access-list 110 permit udp 10.80.161.192 0.0.0.63 eq tftp any eq tftp
+```
+### Interface Fa 1/0 (outwards-facing)
+```bash
+# external spoofing
+access-list 111 deny ip 10.80.160.0 0.0.1.255 any
+
+# permit incoming ICMP echo requests/replies
+access-list 111 permit icmp any 10.80.160.0 0.0.1.255 echo
+access-list 111 permit icmp any 10.80.160.0 0.0.1.255 echo-reply
+
+# Allow traffic to DNS/HTTP services (via NAT)
+access-list 111 permit tcp any host 10.80.167.2 eq www
+access-list 111 permit tcp any host 10.80.167.2 eq 443
+access-list 111 permit tcp any host 10.80.167.2 eq 53
+access-list 111 permit udp any host 10.80.167.2 eq domain
+
+# Block all traffic to the DMZ
+access-list 111 deny ip any 10.80.161.0 0.0.0.127
+
+# TFTP and dial-peer
+access-list 111 permit udp any eq tftp host 10.80.167.2 eq tftp
+access-list 111 permit tcp any host 10.80.167.2 eq 1720
+access-list 111 permit tcp any host 10.80.167.2 established
+
+# OSPF traffic
+access-list 111 permit ospf any any
+
+# Deny all other traffic directed to the router
+access-list 111 deny ip any host 10.80.167.2
+
+# DHCP traffic
+access-list 111 permit ip host 0.0.0.0 host 255.255.255.255
+
+# Remaining traffic should be allowed
+access-list 111 permit ip any any
+```
