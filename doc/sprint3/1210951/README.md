@@ -114,61 +114,169 @@ interface FastEthernet0/0.5<br>
 
 ## 7. Static Firewall (ACL)
 
+# INSIDE TO OUTSIDE
+**spoofing- implicito, apenas permitimos ip's interiores**
+access-list 120 permit ip 10.80.164.0 0.0.0.255 any
+
+**ICMP ECHO AND REPLIES IN BOTH DIRECTIONS**
+access-list 120 permit icmp 10.80.164.0 0.0.0.255 any echo-reply
+access-list 120 permit icmp 10.80.164.0 0.0.0.255 any echo
+
+**DMZ RESPONSES**
+access-list 120 permit tcp host 10.80.164.243 eq www any established
+access-list 120 permit tcp host 10.80.164.243 eq 443 any established
+access-list 120 permit udp host 10.80.164.242 eq domain any 
+access-list 120 permit tcp host 10.80.164.242 eq 53 any established
+
+**ALLOW VOIP SERVICE**(???)(esta linha é suposto aceitar ip phones)
+access-list 120 permit udp 10.80.164.224 0.0.0.15 eq tftp any eq tftp   
+access-list 120 permit udp 10.80.164.224 0.0.0.15 eq 2000 any eq 2000
+
+
+# OUTSIDE TO INSIDE
+**EXTERNAL SPOOFING**
+
+    access-list 121 deny ip 10.80.164.0 0.0.0.255 any
+
+**ICMP ECHO AND REPLIES IN BOTH DIRECTIONS**
+
+    access-list 121 permit icmp any 10.80.164.0 0.0.0.255 echo
+    access-list 121 permit icmp any 10.80.164.0 0.0.0.255 echo-reply
+
+**DMZ TRAFFIC TROUGHT NAT ON ROUTER**
+
+    access-list 121 permit tcp any host 10.80.167.3 eq www
+    access-list 121 permit tcp any host 10.80.167.3 eq 443
+    access-list 121 permit tcp any host 10.80.167.3 eq 53
+    access-list 121 permit udp any host 10.80.167.3 eq domain
+
+**PERMIT OSPF REQUESTS TO ROUTER**
+
+    access-list 121 permit ospf any any 
+
+**DENY ALL THE REQUESTS SEND DIRECTLY TO THE DMZ**
+
+Except for icmp requests, since this this policy is overwritten by the 2 policy that allows all icmp traffic:  
+
+    access-list 121 deny ip any 10.80.164.240 0.0.0.15
+
+**ALLOW 1STDHCP REQUEST**
+
+(DHCP service uses port 67 and 68) but this information was not mentioned on the sprint specifications <br>
+In that case we should use : access-list 121 permit ip host 0.0.0.0 eq 67 host 255.255.255.255 eq 68
+
+    access-list 121 permit ip host 0.0.0.0 host 255.255.255.255
+
+**ALLOW VOIP SERVICE**
+
+    access-list 121 permit udp any eq tftp 10.80.167. eq tftp
+
+**BLOCK ALL THE OTHER ACCES DIRECTKY TO THE ROUTER**
+
+    access-list 121 deny ip any host 10.80.167.3
+    access-list 121 permit udp any eq 2000 host 10.80.167.3 eq 2000
+
+**ALL THE OTHER TRAFFIC MUST BE ALLOWED**
+
+    access-list 121 permit ip any any
+
+
+
+
+## test
+
+
+
+Dentro para Fora
+
+access-list 120 permit ip 10.80.164.0 0.0.0.255 any
+access-list 120 permit icmp 10.80.164.0 0.0.0.255 any echo-reply
+access-list 120 permit icmp 10.80.164.0 0.0.0.255 any echo
+access-list 120 permit tcp host 10.80.164.243 eq www any established
+access-list 120 permit tcp host 10.80.164.243 eq 443 any established
+access-list 120 permit udp host 10.80.164.242 eq domain any
+access-list 120 permit tcp host 10.80.164.242 eq domain any established
+
+
+Fora Para Dentro
+
+access-list 121 deny ip 10.80.164.0 0.0.0.255 any
+access-list 121 permit icmp any 10.80.164.0 0.0.0.255  echo
+access-list 121 permit icmp any 10.80.164.0 0.0.0.255  echo-reply
+access-list 121 permit tcp any host 10.80.167.3 eq www
+access-list 121 permit tcp any host 10.80.167.3 eq 443
+access-list 121 permit udp any host 10.80.167.3 eq domain
+access-list 121 permit tcp any host 10.80.167.3 eq domain 
+
+
+
+
+
+
 1. Interface Fa 0/0    (INTRANET)
 
 Allow internal nodes to reach any ip (all newtowrk)
-- access-list 120 permit ip 10.80.164.0 0.0.0.127 any
-- access-list 120 permit ip 10.80.164.128 0.0.0.63 any
-- access-list 120 permit ip 10.80.164.192 0.0.0.31 any
-- access-list 120 permit ip 10.80.164.224 0.0.0.15 any
-- access-list 120 permit ip 10.80.164.240 0.0.0.15 any
+access-list 120 permit ip 10.80.164.0 0.0.0.127 any
+access-list 120 permit ip 10.80.164.128 0.0.0.63 any
+access-list 120 permit ip 10.80.164.192 0.0.0.31 any
+access-list 120 permit ip 10.80.164.224 0.0.0.15 any
+access-list 120 permit ip 10.80.164.240 0.0.0.15 any        
+
+access-list 120 permit ip 10.80.164.0 0.0.0.255 any        
 
 **2**
 Allow internal nodes to request and answer icmp requests
-- access-list 120 permit icmp 10.80.164.0 0.0.0.255 any echo
-- access-list 120 permit icmp 10.80.164.0 0.0.0.255 any echo-reply
+
+access-list 120 permit icmp 10.80.164.0 0.0.0.255 any echo          YES
+access-list 120 permit icmp 10.80.164.0 0.0.0.255 any echo-reply    YES
 
 **3**
 Allow HTTP server to be reached by any tcp packet using HTTP(80) AND HTTP(443)
-- access-list 120 permit tcp any host 10.80.164.243 eq www
-- access-list 120 permit tcp any host 10.80.164.243 eq 443
+
+access-list 120 permit tcp host 10.80.167.3 eq www any established    YES 
+access-list 120 permit tcp host 10.80.167.3 eq 443 any established    YES
 
 Allow DNS server to be reached by any packet using udp on port domain(52)
-- access-list 120 permit udp any host 10.80.164.242 eq domain
-        - access-list 120 permit tcp any host 10.80.164.242 eq domain
 
+access-list 120 permit udp any host 10.80.164.242 eq domain                   ??? yes mmaybe
+access-list 120 permit tcp any 10.80.164.242 eq domain any established       ??? MAYBE
+
+
+MAYBE NO NEED
 Deny all the other traffic that comes to the dmz server
-- access-list 120 deny ip any 10.80.146.240 0.0.0.15
+
+access-list 120 deny ip any 10.80.146.240 0.0.0.15
 
 
 ?????????
-- access-list 120 deny ip any host 10.80.164.0
+access-list 120 deny ip any host 10.80.164.0
 
 2. Inteface Fa1/0  (INTERNET)
 
 
 **1** Block external spoofing:
-- access-list 121 deny ip 10.80.164.0 0.0.0.255 any
+    access-list 121 deny ip 10.80.164.0 0.0.0.255 any   YES
 
 **2**Allow all icmp requests/replies
-- access-list 121 permit icmp any any echo
-- access-list 121 permit icmp any any echo-reply
+access-list 121 permit icmp any any echo                YES
+access-list 121 permit icmp any any echo-reply          YES
 
 **3**Allow HTTP(80)/HTTPS(443) access to 10.80.164.243(B_SV_0_2_HTTP)
-- access-list 121 permit tcp any host 10.80.164.243 eq www
-- access-list 121 permit tcp any host 10.80.164.243 eq 443
+access-list 121 permit tcp any host 10.80.167.3 eq www        YES
+access-list 121 permit tcp any host 10.80.167.3 eq 443        YES
 
 Allow DNS server to be reached by any packet using udp on port domain(52)
-- access-list 121 permit udp any host 10.80.164.242 eq domain
-        - access-list 121 permit tcp any host 10.80.164.242 eq domain
+access-list 121 permit udp any host 10.80.167.3 eq domain     YES 
+access-list 121 permit tcp any host 10.80.167.3 eq domain     YES
+
 
 # **Allow ospf to be used ??**
-- access-list 121 permit ospf any any**
+access-list 121 permit ospf any any**
 
 
 Allow any dmz requests?
-- access-list 121 permit ip any 10.80.164.224 0.0.0.15
+access-list 121 permit ip any 10.80.164.224 0.0.0.15
 
 
-Allow any host to acces router's backbone interface
-- access-list 121 permit ip any host 10.80.167.3
+Allow any host to access router's backbone interface
+access-list 121 permit ip any host 10.80.167.3
