@@ -183,6 +183,8 @@ access-list 100 permit ip 10.80.160.0 0.0.7.255 any
 
 # external spoofing
 access-list 101 deny   ip 10.80.160.0 0.0.7.255 any
+# allow all but the ones from external spoofing
+access-list 101 permit ip any any
 ```
 
 ## Building A router

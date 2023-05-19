@@ -76,26 +76,31 @@ interface FastEthernet0/0.1
 interface FastEthernet0/0.416
  encapsulation dot1Q 416
  ip address 10.80.160.1 255.255.255.128
+ ip access-group 110 in
  ip nat inside
 !
 interface FastEthernet0/0.417
  encapsulation dot1Q 417
  ip address 10.80.160.129 255.255.255.128
+ ip access-group 110 in
  ip nat inside
 !
 interface FastEthernet0/0.418
  encapsulation dot1Q 418
  ip address 10.80.161.1 255.255.255.128
+ ip access-group 110 in
  ip nat inside
 !
 interface FastEthernet0/0.419
  encapsulation dot1Q 419
  ip address 10.80.161.129 255.255.255.192
+ ip access-group 110 in
  ip nat inside
 !
 interface FastEthernet0/0.420
  encapsulation dot1Q 420
  ip address 10.80.161.193 255.255.255.192
+ ip access-group 110 in
  ip nat inside
 !
 interface FastEthernet0/1
@@ -105,6 +110,7 @@ interface FastEthernet0/1
 !
 interface FastEthernet1/0
  ip address 10.80.167.2 255.255.255.128
+ ip access-group 111 in
  ip nat outside
 !
 interface Vlan1
@@ -125,6 +131,29 @@ ip classless
 ip flow-export version 9
 !
 !
+access-list 110 permit ip 10.80.160.0 0.0.1.255 any
+access-list 110 permit icmp 10.80.160.0 0.0.1.255 any echo-reply
+access-list 110 permit icmp 10.80.160.0 0.0.1.255 any echo
+access-list 110 permit tcp host 10.80.161.3 eq www any established
+access-list 110 permit tcp host 10.80.161.3 eq 443 any established
+access-list 110 permit udp host 10.80.161.2 eq domain any
+access-list 110 permit tcp host 10.80.161.2 eq domain any established
+access-list 110 permit udp 10.80.161.192 0.0.0.63 eq tftp any eq tftp
+access-list 111 deny ip 10.80.160.0 0.0.1.255 any
+access-list 111 permit icmp any 10.80.160.0 0.0.1.255 echo
+access-list 111 permit icmp any 10.80.160.0 0.0.1.255 echo-reply
+access-list 111 permit tcp any host 10.80.167.2 eq www
+access-list 111 permit tcp any host 10.80.167.2 eq 443
+access-list 111 permit tcp any host 10.80.167.2 eq domain
+access-list 111 permit udp any host 10.80.167.2 eq domain
+access-list 111 deny ip any 10.80.161.0 0.0.0.127
+access-list 111 permit udp any eq tftp host 10.80.167.2 eq tftp
+access-list 111 permit tcp any host 10.80.167.2 eq 1720
+access-list 111 permit tcp any host 10.80.167.2 established
+access-list 111 permit ospf any any
+access-list 111 deny ip any host 10.80.167.2
+access-list 111 permit ip host 0.0.0.0 host 255.255.255.255
+access-list 111 permit ip any any
 !
 !
 !
