@@ -141,7 +141,6 @@ dial-peer voice 5 voip
 
 **DNS Domain Name:** `rcomp-22-23-dd-g9`
 
-<!-- FIXME: update records to point at other building's routers -->
 DNS records:
 
 ![dns_records](./dnsconfig.png)
