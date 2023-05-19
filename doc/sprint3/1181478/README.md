@@ -167,7 +167,7 @@ ip nat inside
 
 ```
 ## Redirection
-<!-- FIXME: currently not working -->
+
 ```bash
 # Redirect HTTP/HTTPS requests to our internal HTTPS server
 ip nat inside source static tcp 10.80.163.35 80 10.80.167.6 80
@@ -179,7 +179,64 @@ ip nat inside source static udp 10.80.163.34 53 10.80.167.6 53
 
 ```
 # Static firewall (ACLs)
-access-list 105 deny ip 10.80.162.0 0.0.0.255 any
+```bash
+
+## Fa 0/0's sub-interfaces (inwards-facing)
+
+#Wireless Network 10.80.162.0 (/25)
+# internal spoofing
+access-list 150 permit ip 10.80.162.0 0.0.0.255 any
+
+# allow outgoing ICMP echo requests/replies
+access-list 150 permit icmp 10.80.162.0 0.0.0.255 any echo-reply
+access-list 150 permit icmp 10.80.162.0 0.0.0.255 any echo
+
+# Permit outgoing traffic from DMZ if from DNS or HTTP/HTTPS services(HTTP Server 10.80.163.35,DNS server 10.80.163.34)
+access-list 150 permit tcp host 10.80.163.35 eq www any established
+access-list 150 permit tcp host 10.80.163.35 eq 443 any established
+access-list 150 permit udp host 10.80.163.34 eq domain any
+access-list 150 permit tcp host 10.80.163.34 eq 53 any established
+
+## TFTP traffic for VoIP phones( 10.80.163 (/27) )
+
+access-list 150 permit udp 10.80.163.0 0.0.0.31 eq tftp any eq tftp
+
+## Fa 1/0 (outwards-facing)
+
+#Wireless Network 10.80.162.0 (/25)
+# external spoofing
+access-list 151 deny ip 10.80.162.0 0.0.0.255 any
+
+# permit incoming ICMP echo requests/replies
+access-list 151 permit icmp any 10.80.162.0 0.0.0.255 echo
+access-list 151 permit icmp any 10.80.162.0 0.0.0.255 echo-reply
+
+# Allow traffic to DNS/HTTP services (via NAT)
+access-list 151 permit tcp any host 10.80.167.6 eq www
+access-list 151 permit tcp any host 10.80.167.6 eq 443
+access-list 151 permit tcp any host 10.80.167.6 eq 53
+access-list 151 permit udp any host 10.80.167.6 eq domain
+
+## Block all traffic to the DMZ(10.80.163.32)
+access-list 151 deny ip any 10.80.163.32 0.0.0.31
+
+## TFTP and dial-peer  (10.80.167.6 -building E )
+access-list 151 permit udp any eq tftp host 10.80.167.6 eq tftp
+access-list 151 permit tcp any host 10.80.167.6 eq 1720
+access-list 151 permit tcp any host 10.80.167.6 established
+
+# OSPF traffic
+access-list 151 permit ospf any any
+
+# Deny all other traffic directed to the router
+access-list 151 deny ip any host 10.80.167.6
+
+# DHCP traffic
+access-list 151 permit ip host 0.0.0.0 host 255.255.255.255
+
+# Remaining traffic should be allowed
+access-list 151 permit ip any any
+```
 
 
 ## IPv4 Addressing
