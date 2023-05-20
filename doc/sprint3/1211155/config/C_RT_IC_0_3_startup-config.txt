@@ -67,6 +67,7 @@ spanning-tree mode pvst
 !
 interface FastEthernet0/0
  no ip address
+ ip access-group 130 in
  duplex auto
  speed auto
 !
@@ -98,6 +99,7 @@ interface FastEthernet0/1
 !
 interface FastEthernet1/0
  ip address 10.80.167.4 255.255.255.128
+ ip access-group 131 in
  ip nat outside
 !
 interface Vlan1
@@ -120,6 +122,27 @@ ip classless
 ip flow-export version 9
 !
 !
+access-list 130 permit ip 10.80.165.0 0.0.0.255 any
+access-list 130 permit icmp 10.80.165.0 0.0.0.255 any echo-reply
+access-list 130 permit icmp 10.80.165.0 0.0.0.255 any echo
+access-list 130 permit tcp host 10.80.165.195 eq www any established
+access-list 130 permit tcp host 10.80.165.195 eq 443 any established
+access-list 130 permit udp host 10.80.165.194 eq domain any
+access-list 130 permit udp 10.80.165.224 0.0.0.31 eq tftp any eq tftp
+access-list 131 deny ip 10.80.165.0 0.0.0.255 any
+access-list 131 permit icmp any 10.80.165.0 0.0.0.255 echo
+access-list 131 permit icmp any 10.80.165.0 0.0.0.255 echo-reply
+access-list 131 permit tcp any host 10.80.167.4 eq www
+access-list 131 permit tcp any host 10.80.167.4 eq 443
+access-list 131 permit udp any host 10.80.167.4 eq domain
+access-list 131 deny ip any 10.80.165.192 0.0.0.31
+access-list 131 permit udp any eq tftp host 10.80.167.4 eq tftp
+access-list 131 permit tcp any host 10.80.167.4 eq 1720
+access-list 131 permit tcp any host 10.80.167.4 established
+access-list 131 permit ospf any any
+access-list 131 deny ip any host 10.80.167.4
+access-list 131 permit ip host 0.0.0.0 host 255.255.255.255
+access-list 131 permit ip any any
 !
 !
 !
@@ -149,7 +172,7 @@ telephony-service
  max-ephones 25
  max-dn 25
  ip source-address 10.80.165.225 port 2000
- auto assign 1 to 2
+ auto assign 1 to 25
 !
 ephone-dn 1
  number 3001
