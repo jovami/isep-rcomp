@@ -137,7 +137,7 @@ access-list 110 permit icmp 10.80.160.0 0.0.1.255 any echo
 access-list 110 permit tcp host 10.80.161.3 eq www any established
 access-list 110 permit tcp host 10.80.161.3 eq 443 any established
 access-list 110 permit udp host 10.80.161.2 eq domain any
-access-list 110 permit tcp host 10.80.161.2 eq domain any established
+access-list 110 permit tcp host 10.80.161.2 eq domain any
 access-list 110 permit udp 10.80.161.192 0.0.0.63 eq tftp any eq tftp
 access-list 111 deny ip 10.80.160.0 0.0.1.255 any
 access-list 111 permit icmp any 10.80.160.0 0.0.1.255 echo
