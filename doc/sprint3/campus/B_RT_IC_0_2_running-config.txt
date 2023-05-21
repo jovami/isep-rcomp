@@ -1,0 +1,208 @@
+!
+version 15.1
+no service timestamps log datetime msec
+no service timestamps debug datetime msec
+no service password-encryption
+!
+hostname Router
+!
+!
+!
+!
+ip dhcp excluded-address 10.80.164.1
+ip dhcp excluded-address 10.80.164.129
+ip dhcp excluded-address 10.80.164.193
+ip dhcp excluded-address 10.80.164.225
+ip dhcp excluded-address 10.80.164.241
+!
+ip dhcp pool wifi
+ network 10.80.164.0 255.255.255.128
+ default-router 10.80.164.1
+ dns-server 10.80.164.242
+ domain-name building-b.rcomp-22-23-dd-g09
+ip dhcp pool f1
+ network 10.80.164.128 255.255.255.192
+ default-router 10.80.164.129
+ dns-server 10.80.164.242
+ domain-name building-b.rcomp-22-23-dd-g09
+ip dhcp pool f0
+ network 10.80.164.192 255.255.255.224
+ default-router 10.80.164.193
+ dns-server 10.80.164.242
+ domain-name building-b.rcomp-22-23-dd-g09
+ip dhcp pool voip
+ network 10.80.164.224 255.255.255.240
+ default-router 10.80.164.225
+ option 150 ip 10.80.164.225
+!
+!
+!
+no ip cef
+no ipv6 cef
+!
+!
+!
+!
+license udi pid CISCO2811/K9 sn FTX10173F3Z-
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+spanning-tree mode pvst
+!
+!
+!
+!
+!
+!
+interface FastEthernet0/0
+ no ip address
+ duplex auto
+ speed auto
+!
+interface FastEthernet0/0.1
+ encapsulation dot1Q 423
+ ip address 10.80.164.1 255.255.255.128
+ ip access-group 120 in
+!
+interface FastEthernet0/0.2
+ encapsulation dot1Q 422
+ ip address 10.80.164.129 255.255.255.192
+ ip access-group 120 in
+!
+interface FastEthernet0/0.3
+ encapsulation dot1Q 421
+ ip address 10.80.164.193 255.255.255.224
+ ip access-group 120 in
+!
+interface FastEthernet0/0.4
+ encapsulation dot1Q 425
+ ip address 10.80.164.225 255.255.255.240
+ ip access-group 120 in
+!
+interface FastEthernet0/0.5
+ encapsulation dot1Q 424
+ ip address 10.80.164.241 255.255.255.240
+ ip access-group 120 in
+ ip nat inside
+!
+interface FastEthernet0/1
+ no ip address
+ duplex auto
+ speed auto
+ shutdown
+!
+interface FastEthernet1/0
+ ip address 10.80.167.3 255.255.255.128
+ ip access-group 121 in
+ ip nat outside
+!
+interface Vlan1
+ no ip address
+ shutdown
+!
+router ospf 2
+ log-adjacency-changes
+ network 10.80.164.0 0.0.0.255 area 2
+ network 10.80.167.0 0.0.0.127 area 0
+!
+router rip
+!
+ip nat inside source static tcp 10.80.164.242 53 10.80.167.3 53 
+ip nat inside source static udp 10.80.164.242 53 10.80.167.3 53 
+ip nat inside source static tcp 10.80.164.243 443 10.80.167.3 443 
+ip nat inside source static tcp 10.80.164.243 80 10.80.167.3 80 
+ip classless
+!
+ip flow-export version 9
+!
+!
+access-list 120 permit ip 10.80.164.0 0.0.0.255 any
+access-list 120 permit icmp 10.80.164.0 0.0.0.255 any echo-reply
+access-list 120 permit icmp 10.80.164.0 0.0.0.255 any echo
+access-list 120 permit tcp host 10.80.164.243 eq www any established
+access-list 120 permit tcp host 10.80.164.243 eq 443 any established
+access-list 120 permit udp host 10.80.164.242 eq domain any
+access-list 120 permit udp 10.80.164.224 0.0.0.15 eq tftp any eq tftp
+access-list 121 deny ip 10.80.164.0 0.0.0.255 any
+access-list 121 permit icmp any 10.80.164.0 0.0.0.255 echo
+access-list 121 permit icmp any 10.80.164.0 0.0.0.255 echo-reply
+access-list 121 permit tcp any host 10.80.167.3 eq www
+access-list 121 permit tcp any host 10.80.167.3 eq 443
+access-list 121 permit tcp any host 10.80.167.3 eq domain
+access-list 121 permit udp any host 10.80.167.3 eq domain
+access-list 121 deny ip any 10.80.164.240 0.0.0.15
+access-list 121 permit udp any eq tftp host 10.80.167.3 eq tftp
+access-list 121 permit tcp any host 10.80.167.3 eq 1720
+access-list 121 permit tcp any host 10.80.167.3 established
+access-list 121 permit ospf any any
+access-list 121 deny ip any host 10.80.167.3
+access-list 121 permit ip host 0.0.0.0 host 255.255.255.255
+access-list 121 permit ip any any
+!
+!
+!
+!
+!
+dial-peer voice 1 voip
+ destination-pattern 1...
+ session target ipv4:10.80.167.2
+!
+dial-peer voice 2 voip
+ destination-pattern 2...
+ session target ipv4:10.80.167.3
+!
+dial-peer voice 3 voip
+ destination-pattern 3...
+ session target ipv4:10.80.167.4
+!
+dial-peer voice 4 voip
+ destination-pattern 4...
+ session target ipv4:10.80.167.5
+!
+dial-peer voice 5 voip
+ destination-pattern 5...
+ session target ipv4:10.80.167.6
+!
+telephony-service
+ max-ephones 13
+ max-dn 13
+ ip source-address 10.80.164.225 port 2000
+ auto assign 1 to 13
+!
+ephone-dn 1
+ number 2001
+!
+ephone-dn 2
+ number 2002
+!
+ephone 1
+ device-security-mode none
+ mac-address 0060.4711.012E
+ type 7960
+ button 1:1
+!
+ephone 2
+ device-security-mode none
+ mac-address 000C.85E5.B7ED
+ type 7960
+ button 1:2
+!
+line con 0
+!
+line aux 0
+!
+line vty 0 4
+ login
+!
+!
+!
+end
+
