@@ -126,14 +126,12 @@ access-list 120 permit icmp 10.80.164.0 0.0.0.255 any echo
 access-list 120 permit tcp host 10.80.164.243 eq www any established
 access-list 120 permit tcp host 10.80.164.243 eq 443 any established
 access-list 120 permit udp host 10.80.164.242 eq domain any
-access-list 120 permit tcp host 10.80.164.242 eq domain any established
 access-list 120 permit udp 10.80.164.224 0.0.0.15 eq tftp any eq tftp
 access-list 121 deny ip 10.80.164.0 0.0.0.255 any
 access-list 121 permit icmp any 10.80.164.0 0.0.0.255 echo
 access-list 121 permit icmp any 10.80.164.0 0.0.0.255 echo-reply
 access-list 121 permit tcp any host 10.80.167.3 eq www
 access-list 121 permit tcp any host 10.80.167.3 eq 443
-access-list 121 permit tcp any host 10.80.167.3 eq domain
 access-list 121 permit udp any host 10.80.167.3 eq domain
 access-list 121 deny ip any 10.80.164.240 0.0.0.15
 access-list 121 permit udp any eq tftp host 10.80.167.3 eq tftp
@@ -169,10 +167,10 @@ dial-peer voice 5 voip
  session target ipv4:10.80.167.6
 !
 telephony-service
- max-ephones 2
- max-dn 2
+ max-ephones 13
+ max-dn 13
  ip source-address 10.80.164.225 port 2000
- auto assign 1 to 2
+ auto assign 1 to 13
 !
 ephone-dn 1
  number 2001

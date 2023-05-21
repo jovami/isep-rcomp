@@ -73,23 +73,28 @@ interface FastEthernet0/0
 interface FastEthernet0/0.436
  encapsulation dot1Q 436
  ip address 10.80.162.193 255.255.255.192
+ ip access-group 150 in
 !
 interface FastEthernet0/0.437
  encapsulation dot1Q 437
  ip address 10.80.162.129 255.255.255.192
+ ip access-group 150 in
 !
 interface FastEthernet0/0.438
  encapsulation dot1Q 438
  ip address 10.80.162.1 255.255.255.128
+ ip access-group 150 in
 !
 interface FastEthernet0/0.439
  encapsulation dot1Q 439
  ip address 10.80.163.33 255.255.255.224
+ ip access-group 150 in
  ip nat inside
 !
 interface FastEthernet0/0.440
  encapsulation dot1Q 440
  ip address 10.80.163.1 255.255.255.224
+ ip access-group 150 in
 !
 interface FastEthernet0/1
  no ip address
@@ -99,6 +104,7 @@ interface FastEthernet0/1
 !
 interface FastEthernet1/0
  ip address 10.80.167.6 255.255.255.128
+ ip access-group 151 in
  ip nat outside
 !
 interface Vlan1
