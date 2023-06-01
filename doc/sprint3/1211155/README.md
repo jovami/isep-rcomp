@@ -1,5 +1,4 @@
-RCOMP 2022-2023 Project - Sprint 3 - Member 1210955 folder
-==========================================================
+# RCOMP 2022-2023 Project - Sprint 3 - Member 1211155 folder
 
 # OSPF
 
@@ -19,16 +18,19 @@ router ospf 1
 ```
 
 ## Building A OSPF
+
 ```bash
 router ospf 3
  network 10.80.165.0 0.0.0.255 area 3 # Building C
  network 10.80.167.0 0.0.0.127 area 0 # Backbone
 ```
- 
+
 # HTTP Server
+
 **IP Address:** 10.80.165.195/27
 
 ## Home Page
+
 ![home_page_preview](./homepage.png)
 
 # DHCP
@@ -40,7 +42,9 @@ router ospf 3
 3. Configuration for the VoIP VLAN must include **option 150**
 
 ## Configuration
+
 ### Excluded Addresses
+
 ```bash
 # Default gateways for each VLAN
 ip dhcp excluded-address 10.80.165.1
@@ -102,7 +106,9 @@ ephone-dn 1
 ephone-dn 2
  number 3002
 ```
+
 ## Call Forwarding
+
 ```bash
 dial-peer voice 1 voip
  destination-pattern 1...
@@ -134,7 +140,9 @@ DNS records:
 ![dns_records](./dnsconfig.png)
 
 # Network Address Translation (NAT)
+
 ## Interface configuration
+
 ```bash
 # Building-A-facing (sub)interfaces
 interface FastEthernet0/0.429
@@ -149,18 +157,21 @@ interface FastEthernet1/0
 ```
 
 ## Redirection
+
 ```bash
 # Redirect HTTP/HTTPS requests to our internal HTTPS server
-ip nat inside source static tcp 10.80.165.195 443 10.80.167.4 443 
-ip nat inside source static tcp 10.80.165.195 80 10.80.167.4 80 
+ip nat inside source static tcp 10.80.165.195 443 10.80.167.4 443
+ip nat inside source static tcp 10.80.165.195 80 10.80.167.4 80
 
 # Redirect DNS requests to our internal DNS server
-ip nat inside source static tcp 10.80.165.194 53 10.80.167.4 53 
-ip nat inside source static udp 10.80.165.194 53 10.80.167.4 53 
+ip nat inside source static tcp 10.80.165.194 53 10.80.167.4 53
+ip nat inside source static udp 10.80.165.194 53 10.80.167.4 53
 ```
+
 # Static firewall (ACLs)
 
 ## Backbone router
+
 ```bash
 # internal spoofing
 access-list 100 permit ip 10.80.160.0 0.0.7.255 any
@@ -174,6 +185,7 @@ access-list 101 permit ip any any
 ## Building A router
 
 ### Fa 0/0's sub-interfaces (inwards-facing)
+
 ```bash
 # internal spoofing
 access-list 130 permit ip 10.80.165.0 0.0.0.255 any
@@ -190,7 +202,9 @@ access-list 130 permit udp host 10.80.165.194 eq domain any
 # TFTP traffic for VoIP phones
 access-list 130 permit udp 10.80.165.224 0.0.0.31 eq tftp any eq tftp
 ```
+
 ### Interface Fa 1/0 (outwards-facing)
+
 ```bash
 # external spoofing
 access-list 131 deny ip 10.80.165.0 0.0.0.255 any
